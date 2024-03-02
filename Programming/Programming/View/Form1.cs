@@ -31,6 +31,10 @@ namespace Programming
         {
             EnumsListBox.Items.AddRange(GetEnumsNames());
             EnumsListBox.SelectedIndex = 0;
+
+            SeasonsComboBox.DataSource = Enum.GetValues(typeof(Season));
+            SeasonsComboBox.SelectedIndex = 0;
+
         }
 
         /// <summary>
@@ -45,22 +49,16 @@ namespace Programming
             {
                 case "Color":
                     return typeof(Color);
-                    break;
                 case "Weekday":
                     return typeof(Weekday);
-                    break;
                 case "EducationForm":
                     return typeof(EducationForm);
-                    break;
                 case "Genre":
                     return typeof(Genre);
-                    break;
                 case "Manufacture":
                     return typeof(Manufacture);
-                    break;
                 case "Season":
                     return typeof(Season);
-                    break;
             }
             return null;
         }
@@ -72,8 +70,6 @@ namespace Programming
         /// <param name="e">выбор нового элемента в EnumsListBox</param>
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ValuesListBox.Items.Clear();
-
             Type selectedEnum = GetSelectedEnum();
             if (selectedEnum == null)
             {
@@ -81,9 +77,7 @@ namespace Programming
                 return;
             }
 
-            foreach (var value in Enum.GetValues(selectedEnum))
-                ValuesListBox.Items.Add(value);
-
+            ValuesListBox.DataSource = Enum.GetValues(selectedEnum);
             ValuesListBox.SelectedIndex = 0;
         }
 
@@ -105,7 +99,7 @@ namespace Programming
         }
 
         /// <summary>
-        /// 
+        /// показыает на экране строку с днём недели и индексом этого дня в Season
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -116,11 +110,31 @@ namespace Programming
             bool isWeek = Enum.TryParse(typeof(Weekday), weekday, true, out parsedWeekday);
             if (isWeek)
             {
-                ParsedWeekdayLabel.Text = $"это день недели({parsedWeekday.ToString()} = {(int)parsedWeekday})";
+                ParsedWeekdayLabel.Text = $"это день недели({parsedWeekday} = {(int)parsedWeekday})";
             }
             else
             {
                 ParsedWeekdayLabel.Text = "Нет такого дня недели";
+            }
+        }
+
+        private void GoButton_Click(object sender, EventArgs e)
+        {
+            Season currentSeason = (Season)SeasonsComboBox.SelectedItem;
+            switch (currentSeason)
+            {
+                case Season.Winter:
+                    MessageBox.Show("сейчас зима");
+                    break;
+                case Season.Spring:
+                    MessageBox.Show("сейчас весна");
+                    break;
+                case Season.Summer:
+                    MessageBox.Show("сейчас лето");
+                    break;
+                case Season.Autmn:
+                    MessageBox.Show("сейчас осень");
+                    break;
             }
         }
     }
