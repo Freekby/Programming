@@ -34,35 +34,35 @@ namespace Programming
         }
 
         /// <summary>
-        /// получает все значения выбранного Enum 
+        /// получает выбранный Enum
         /// </summary>
-        /// <returns>Array</returns>
-        private Array GetSelectedEnumValues()
+        /// <returns>Type, если элемента нет - null</returns>
+        private Type GetSelectedEnum()
         {
             string CurrentEnumName = EnumsListBox.SelectedItem.ToString();
 
             switch (CurrentEnumName)
             {
                 case "Color":
-                    return Enum.GetValues(typeof(Color));
+                    return typeof(Color);
                     break;
                 case "Weekday":
-                    return Enum.GetValues(typeof(Weekday));
+                    return typeof(Weekday);
                     break;
                 case "EducationForm":
-                    return Enum.GetValues(typeof(EducationForm));
+                    return typeof(EducationForm);
                     break;
                 case "Genre":
-                    return Enum.GetValues(typeof(Genre));
+                    return typeof(Genre);
                     break;
                 case "Manufacture":
-                    return Enum.GetValues(typeof(Manufacture));
+                    return typeof(Manufacture);
                     break;
                 case "Season":
-                    return Enum.GetValues(typeof(Season));
+                    return typeof(Season);
                     break;
             }
-            return new string[] { "Элементов не найдено" };
+            return null;
         }
 
         /// <summary>
@@ -73,7 +73,15 @@ namespace Programming
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             ValuesListBox.Items.Clear();
-            foreach (var value in GetSelectedEnumValues())
+
+            Type selectedEnum = GetSelectedEnum();
+            if (selectedEnum == null)
+            {
+                ValuesListBox.Items.Add("Элементы не найдены");
+                return;
+            }
+
+            foreach (var value in Enum.GetValues(selectedEnum))
                 ValuesListBox.Items.Add(value);
 
             ValuesListBox.SelectedIndex = 0;
@@ -86,7 +94,14 @@ namespace Programming
         /// <param name="e">выбор нового элемента в ValuesListBox</param>
         private void ValuesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string SelectedValue = ValuesListBox.SelectedItem.ToString();
+            Type selectedEnum = GetSelectedEnum();
+            if (selectedEnum == null)
+            {
+                return;
+            }
 
+            IntValue.Text = $"{(int)Enum.Parse(selectedEnum, SelectedValue)}";
         }
 
         /// <summary>
@@ -96,10 +111,9 @@ namespace Programming
         /// <param name="e"></param>
         private void WeekdayParsingButton_Click(object sender, EventArgs e)
         {
-
             object? parsedWeekday;
             string weekday = WeekdayTextBox.Text;
-            bool isWeek = Enum.TryParse(typeof(Weekday), weekday,true, out parsedWeekday);
+            bool isWeek = Enum.TryParse(typeof(Weekday), weekday, true, out parsedWeekday);
             if (isWeek)
             {
                 ParsedWeekdayLabel.Text = $"это день недели({parsedWeekday.ToString()} = {(int)parsedWeekday})";
