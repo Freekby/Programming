@@ -31,38 +31,36 @@ namespace Programming
         {
             EnumsListBox.Items.AddRange(GetEnumsNames());
             EnumsListBox.SelectedIndex = 0;
+
+            SeasonsComboBox.DataSource = Enum.GetValues(typeof(Season));
+            SeasonsComboBox.SelectedIndex = 0;
+
         }
 
         /// <summary>
-        /// получает все значени€ выбранного Enum 
+        /// получает выбранный Enum
         /// </summary>
-        /// <returns>Array</returns>
-        private Array GetSelectedEnumValues()
+        /// <returns>Type, если элемента нет - null</returns>
+        private Type GetSelectedEnum()
         {
             string CurrentEnumName = EnumsListBox.SelectedItem.ToString();
 
             switch (CurrentEnumName)
             {
                 case "Color":
-                    return Enum.GetValues(typeof(Color));
-                    break;
+                    return typeof(Color);
                 case "Weekday":
-                    return Enum.GetValues(typeof(Weekday));
-                    break;
+                    return typeof(Weekday);
                 case "EducationForm":
-                    return Enum.GetValues(typeof(EducationForm));
-                    break;
+                    return typeof(EducationForm);
                 case "Genre":
-                    return Enum.GetValues(typeof(Genre));
-                    break;
+                    return typeof(Genre);
                 case "Manufacture":
-                    return Enum.GetValues(typeof(Manufacture));
-                    break;
+                    return typeof(Manufacture);
                 case "Season":
-                    return Enum.GetValues(typeof(Season));
-                    break;
+                    return typeof(Season);
             }
-            return new string[] { "Ёлементов не найдено" };
+            return null;
         }
 
         /// <summary>
@@ -72,10 +70,14 @@ namespace Programming
         /// <param name="e">выбор нового элемента в EnumsListBox</param>
         private void EnumsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ValuesListBox.Items.Clear();
-            foreach (var value in GetSelectedEnumValues())
-                ValuesListBox.Items.Add(value);
+            Type selectedEnum = GetSelectedEnum();
+            if (selectedEnum == null)
+            {
+                ValuesListBox.Items.Add("Ёлементы не найдены");
+                return;
+            }
 
+            ValuesListBox.DataSource = Enum.GetValues(selectedEnum);
             ValuesListBox.SelectedIndex = 0;
         }
 
@@ -86,27 +88,53 @@ namespace Programming
         /// <param name="e">выбор нового элемента в ValuesListBox</param>
         private void ValuesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string SelectedValue = ValuesListBox.SelectedItem.ToString();
+            Type selectedEnum = GetSelectedEnum();
+            if (selectedEnum == null)
+            {
+                return;
+            }
 
+            IntValue.Text = $"{(int)Enum.Parse(selectedEnum, SelectedValue)}";
         }
 
         /// <summary>
-        /// 
+        /// показыает на экране строку с днЄм недели и индексом этого дн€ в Season
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void WeekdayParsingButton_Click(object sender, EventArgs e)
         {
-
             object? parsedWeekday;
             string weekday = WeekdayTextBox.Text;
-            bool isWeek = Enum.TryParse(typeof(Weekday), weekday,true, out parsedWeekday);
+            bool isWeek = Enum.TryParse(typeof(Weekday), weekday, true, out parsedWeekday);
             if (isWeek)
             {
-                ParsedWeekdayLabel.Text = $"это день недели({parsedWeekday.ToString()} = {(int)parsedWeekday})";
+                ParsedWeekdayLabel.Text = $"это день недели({parsedWeekday} = {(int)parsedWeekday})";
             }
             else
             {
                 ParsedWeekdayLabel.Text = "Ќет такого дн€ недели";
+            }
+        }
+
+        private void GoButton_Click(object sender, EventArgs e)
+        {
+            Season currentSeason = (Season)SeasonsComboBox.SelectedItem;
+            switch (currentSeason)
+            {
+                case Season.Winter:
+                    MessageBox.Show("сейчас зима");
+                    break;
+                case Season.Spring:
+                    MessageBox.Show("сейчас весна");
+                    break;
+                case Season.Summer:
+                    MessageBox.Show("сейчас лето");
+                    break;
+                case Season.Autmn:
+                    MessageBox.Show("сейчас осень");
+                    break;
             }
         }
     }

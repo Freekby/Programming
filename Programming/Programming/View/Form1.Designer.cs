@@ -31,21 +31,26 @@
             tabControl1 = new TabControl();
             EnumsPage = new TabPage();
             EnumerationsGroup = new GroupBox();
+            SeasonGroupBox = new GroupBox();
+            GoButton = new Button();
+            SeasonsComboBox = new ComboBox();
+            label5 = new Label();
+            WeekdayGroupBox = new GroupBox();
+            WeekdayTextBox = new TextBox();
+            WeekdayParsingButton = new Button();
+            ParsedWeekdayLabel = new Label();
+            label4 = new Label();
             EnumsListBox = new ListBox();
             label3 = new Label();
             label1 = new Label();
             IntValue = new TextBox();
             label2 = new Label();
             ValuesListBox = new ListBox();
-            groupBox1 = new GroupBox();
-            label4 = new Label();
-            ParsedWeekdayLabel = new Label();
-            WeekdayParsingButton = new Button();
-            WeekdayTextBox = new TextBox();
             tabControl1.SuspendLayout();
             EnumsPage.SuspendLayout();
             EnumerationsGroup.SuspendLayout();
-            groupBox1.SuspendLayout();
+            SeasonGroupBox.SuspendLayout();
+            WeekdayGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -72,7 +77,8 @@
             // 
             // EnumerationsGroup
             // 
-            EnumerationsGroup.Controls.Add(groupBox1);
+            EnumerationsGroup.Controls.Add(SeasonGroupBox);
+            EnumerationsGroup.Controls.Add(WeekdayGroupBox);
             EnumerationsGroup.Controls.Add(EnumsListBox);
             EnumerationsGroup.Controls.Add(label3);
             EnumerationsGroup.Controls.Add(label1);
@@ -86,6 +92,93 @@
             EnumerationsGroup.TabIndex = 7;
             EnumerationsGroup.TabStop = false;
             EnumerationsGroup.Text = "Enumerations";
+            // 
+            // SeasonGroupBox
+            // 
+            SeasonGroupBox.Controls.Add(GoButton);
+            SeasonGroupBox.Controls.Add(SeasonsComboBox);
+            SeasonGroupBox.Controls.Add(label5);
+            SeasonGroupBox.Location = new Point(392, 212);
+            SeasonGroupBox.Name = "SeasonGroupBox";
+            SeasonGroupBox.Size = new Size(394, 140);
+            SeasonGroupBox.TabIndex = 1;
+            SeasonGroupBox.TabStop = false;
+            SeasonGroupBox.Text = "Season Handle";
+            // 
+            // GoButton
+            // 
+            GoButton.Location = new Point(133, 38);
+            GoButton.Name = "GoButton";
+            GoButton.Size = new Size(58, 23);
+            GoButton.TabIndex = 2;
+            GoButton.Text = "Go";
+            GoButton.UseVisualStyleBackColor = true;
+            GoButton.Click += GoButton_Click;
+            // 
+            // SeasonsComboBox
+            // 
+            SeasonsComboBox.FormattingEnabled = true;
+            SeasonsComboBox.Location = new Point(6, 37);
+            SeasonsComboBox.Name = "SeasonsComboBox";
+            SeasonsComboBox.Size = new Size(121, 23);
+            SeasonsComboBox.TabIndex = 1;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(6, 19);
+            label5.Name = "label5";
+            label5.Size = new Size(86, 15);
+            label5.TabIndex = 0;
+            label5.Text = "Choose season";
+            // 
+            // WeekdayGroupBox
+            // 
+            WeekdayGroupBox.Controls.Add(WeekdayTextBox);
+            WeekdayGroupBox.Controls.Add(WeekdayParsingButton);
+            WeekdayGroupBox.Controls.Add(ParsedWeekdayLabel);
+            WeekdayGroupBox.Controls.Add(label4);
+            WeekdayGroupBox.Location = new Point(6, 212);
+            WeekdayGroupBox.Name = "WeekdayGroupBox";
+            WeekdayGroupBox.Size = new Size(380, 140);
+            WeekdayGroupBox.TabIndex = 7;
+            WeekdayGroupBox.TabStop = false;
+            WeekdayGroupBox.Text = "Weekday parsing";
+            // 
+            // WeekdayTextBox
+            // 
+            WeekdayTextBox.Location = new Point(6, 38);
+            WeekdayTextBox.Name = "WeekdayTextBox";
+            WeekdayTextBox.Size = new Size(127, 23);
+            WeekdayTextBox.TabIndex = 8;
+            // 
+            // WeekdayParsingButton
+            // 
+            WeekdayParsingButton.Location = new Point(139, 38);
+            WeekdayParsingButton.Name = "WeekdayParsingButton";
+            WeekdayParsingButton.Size = new Size(75, 23);
+            WeekdayParsingButton.TabIndex = 8;
+            WeekdayParsingButton.Text = "Parse";
+            WeekdayParsingButton.UseVisualStyleBackColor = true;
+            WeekdayParsingButton.Click += WeekdayParsingButton_Click;
+            // 
+            // ParsedWeekdayLabel
+            // 
+            ParsedWeekdayLabel.AutoSize = true;
+            ParsedWeekdayLabel.Location = new Point(6, 63);
+            ParsedWeekdayLabel.Name = "ParsedWeekdayLabel";
+            ParsedWeekdayLabel.Size = new Size(103, 15);
+            ParsedWeekdayLabel.TabIndex = 1;
+            ParsedWeekdayLabel.Text = "Здесь будет ответ";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(6, 19);
+            label4.Name = "label4";
+            label4.Size = new Size(127, 15);
+            label4.TabIndex = 0;
+            label4.Text = "Type value for parsing ";
             // 
             // EnumsListBox
             // 
@@ -142,60 +235,13 @@
             ValuesListBox.TabIndex = 2;
             ValuesListBox.SelectedIndexChanged += ValuesListBox_SelectedIndexChanged;
             // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(WeekdayTextBox);
-            groupBox1.Controls.Add(WeekdayParsingButton);
-            groupBox1.Controls.Add(ParsedWeekdayLabel);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Location = new Point(6, 212);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(380, 140);
-            groupBox1.TabIndex = 7;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Weekday parsing";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(6, 19);
-            label4.Name = "label4";
-            label4.Size = new Size(127, 15);
-            label4.TabIndex = 0;
-            label4.Text = "Type value for parsing ";
-            // 
-            // ParsedWeekdayLabel
-            // 
-            ParsedWeekdayLabel.AutoSize = true;
-            ParsedWeekdayLabel.Location = new Point(6, 63);
-            ParsedWeekdayLabel.Name = "ParsedWeekdayLabel";
-            ParsedWeekdayLabel.Size = new Size(103, 15);
-            ParsedWeekdayLabel.TabIndex = 1;
-            ParsedWeekdayLabel.Text = "Здесь будет ответ";
-            // 
-            // WeekdayParsingButton
-            // 
-            WeekdayParsingButton.Location = new Point(139, 37);
-            WeekdayParsingButton.Name = "WeekdayParsingButton";
-            WeekdayParsingButton.Size = new Size(75, 23);
-            WeekdayParsingButton.TabIndex = 8;
-            WeekdayParsingButton.Text = "Parse";
-            WeekdayParsingButton.UseVisualStyleBackColor = true;
-            WeekdayParsingButton.Click += WeekdayParsingButton_Click;
-            // 
-            // WeekdayTextBox
-            // 
-            WeekdayTextBox.Location = new Point(6, 37);
-            WeekdayTextBox.Name = "WeekdayTextBox";
-            WeekdayTextBox.Size = new Size(127, 23);
-            WeekdayTextBox.TabIndex = 8;
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 392);
             Controls.Add(tabControl1);
+            MaximizeBox = false;
             Name = "MainForm";
             Text = "Main window";
             Load += MainForm_Load;
@@ -203,8 +249,10 @@
             EnumsPage.ResumeLayout(false);
             EnumerationsGroup.ResumeLayout(false);
             EnumerationsGroup.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            SeasonGroupBox.ResumeLayout(false);
+            SeasonGroupBox.PerformLayout();
+            WeekdayGroupBox.ResumeLayout(false);
+            WeekdayGroupBox.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -220,10 +268,14 @@
         private ListBox ValuesListBox;
         private ListBox EnumsListBox;
         private GroupBox EnumerationsGroup;
-        private GroupBox groupBox1;
+        private GroupBox WeekdayGroupBox;
         private TextBox WeekdayTextBox;
         private Button WeekdayParsingButton;
         private Label ParsedWeekdayLabel;
         private Label label4;
+        private GroupBox SeasonGroupBox;
+        private Label label5;
+        private ComboBox SeasonsComboBox;
+        private Button GoButton;
     }
 }
