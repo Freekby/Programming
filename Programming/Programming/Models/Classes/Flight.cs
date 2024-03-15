@@ -2,9 +2,10 @@
 {
     public class Flight
     {
+        private int flightTimeInMinutes;
+
         public string DeparturePoint { get; set; }
         public string DestinationPoint { get; set; }
-        private int flightTimeInMinutes;
 
         public Flight()
         {

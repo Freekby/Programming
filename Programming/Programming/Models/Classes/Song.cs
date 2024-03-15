@@ -2,7 +2,8 @@
 {
     public class Song
     {
-        private int duration;
+        private int _duration;
+
         public string Title { get; set; }
         public string Artist { get; set; }
 
@@ -19,14 +20,14 @@
 
         public int Duration
         {
-            get { return duration; }
+            get { return _duration; }
             set
             {
                 if (value <= 0)
                 {
                     throw new ArgumentException("продолжительность должна быть больше 0");
                 }
-                duration = value;
+                _duration = value;
             }
         }
     }
