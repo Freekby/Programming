@@ -104,7 +104,7 @@ namespace Programming
         }
 
         /// <summary>
-        /// при изменении текста в RectangleWidthTextBox мен€ет значение Width в выбранном пр€моугольнике
+        /// при изменении текста в RectangleColorTextBox мен€ет значение Color в выбранном пр€моугольнике
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -113,6 +113,11 @@ namespace Programming
             _currentRectangle.Color = RectangleColorTextBox.Text;
         }
 
+        /// <summary>
+        /// Ќаходит пр€моугольник с максимальным параметром Width 
+        /// </summary>
+        /// <param name="rectangles">массив пр€моугольников</param>
+        /// <returns>int</returns>
         private int FindRectangleWithMaxWidth(Rectangle[] rectangles)
         {
             int rectangleWithMaxWidthIndex = 0;
@@ -125,6 +130,12 @@ namespace Programming
             }
             return rectangleWithMaxWidthIndex;
         }
+
+        /// <summary>
+        /// ¬ыбирает в качестве активного элемента в RectanglesListBox элемент с максимальным Width
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FindRectangleButton_Click(object sender, EventArgs e)
         {
             RectanglesListBox.SelectedIndex = FindRectangleWithMaxWidth(_rectangles);
