@@ -1,41 +1,74 @@
-using Programing;
-
 namespace Programming
 {
     public partial class MainForm : Form
     {
+        private string[] _colors = new string[] { "red", "yellow", "green" };
+        private Rectangle[] _rectangles = new Rectangle[5];
+        private Rectangle _currentRectangle;
+
         public MainForm()
         {
             InitializeComponent();
         }
 
         /// <summary>
-        /// находит имена всех перечислений в папке Enums и возвращает их названия
-        /// </summary>
-        /// <returns>string[]</returns>
-        private string[] GetEnumsNames()
-        {
-            const string directoryPath = @"C:\Users\5733bap\Source\Repos\Programming\Programming\Programming\Models\Enums\";
-            var directory = Directory
-                .GetFiles(directoryPath, "*", SearchOption.TopDirectoryOnly)
-                .Select(fileName => Path.GetFileNameWithoutExtension(fileName)).ToArray();
-            return directory;
-        }
-
-        /// <summary>
-        /// при загрузке формы инициалиируем значениями EnumsListBox
+        /// при загрузке формы инициалиирует значениями SeasonsComboBox и _rectangles
+        /// выставляет выбранные индексы EnumsListBox, SeasonsComboBox и RectanglesListBox на 0
         /// </summary>
         /// <param name="sender"></param>
-        /// <param name="e">запуск MainForm</param>
+        /// <param name="e">загрузка MainForm</param>
         private void MainForm_Load(object sender, EventArgs e)
         {
-            EnumsListBox.Items.AddRange(GetEnumsNames());
             EnumsListBox.SelectedIndex = 0;
 
             SeasonsComboBox.DataSource = Enum.GetValues(typeof(Season));
             SeasonsComboBox.SelectedIndex = 0;
 
+            InitializeRectangles();
+            RectanglesListBox.SelectedIndex = 0;
         }
+
+        //***Lab2***//
+
+        /// <summary>
+        /// инициализирует массив _rectangles объектами 
+        /// </summary>
+        private void InitializeRectangles()
+        {
+            Random random = new Random();
+            for (int i = 0; i < _rectangles.Length; i++)
+            {
+                double lenght = random.Next(0, 100000) / 1000d;
+                double width = random.Next(0, 100000) / 1000d;
+                int colorId = random.Next(0, _colors.Length);
+                _rectangles[i] = new Rectangle(lenght, width, _colors[colorId]);
+            }
+        }
+
+        private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _currentRectangle = _rectangles[RectanglesListBox.SelectedIndex];
+            LenghtTextBox.Text = _currentRectangle.Length.ToString();
+            WidthTextBox.Text = _currentRectangle.Width.ToString();
+            ColorTextBox.Text = _currentRectangle.Color;
+        }
+
+        private void LenghtTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WidthTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ColorTextBox_TextChanged(object sender, EventArgs e)
+        {
+            _currentRectangle.Color = ColorTextBox.Text.ToLower();
+        }
+
+        //***Lab1***//
 
         /// <summary>
         /// получает выбранный Enum
@@ -90,10 +123,6 @@ namespace Programming
         {
             string SelectedValue = ValuesListBox.SelectedItem.ToString();
             Type selectedEnum = GetSelectedEnum();
-            if (selectedEnum == null)
-            {
-                return;
-            }
 
             IntValue.Text = $"{(int)Enum.Parse(selectedEnum, SelectedValue)}";
         }
@@ -102,12 +131,13 @@ namespace Programming
         /// показыает на экране строку с днём недели и индексом этого дня в Season
         /// </summary>
         /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="e">нажатие WeekdayParsingButton</param>
         private void WeekdayParsingButton_Click(object sender, EventArgs e)
         {
-            object? parsedWeekday;
             string weekday = WeekdayTextBox.Text;
+            object? parsedWeekday;
             bool isWeek = Enum.TryParse(typeof(Weekday), weekday, true, out parsedWeekday);
+
             if (isWeek)
             {
                 ParsedWeekdayLabel.Text = $"это день недели({parsedWeekday} = {(int)parsedWeekday})";
@@ -118,6 +148,11 @@ namespace Programming
             }
         }
 
+        /// <summary>
+        /// считывает значение из SeasonsComboBox и в зависимости от значения вызывает событие
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">нажатие GoButton</param>
         private void GoButton_Click(object sender, EventArgs e)
         {
             Season currentSeason = (Season)SeasonsComboBox.SelectedItem;
