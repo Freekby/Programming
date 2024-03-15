@@ -2,9 +2,9 @@
 {
     public class Time
     {
-        private int hours;
-        private int minutes;
-        private int seconds;
+        private int _hours;
+        private int _minutes;
+        private int _seconds;
 
         public Time()
         {
@@ -19,40 +19,40 @@
 
         public int Hours
         {
-            get { return hours; }
+            get { return _hours; }
             set
             {
                 if (value < 0 || value > 23)
                 {
                     throw new ArgumentException("Часы должны быть в диапазоне от 0 до 23.");
                 }
-                hours = value;
+                _hours = value;
             }
         }
 
         public int Minutes
         {
-            get { return minutes; }
+            get { return _minutes; }
             set
             {
                 if (value < 0 || value > 60)
                 {
                     throw new ArgumentException("Минуты должны быть в диапазоне от 0 до 60.");
                 }
-                minutes = value;
+                _minutes = value;
             }
         }
 
         public int Seconds
         {
-            get { return seconds; }
+            get { return _seconds; }
             set
             {
                 if (value < 0 || value > 60)
                 {
                     throw new ArgumentException("Секунды должны быть в диапазоне от 0 до 60.");
                 }
-                seconds = value;
+                _seconds = value;
             }
         }
     }

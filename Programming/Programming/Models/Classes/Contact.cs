@@ -2,7 +2,8 @@
 {
     public class Contact
     {
-        private string email;
+        private string _email;
+
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
 
@@ -19,14 +20,14 @@
 
         public string Email
         {
-            get { return email; }
+            get { return _email; }
             set
             {
                 if (!value.Contains("@"))
                 {
                     throw new ArgumentException("неправильный формат email");
                 }
-                    email = value;
+                    _email = value;
             }
         }
     }
