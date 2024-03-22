@@ -23,10 +23,7 @@
             get { return _numOfStudents; }
             set
             {
-                if (value <= 0)
-                {
-                    throw new ArgumentException("число студентов должно быть больше 0");
-                }
+                Validator.AssertOnPositiveValue(value, nameof(NumOfStudents));
                 _numOfStudents = value;
             }
         }
@@ -36,10 +33,7 @@
             get { return _semester; }
             set
             {
-                if (value <= 0)
-                {
-                    throw new ArgumentException("Семестр должен быть больше 0");
-                }
+                Validator.AssertOnPositiveValue(value, nameof(Semester));
                 _semester = value;
             }
         }

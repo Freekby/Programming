@@ -23,10 +23,7 @@
             get { return _duration; }
             set
             {
-                if (value <= 0)
-                {
-                    throw new ArgumentException("продолжительность должна быть больше 0");
-                }
+                Validator.AssertOnPositiveValue(value, nameof(Duration));
                 _duration = value;
             }
         }

@@ -1,3 +1,5 @@
+using System.Linq.Expressions;
+
 namespace Programming
 {
     public partial class MainForm : Form
@@ -45,10 +47,12 @@ namespace Programming
             {
                 double lenght = random.Next(0, 10000) / 100d;
                 double width = random.Next(0, 10000) / 100d;
+                double CenterX = random.Next(0, 100000) / 100d;
+                double CenterY = random.Next(0, 100000) / 100d;
                 int RandomColorId = random.Next(0, Enum.GetValues(typeof(Color)).Length);
                 string color = Enum.GetValues(typeof(Color)).GetValue(RandomColorId).ToString();
 
-                _rectangles[i] = new Rectangle(lenght, width, color);
+                _rectangles[i] = new Rectangle(lenght, width, color, CenterX, CenterY);
             }
         }
 
@@ -60,9 +64,12 @@ namespace Programming
         private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             _currentRectangle = _rectangles[RectanglesListBox.SelectedIndex];
-            RectagleLenghtTextBox.Text = _currentRectangle.Length.ToString();
+            RectagleLenghtTextBox.Text = _currentRectangle.Height.ToString();
             RectangleWidthTextBox.Text = _currentRectangle.Width.ToString();
             RectangleColorTextBox.Text = _currentRectangle.Color;
+            RectangleCenterXTextBox.Text = _currentRectangle.Center.X.ToString();
+            RectangleCenterYTextBox.Text = _currentRectangle.Center.Y.ToString();
+            RectangleIdTextBox.Text = _currentRectangle.Id.ToString();
         }
 
         /// <summary>
@@ -75,7 +82,7 @@ namespace Programming
             try
             {
                 double lenght = double.Parse(RectagleLenghtTextBox.Text);
-                _currentRectangle.Length = lenght;
+                _currentRectangle.Height = lenght;
                 RectagleLenghtTextBox.BackColor = System.Drawing.Color.White;
             }
             catch (Exception)
@@ -244,7 +251,7 @@ namespace Programming
         private int FindMovieWithMaxRating(Movie[] movies)
         {
             int movieWithMaxRatingIndex = 0;
-            for(int i = 0; i < movies.Length; i++)
+            for (int i = 0; i < movies.Length; i++)
             {
                 if (movies[movieWithMaxRatingIndex].Rating < movies[i].Rating)
                 {
@@ -329,6 +336,15 @@ namespace Programming
         private void WeekdayParsingButton_Click(object sender, EventArgs e)
         {
             string weekday = WeekdayTextBox.Text;
+            foreach (char symbol in weekday)
+            {
+                if (char.IsDigit(symbol))
+                {
+                    ParsedWeekdayLabel.Text = "Нет такого дня недели";
+                    return;
+                }
+            }
+
             object? parsedWeekday;
             bool isWeek = Enum.TryParse(typeof(Weekday), weekday, true, out parsedWeekday);
 
@@ -353,13 +369,13 @@ namespace Programming
             switch (currentSeason)
             {
                 case Season.Winter:
-                    MessageBox.Show("сейчас зима");
+                    EnumsPage.BackColor = System.Drawing.Color.White;
                     break;
                 case Season.Spring:
                     MessageBox.Show("сейчас весна");
                     break;
                 case Season.Summer:
-                    MessageBox.Show("сейчас лето");
+                    EnumsPage.BackColor = System.Drawing.Color.Orange;
                     break;
                 case Season.Autmn:
                     MessageBox.Show("сейчас осень");
@@ -367,5 +383,6 @@ namespace Programming
             }
         }
         #endregion
+
     }
 }

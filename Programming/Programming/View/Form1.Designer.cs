@@ -62,6 +62,10 @@
             MovieRatingTextBox = new TextBox();
             MovieListBox = new ListBox();
             RectanglesGroupBox = new GroupBox();
+            label15 = new Label();
+            label14 = new Label();
+            RectangleCenterYTextBox = new TextBox();
+            RectangleCenterXTextBox = new TextBox();
             RectangleFindButton = new Button();
             label8 = new Label();
             label7 = new Label();
@@ -70,6 +74,8 @@
             RectangleWidthTextBox = new TextBox();
             RectangleColorTextBox = new TextBox();
             RectanglesListBox = new ListBox();
+            label16 = new Label();
+            RectangleIdTextBox = new TextBox();
             MainTabControl.SuspendLayout();
             EnumsPage.SuspendLayout();
             EnumerationsGroup.SuspendLayout();
@@ -417,6 +423,12 @@
             // 
             // RectanglesGroupBox
             // 
+            RectanglesGroupBox.Controls.Add(label16);
+            RectanglesGroupBox.Controls.Add(RectangleIdTextBox);
+            RectanglesGroupBox.Controls.Add(label15);
+            RectanglesGroupBox.Controls.Add(label14);
+            RectanglesGroupBox.Controls.Add(RectangleCenterYTextBox);
+            RectanglesGroupBox.Controls.Add(RectangleCenterXTextBox);
             RectanglesGroupBox.Controls.Add(RectangleFindButton);
             RectanglesGroupBox.Controls.Add(label8);
             RectanglesGroupBox.Controls.Add(label7);
@@ -431,6 +443,40 @@
             RectanglesGroupBox.TabIndex = 0;
             RectanglesGroupBox.TabStop = false;
             RectanglesGroupBox.Text = "Rectangles";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(238, 183);
+            label15.Name = "label15";
+            label15.Size = new Size(14, 15);
+            label15.TabIndex = 11;
+            label15.Text = "Y";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(238, 154);
+            label14.Name = "label14";
+            label14.Size = new Size(14, 15);
+            label14.TabIndex = 10;
+            label14.Text = "X";
+            // 
+            // RectangleCenterYTextBox
+            // 
+            RectangleCenterYTextBox.Location = new Point(258, 180);
+            RectangleCenterYTextBox.Name = "RectangleCenterYTextBox";
+            RectangleCenterYTextBox.ReadOnly = true;
+            RectangleCenterYTextBox.Size = new Size(44, 23);
+            RectangleCenterYTextBox.TabIndex = 9;
+            // 
+            // RectangleCenterXTextBox
+            // 
+            RectangleCenterXTextBox.Location = new Point(258, 151);
+            RectangleCenterXTextBox.Name = "RectangleCenterXTextBox";
+            RectangleCenterXTextBox.ReadOnly = true;
+            RectangleCenterXTextBox.Size = new Size(44, 23);
+            RectangleCenterXTextBox.TabIndex = 8;
             // 
             // RectangleFindButton
             // 
@@ -504,6 +550,23 @@
             RectanglesListBox.TabIndex = 0;
             RectanglesListBox.SelectedIndexChanged += RectanglesListBox_SelectedIndexChanged;
             // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(238, 212);
+            label16.Name = "label16";
+            label16.Size = new Size(18, 15);
+            label16.TabIndex = 13;
+            label16.Text = "ID";
+            // 
+            // RectangleIdTextBox
+            // 
+            RectangleIdTextBox.Location = new Point(258, 209);
+            RectangleIdTextBox.Name = "RectangleIdTextBox";
+            RectangleIdTextBox.ReadOnly = true;
+            RectangleIdTextBox.Size = new Size(44, 23);
+            RectangleIdTextBox.TabIndex = 12;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -576,5 +639,11 @@
         private TextBox MovieGenreTextBox;
         private Label label12;
         private TextBox MovieTitleTextBox;
+        private Label label15;
+        private Label label14;
+        private TextBox RectangleCenterYTextBox;
+        private TextBox RectangleCenterXTextBox;
+        private Label label16;
+        private TextBox RectangleIdTextBox;
     }
 }
