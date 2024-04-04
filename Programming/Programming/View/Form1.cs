@@ -1,5 +1,3 @@
-using System.Linq.Expressions;
-
 namespace Programming
 {
     public partial class MainForm : Form
@@ -28,6 +26,19 @@ namespace Programming
 
             InitialiseMovies();
             MovieListBox.SelectedIndex = 0;
+        }
+
+        private void MainTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (MainTabControl.SelectedIndex != 2)
+            {
+                this.Size = new Size(820, 430);
+                this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            }
+            else
+            {
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+            }
         }
 
         #region Classes
