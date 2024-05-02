@@ -9,20 +9,32 @@
 
         public Rectangle()
         {
+            Id = _allRectangleCount++;
         }
 
-        public Rectangle(double length, double width, string color, double centerX, double centerY)
+        public Rectangle(double height, double width, string color, double centerX, double centerY)
         {
-            Height = length;
+            Height = height;
             Width = width;
             Color = color;
             Center = new Point2D(centerX, centerY);
             _allRectangleCount++;
             Id = _allRectangleCount;
+
         }
 
+        public Rectangle(double height, double width, double centerX, double centerY)
+        {
+            Height = height;
+            Width = width;
+            Center = new Point2D(centerX, centerY);
+            _allRectangleCount++;
+            Id = _allRectangleCount;
+
+        }
         public string Color { get; set; }
-        public Point2D Center { get; private set; }
+
+        public Point2D Center { get; set; }
 
         public int Id
         {
@@ -30,9 +42,10 @@
             private set { _id = value; }
         }
 
-        public static int AllRectangleCount
+        public static int AllRectanglesCount
         {
             get { return _allRectangleCount; }
+            private set { _allRectangleCount = value; }
         }
 
         public double Height
@@ -54,5 +67,6 @@
                 _width = value;
             }
         }
+
     }
 }

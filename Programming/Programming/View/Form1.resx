@@ -57,411 +57,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="GoButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, 38</value>
-  </data>
-  <data name="GoButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 23</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="GoButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="GoButton.Text" xml:space="preserve">
-    <value>Go</value>
-  </data>
-  <data name="&gt;&gt;GoButton.Name" xml:space="preserve">
-    <value>GoButton</value>
-  </data>
-  <data name="&gt;&gt;GoButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GoButton.Parent" xml:space="preserve">
-    <value>SeasonGroupBox</value>
-  </data>
-  <data name="&gt;&gt;GoButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="SeasonsComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 37</value>
-  </data>
-  <data name="SeasonsComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 23</value>
-  </data>
-  <data name="SeasonsComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;SeasonsComboBox.Name" xml:space="preserve">
-    <value>SeasonsComboBox</value>
-  </data>
-  <data name="&gt;&gt;SeasonsComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SeasonsComboBox.Parent" xml:space="preserve">
-    <value>SeasonGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SeasonsComboBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 15</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Choose season</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>SeasonGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="SeasonGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>389, 211</value>
-  </data>
-  <data name="SeasonGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>396, 140</value>
-  </data>
-  <data name="SeasonGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="SeasonGroupBox.Text" xml:space="preserve">
-    <value>Season Handle</value>
-  </data>
-  <data name="&gt;&gt;SeasonGroupBox.Name" xml:space="preserve">
-    <value>SeasonGroupBox</value>
-  </data>
-  <data name="&gt;&gt;SeasonGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;SeasonGroupBox.Parent" xml:space="preserve">
-    <value>EnumerationsGroup</value>
-  </data>
-  <data name="&gt;&gt;SeasonGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="WeekdayTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 38</value>
-  </data>
-  <data name="WeekdayTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 23</value>
-  </data>
-  <data name="WeekdayTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;WeekdayTextBox.Name" xml:space="preserve">
-    <value>WeekdayTextBox</value>
-  </data>
-  <data name="&gt;&gt;WeekdayTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;WeekdayTextBox.Parent" xml:space="preserve">
-    <value>WeekdayGroupBox</value>
-  </data>
-  <data name="&gt;&gt;WeekdayTextBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="WeekdayParsingButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>139, 38</value>
-  </data>
-  <data name="WeekdayParsingButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="WeekdayParsingButton.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="WeekdayParsingButton.Text" xml:space="preserve">
-    <value>Parse</value>
-  </data>
-  <data name="&gt;&gt;WeekdayParsingButton.Name" xml:space="preserve">
-    <value>WeekdayParsingButton</value>
-  </data>
-  <data name="&gt;&gt;WeekdayParsingButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;WeekdayParsingButton.Parent" xml:space="preserve">
-    <value>WeekdayGroupBox</value>
-  </data>
-  <data name="&gt;&gt;WeekdayParsingButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ParsedWeekdayLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ParsedWeekdayLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 63</value>
-  </data>
-  <data name="ParsedWeekdayLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 15</value>
-  </data>
-  <data name="ParsedWeekdayLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="ParsedWeekdayLabel.Text" xml:space="preserve">
-    <value>Здесь будет ответ</value>
-  </data>
-  <data name="&gt;&gt;ParsedWeekdayLabel.Name" xml:space="preserve">
-    <value>ParsedWeekdayLabel</value>
-  </data>
-  <data name="&gt;&gt;ParsedWeekdayLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ParsedWeekdayLabel.Parent" xml:space="preserve">
-    <value>WeekdayGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ParsedWeekdayLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 15</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Type value for parsing </value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>WeekdayGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="WeekdayGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 211</value>
-  </data>
-  <data name="WeekdayGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>378, 140</value>
-  </data>
-  <data name="WeekdayGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="WeekdayGroupBox.Text" xml:space="preserve">
-    <value>Weekday parsing</value>
-  </data>
-  <data name="&gt;&gt;WeekdayGroupBox.Name" xml:space="preserve">
-    <value>WeekdayGroupBox</value>
-  </data>
-  <data name="&gt;&gt;WeekdayGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;WeekdayGroupBox.Parent" xml:space="preserve">
-    <value>EnumerationsGroup</value>
-  </data>
-  <data name="&gt;&gt;WeekdayGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="EnumsListBox.ItemHeight" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="EnumsListBox.Items" xml:space="preserve">
-    <value>Color</value>
-  </data>
-  <data name="EnumsListBox.Items1" xml:space="preserve">
-    <value>Season</value>
-  </data>
-  <data name="EnumsListBox.Items2" xml:space="preserve">
-    <value>Weekday</value>
-  </data>
-  <data name="EnumsListBox.Items3" xml:space="preserve">
-    <value>EducationForm</value>
-  </data>
-  <data name="EnumsListBox.Items4" xml:space="preserve">
-    <value>Genre</value>
-  </data>
-  <data name="EnumsListBox.Items5" xml:space="preserve">
-    <value>Manufacture</value>
-  </data>
-  <data name="EnumsListBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 37</value>
-  </data>
-  <data name="EnumsListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 169</value>
-  </data>
-  <data name="EnumsListBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;EnumsListBox.Name" xml:space="preserve">
-    <value>EnumsListBox</value>
-  </data>
-  <data name="&gt;&gt;EnumsListBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;EnumsListBox.Parent" xml:space="preserve">
-    <value>EnumerationsGroup</value>
-  </data>
-  <data name="&gt;&gt;EnumsListBox.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>392, 19</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 15</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Int value</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>EnumerationsGroup</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 15</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Select enumeration</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>EnumerationsGroup</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="IntValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>392, 37</value>
-  </data>
-  <data name="IntValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
-  </data>
-  <data name="IntValue.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;IntValue.Name" xml:space="preserve">
-    <value>IntValue</value>
-  </data>
-  <data name="&gt;&gt;IntValue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;IntValue.Parent" xml:space="preserve">
-    <value>EnumerationsGroup</value>
-  </data>
-  <data name="&gt;&gt;IntValue.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>199, 19</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 15</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Select value</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>EnumerationsGroup</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="ValuesListBox.ItemHeight" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="ValuesListBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>199, 37</value>
-  </data>
-  <data name="ValuesListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 169</value>
-  </data>
-  <data name="ValuesListBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;ValuesListBox.Name" xml:space="preserve">
-    <value>ValuesListBox</value>
-  </data>
-  <data name="&gt;&gt;ValuesListBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ValuesListBox.Parent" xml:space="preserve">
-    <value>EnumerationsGroup</value>
-  </data>
-  <data name="&gt;&gt;ValuesListBox.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="EnumerationsGroup.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="EnumerationsGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="EnumerationsGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>790, 357</value>
-  </data>
-  <data name="EnumerationsGroup.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="EnumerationsGroup.Text" xml:space="preserve">
-    <value>Enumerations</value>
-  </data>
   <data name="&gt;&gt;EnumerationsGroup.Name" xml:space="preserve">
     <value>EnumerationsGroup</value>
   </data>
@@ -474,6 +69,7 @@
   <data name="&gt;&gt;EnumerationsGroup.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="EnumsPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
   </data>
@@ -482,8 +78,9 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="EnumsPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>796, 363</value>
+    <value>546, 403</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="EnumsPage.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -505,733 +102,16 @@
   <data name="&gt;&gt;EnumsPage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label13.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;ClassesGroup.Name" xml:space="preserve">
+    <value>ClassesGroup</value>
   </data>
-  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 196</value>
-  </data>
-  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 15</value>
-  </data>
-  <data name="label13.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="label13.Text" xml:space="preserve">
-    <value>Genre</value>
-  </data>
-  <data name="&gt;&gt;label13.Name" xml:space="preserve">
-    <value>label13</value>
-  </data>
-  <data name="&gt;&gt;label13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
-    <value>MoviesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="MovieGenreTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 214</value>
-  </data>
-  <data name="MovieGenreTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="MovieGenreTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;MovieGenreTextBox.Name" xml:space="preserve">
-    <value>MovieGenreTextBox</value>
-  </data>
-  <data name="&gt;&gt;MovieGenreTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MovieGenreTextBox.Parent" xml:space="preserve">
-    <value>MoviesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;MovieGenreTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label12.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 151</value>
-  </data>
-  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 15</value>
-  </data>
-  <data name="label12.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Title</value>
-  </data>
-  <data name="&gt;&gt;label12.Name" xml:space="preserve">
-    <value>label12</value>
-  </data>
-  <data name="&gt;&gt;label12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
-    <value>MoviesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="MovieTitleTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 169</value>
-  </data>
-  <data name="MovieTitleTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="MovieTitleTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;MovieTitleTextBox.Name" xml:space="preserve">
-    <value>MovieTitleTextBox</value>
-  </data>
-  <data name="&gt;&gt;MovieTitleTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MovieTitleTextBox.Parent" xml:space="preserve">
-    <value>MoviesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;MovieTitleTextBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="MovieFindButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 243</value>
-  </data>
-  <data name="MovieFindButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="MovieFindButton.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="MovieFindButton.Text" xml:space="preserve">
-    <value>Find</value>
-  </data>
-  <data name="&gt;&gt;MovieFindButton.Name" xml:space="preserve">
-    <value>MovieFindButton</value>
-  </data>
-  <data name="&gt;&gt;MovieFindButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MovieFindButton.Parent" xml:space="preserve">
-    <value>MoviesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;MovieFindButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 107</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 15</value>
-  </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Rating</value>
-  </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
-    <value>MoviesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 63</value>
-  </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 15</value>
-  </data>
-  <data name="label10.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Release year</value>
-  </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
-  </data>
-  <data name="&gt;&gt;label10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
-    <value>MoviesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 22</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 15</value>
-  </data>
-  <data name="label11.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Duration</value>
-  </data>
-  <data name="&gt;&gt;label11.Name" xml:space="preserve">
-    <value>label11</value>
-  </data>
-  <data name="&gt;&gt;label11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
-    <value>MoviesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="MovieDurationTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 40</value>
-  </data>
-  <data name="MovieDurationTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="MovieDurationTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;MovieDurationTextBox.Name" xml:space="preserve">
-    <value>MovieDurationTextBox</value>
-  </data>
-  <data name="&gt;&gt;MovieDurationTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MovieDurationTextBox.Parent" xml:space="preserve">
-    <value>MoviesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;MovieDurationTextBox.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="MovieReleaseYearTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 81</value>
-  </data>
-  <data name="MovieReleaseYearTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="MovieReleaseYearTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;MovieReleaseYearTextBox.Name" xml:space="preserve">
-    <value>MovieReleaseYearTextBox</value>
-  </data>
-  <data name="&gt;&gt;MovieReleaseYearTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MovieReleaseYearTextBox.Parent" xml:space="preserve">
-    <value>MoviesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;MovieReleaseYearTextBox.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="MovieRatingTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 125</value>
-  </data>
-  <data name="MovieRatingTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="MovieRatingTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;MovieRatingTextBox.Name" xml:space="preserve">
-    <value>MovieRatingTextBox</value>
-  </data>
-  <data name="&gt;&gt;MovieRatingTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MovieRatingTextBox.Parent" xml:space="preserve">
-    <value>MoviesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;MovieRatingTextBox.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="MovieListBox.ItemHeight" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="MovieListBox.Items" xml:space="preserve">
-    <value>Movie1</value>
-  </data>
-  <data name="MovieListBox.Items1" xml:space="preserve">
-    <value>Movie2</value>
-  </data>
-  <data name="MovieListBox.Items2" xml:space="preserve">
-    <value>Movie3</value>
-  </data>
-  <data name="MovieListBox.Items3" xml:space="preserve">
-    <value>Movie4</value>
-  </data>
-  <data name="MovieListBox.Items4" xml:space="preserve">
-    <value>Movie5</value>
-  </data>
-  <data name="MovieListBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 22</value>
-  </data>
-  <data name="MovieListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 244</value>
-  </data>
-  <data name="MovieListBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;MovieListBox.Name" xml:space="preserve">
-    <value>MovieListBox</value>
-  </data>
-  <data name="&gt;&gt;MovieListBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MovieListBox.Parent" xml:space="preserve">
-    <value>MoviesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;MovieListBox.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="MoviesGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>398, 22</value>
-  </data>
-  <data name="MoviesGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>386, 330</value>
-  </data>
-  <data name="MoviesGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="MoviesGroupBox.Text" xml:space="preserve">
-    <value>Movies</value>
-  </data>
-  <data name="&gt;&gt;MoviesGroupBox.Name" xml:space="preserve">
-    <value>MoviesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;MoviesGroupBox.Type" xml:space="preserve">
+  <data name="&gt;&gt;ClassesGroup.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;MoviesGroupBox.Parent" xml:space="preserve">
-    <value>ClassesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;MoviesGroupBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label16.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 212</value>
-  </data>
-  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>18, 15</value>
-  </data>
-  <data name="label16.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="label16.Text" xml:space="preserve">
-    <value>ID</value>
-  </data>
-  <data name="&gt;&gt;label16.Name" xml:space="preserve">
-    <value>label16</value>
-  </data>
-  <data name="&gt;&gt;label16.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
-    <value>RectanglesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="RectangleIdTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>258, 209</value>
-  </data>
-  <data name="RectangleIdTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 23</value>
-  </data>
-  <data name="RectangleIdTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;RectangleIdTextBox.Name" xml:space="preserve">
-    <value>RectangleIdTextBox</value>
-  </data>
-  <data name="&gt;&gt;RectangleIdTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RectangleIdTextBox.Parent" xml:space="preserve">
-    <value>RectanglesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;RectangleIdTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label15.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 183</value>
-  </data>
-  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 15</value>
-  </data>
-  <data name="label15.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="label15.Text" xml:space="preserve">
-    <value>Y</value>
-  </data>
-  <data name="&gt;&gt;label15.Name" xml:space="preserve">
-    <value>label15</value>
-  </data>
-  <data name="&gt;&gt;label15.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
-    <value>RectanglesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label14.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 154</value>
-  </data>
-  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 15</value>
-  </data>
-  <data name="label14.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="label14.Text" xml:space="preserve">
-    <value>X</value>
-  </data>
-  <data name="&gt;&gt;label14.Name" xml:space="preserve">
-    <value>label14</value>
-  </data>
-  <data name="&gt;&gt;label14.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
-    <value>RectanglesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="RectangleCenterYTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>258, 180</value>
-  </data>
-  <data name="RectangleCenterYTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 23</value>
-  </data>
-  <data name="RectangleCenterYTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;RectangleCenterYTextBox.Name" xml:space="preserve">
-    <value>RectangleCenterYTextBox</value>
-  </data>
-  <data name="&gt;&gt;RectangleCenterYTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RectangleCenterYTextBox.Parent" xml:space="preserve">
-    <value>RectanglesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;RectangleCenterYTextBox.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="RectangleCenterXTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>258, 151</value>
-  </data>
-  <data name="RectangleCenterXTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 23</value>
-  </data>
-  <data name="RectangleCenterXTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;RectangleCenterXTextBox.Name" xml:space="preserve">
-    <value>RectangleCenterXTextBox</value>
-  </data>
-  <data name="&gt;&gt;RectangleCenterXTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RectangleCenterXTextBox.Parent" xml:space="preserve">
-    <value>RectanglesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;RectangleCenterXTextBox.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="RectangleFindButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 243</value>
-  </data>
-  <data name="RectangleFindButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="RectangleFindButton.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="RectangleFindButton.Text" xml:space="preserve">
-    <value>Find</value>
-  </data>
-  <data name="&gt;&gt;RectangleFindButton.Name" xml:space="preserve">
-    <value>RectangleFindButton</value>
-  </data>
-  <data name="&gt;&gt;RectangleFindButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RectangleFindButton.Parent" xml:space="preserve">
-    <value>RectanglesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;RectangleFindButton.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 107</value>
-  </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 15</value>
-  </data>
-  <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Color</value>
-  </data>
-  <data name="&gt;&gt;label8.Name" xml:space="preserve">
-    <value>label8</value>
-  </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>RectanglesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 63</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 15</value>
-  </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Width</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>RectanglesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 22</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 15</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Lenght</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>RectanglesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="RectagleLenghtTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 40</value>
-  </data>
-  <data name="RectagleLenghtTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="RectagleLenghtTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;RectagleLenghtTextBox.Name" xml:space="preserve">
-    <value>RectagleLenghtTextBox</value>
-  </data>
-  <data name="&gt;&gt;RectagleLenghtTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RectagleLenghtTextBox.Parent" xml:space="preserve">
-    <value>RectanglesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;RectagleLenghtTextBox.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="RectangleWidthTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 81</value>
-  </data>
-  <data name="RectangleWidthTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="RectangleWidthTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;RectangleWidthTextBox.Name" xml:space="preserve">
-    <value>RectangleWidthTextBox</value>
-  </data>
-  <data name="&gt;&gt;RectangleWidthTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RectangleWidthTextBox.Parent" xml:space="preserve">
-    <value>RectanglesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;RectangleWidthTextBox.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="RectangleColorTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 125</value>
-  </data>
-  <data name="RectangleColorTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="RectangleColorTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;RectangleColorTextBox.Name" xml:space="preserve">
-    <value>RectangleColorTextBox</value>
-  </data>
-  <data name="&gt;&gt;RectangleColorTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RectangleColorTextBox.Parent" xml:space="preserve">
-    <value>RectanglesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;RectangleColorTextBox.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="RectanglesListBox.ItemHeight" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="RectanglesListBox.Items" xml:space="preserve">
-    <value>Rectagle1</value>
-  </data>
-  <data name="RectanglesListBox.Items1" xml:space="preserve">
-    <value>Rectagle2</value>
-  </data>
-  <data name="RectanglesListBox.Items2" xml:space="preserve">
-    <value>Rectagle3</value>
-  </data>
-  <data name="RectanglesListBox.Items3" xml:space="preserve">
-    <value>Rectagle4</value>
-  </data>
-  <data name="RectanglesListBox.Items4" xml:space="preserve">
-    <value>Rectagle5</value>
-  </data>
-  <data name="RectanglesListBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 22</value>
-  </data>
-  <data name="RectanglesListBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 244</value>
-  </data>
-  <data name="RectanglesListBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;RectanglesListBox.Name" xml:space="preserve">
-    <value>RectanglesListBox</value>
-  </data>
-  <data name="&gt;&gt;RectanglesListBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RectanglesListBox.Parent" xml:space="preserve">
-    <value>RectanglesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;RectanglesListBox.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="RectanglesGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 22</value>
-  </data>
-  <data name="RectanglesGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>386, 330</value>
-  </data>
-  <data name="RectanglesGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="RectanglesGroupBox.Text" xml:space="preserve">
-    <value>Rectangles</value>
-  </data>
-  <data name="&gt;&gt;RectanglesGroupBox.Name" xml:space="preserve">
-    <value>RectanglesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;RectanglesGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RectanglesGroupBox.Parent" xml:space="preserve">
-    <value>ClassesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;RectanglesGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ClassesGroupBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="ClassesGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="ClassesGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>790, 357</value>
-  </data>
-  <data name="ClassesGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ClassesGroupBox.Text" xml:space="preserve">
-    <value>Classes</value>
-  </data>
-  <data name="&gt;&gt;ClassesGroupBox.Name" xml:space="preserve">
-    <value>ClassesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;ClassesGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ClassesGroupBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;ClassesGroup.Parent" xml:space="preserve">
     <value>ClassesPage</value>
   </data>
-  <data name="&gt;&gt;ClassesGroupBox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;ClassesGroup.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="ClassesPage.Location" type="System.Drawing.Point, System.Drawing">
@@ -1241,7 +121,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="ClassesPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>796, 363</value>
+    <value>546, 403</value>
   </data>
   <data name="ClassesPage.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1261,31 +141,32 @@
   <data name="&gt;&gt;ClassesPage.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="panel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="rectangleCollisions1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
-  <data name="panel1.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="rectangleCollisions1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
   </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>319, 6</value>
+  <data name="rectangleCollisions1.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>600, 405</value>
   </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>469, 349</value>
+  <data name="rectangleCollisions1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>600, 405</value>
   </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+  <data name="rectangleCollisions1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;rectangleCollisions1.Name" xml:space="preserve">
+    <value>rectangleCollisions1</value>
   </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;rectangleCollisions1.Type" xml:space="preserve">
+    <value>Programming.View.RectangleCollisions, Programming, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;rectangleCollisions1.Parent" xml:space="preserve">
     <value>RectangleTabPage</value>
   </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;rectangleCollisions1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="RectangleTabPage.Location" type="System.Drawing.Point, System.Drawing">
@@ -1295,7 +176,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="RectangleTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>796, 363</value>
+    <value>601, 407</value>
   </data>
   <data name="RectangleTabPage.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1322,7 +203,7 @@
     <value>0, 0</value>
   </data>
   <data name="MainTabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>804, 391</value>
+    <value>609, 435</value>
   </data>
   <data name="MainTabControl.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1339,6 +220,249 @@
   <data name="&gt;&gt;MainTabControl.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;enumerations.Name" xml:space="preserve">
+    <value>enumerations</value>
+  </data>
+  <data name="&gt;&gt;enumerations.Type" xml:space="preserve">
+    <value>Programming.View.Enumerations, Programming, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;enumerations.Parent" xml:space="preserve">
+    <value>EnumerationsGroup</value>
+  </data>
+  <data name="&gt;&gt;enumerations.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;seasonHandler.Name" xml:space="preserve">
+    <value>seasonHandler</value>
+  </data>
+  <data name="&gt;&gt;seasonHandler.Type" xml:space="preserve">
+    <value>Programming.View.SeasonHandler, Programming, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;seasonHandler.Parent" xml:space="preserve">
+    <value>EnumerationsGroup</value>
+  </data>
+  <data name="&gt;&gt;seasonHandler.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;weekdayParsing.Name" xml:space="preserve">
+    <value>weekdayParsing</value>
+  </data>
+  <data name="&gt;&gt;weekdayParsing.Type" xml:space="preserve">
+    <value>Programming.View.WeekdayParsing, Programming, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;weekdayParsing.Parent" xml:space="preserve">
+    <value>EnumerationsGroup</value>
+  </data>
+  <data name="&gt;&gt;weekdayParsing.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="EnumerationsGroup.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="EnumerationsGroup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="EnumerationsGroup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>540, 397</value>
+  </data>
+  <data name="EnumerationsGroup.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="EnumerationsGroup.Text" xml:space="preserve">
+    <value>Enumerations Page</value>
+  </data>
+  <data name="&gt;&gt;EnumerationsGroup.Name" xml:space="preserve">
+    <value>EnumerationsGroup</value>
+  </data>
+  <data name="&gt;&gt;EnumerationsGroup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EnumerationsGroup.Parent" xml:space="preserve">
+    <value>EnumsPage</value>
+  </data>
+  <data name="&gt;&gt;EnumerationsGroup.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="enumerations.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="enumerations.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 22</value>
+  </data>
+  <data name="enumerations.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>530, 190</value>
+  </data>
+  <data name="enumerations.Size" type="System.Drawing.Size, System.Drawing">
+    <value>530, 230</value>
+  </data>
+  <data name="enumerations.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;enumerations.Name" xml:space="preserve">
+    <value>enumerations</value>
+  </data>
+  <data name="&gt;&gt;enumerations.Type" xml:space="preserve">
+    <value>Programming.View.Enumerations, Programming, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;enumerations.Parent" xml:space="preserve">
+    <value>EnumerationsGroup</value>
+  </data>
+  <data name="&gt;&gt;enumerations.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="seasonHandler.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="seasonHandler.Location" type="System.Drawing.Point, System.Drawing">
+    <value>365, 258</value>
+  </data>
+  <data name="seasonHandler.Size" type="System.Drawing.Size, System.Drawing">
+    <value>353, 136</value>
+  </data>
+  <data name="seasonHandler.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;seasonHandler.Name" xml:space="preserve">
+    <value>seasonHandler</value>
+  </data>
+  <data name="&gt;&gt;seasonHandler.Type" xml:space="preserve">
+    <value>Programming.View.SeasonHandler, Programming, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;seasonHandler.Parent" xml:space="preserve">
+    <value>EnumerationsGroup</value>
+  </data>
+  <data name="&gt;&gt;seasonHandler.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="weekdayParsing.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="weekdayParsing.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="weekdayParsing.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 258</value>
+  </data>
+  <data name="weekdayParsing.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>230, 90</value>
+  </data>
+  <data name="weekdayParsing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>353, 133</value>
+  </data>
+  <data name="weekdayParsing.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;weekdayParsing.Name" xml:space="preserve">
+    <value>weekdayParsing</value>
+  </data>
+  <data name="&gt;&gt;weekdayParsing.Type" xml:space="preserve">
+    <value>Programming.View.WeekdayParsing, Programming, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;weekdayParsing.Parent" xml:space="preserve">
+    <value>EnumerationsGroup</value>
+  </data>
+  <data name="&gt;&gt;weekdayParsing.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;moviesInfo1.Name" xml:space="preserve">
+    <value>moviesInfo1</value>
+  </data>
+  <data name="&gt;&gt;moviesInfo1.Type" xml:space="preserve">
+    <value>Programming.View.MoviesInfo, Programming, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;moviesInfo1.Parent" xml:space="preserve">
+    <value>ClassesGroup</value>
+  </data>
+  <data name="&gt;&gt;moviesInfo1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;rectanglesInfo1.Name" xml:space="preserve">
+    <value>rectanglesInfo1</value>
+  </data>
+  <data name="&gt;&gt;rectanglesInfo1.Type" xml:space="preserve">
+    <value>Programming.View.RectanglesInfo, Programming, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;rectanglesInfo1.Parent" xml:space="preserve">
+    <value>ClassesGroup</value>
+  </data>
+  <data name="&gt;&gt;rectanglesInfo1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ClassesGroup.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="ClassesGroup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="ClassesGroup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>540, 397</value>
+  </data>
+  <data name="ClassesGroup.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ClassesGroup.Text" xml:space="preserve">
+    <value>Classes Page</value>
+  </data>
+  <data name="&gt;&gt;ClassesGroup.Name" xml:space="preserve">
+    <value>ClassesGroup</value>
+  </data>
+  <data name="&gt;&gt;ClassesGroup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ClassesGroup.Parent" xml:space="preserve">
+    <value>ClassesPage</value>
+  </data>
+  <data name="&gt;&gt;ClassesGroup.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="moviesInfo1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>320, 22</value>
+  </data>
+  <data name="moviesInfo1.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>308, 273</value>
+  </data>
+  <data name="moviesInfo1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>308, 273</value>
+  </data>
+  <data name="moviesInfo1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;moviesInfo1.Name" xml:space="preserve">
+    <value>moviesInfo1</value>
+  </data>
+  <data name="&gt;&gt;moviesInfo1.Type" xml:space="preserve">
+    <value>Programming.View.MoviesInfo, Programming, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;moviesInfo1.Parent" xml:space="preserve">
+    <value>ClassesGroup</value>
+  </data>
+  <data name="&gt;&gt;moviesInfo1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rectanglesInfo1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 22</value>
+  </data>
+  <data name="rectanglesInfo1.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>308, 273</value>
+  </data>
+  <data name="rectanglesInfo1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>308, 273</value>
+  </data>
+  <data name="rectanglesInfo1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;rectanglesInfo1.Name" xml:space="preserve">
+    <value>rectanglesInfo1</value>
+  </data>
+  <data name="&gt;&gt;rectanglesInfo1.Type" xml:space="preserve">
+    <value>Programming.View.RectanglesInfo, Programming, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;rectanglesInfo1.Parent" xml:space="preserve">
+    <value>ClassesGroup</value>
+  </data>
+  <data name="&gt;&gt;rectanglesInfo1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1349,7 +473,10 @@
     <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>804, 391</value>
+    <value>609, 435</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>625, 470</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Main window</value>

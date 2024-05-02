@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-namespace Programming
+﻿namespace Programming
 {
     public class Point2D
     {
@@ -23,6 +21,11 @@ namespace Programming
         {
             get { return _y; }
             private set { _y = value; }
+        }
+
+        public static Point2D operator +(Point2D point1, Point2D point2)
+        {
+            return new Point2D(point1.X + point2.X, point1.Y + point2.Y);
         }
     }
 }
