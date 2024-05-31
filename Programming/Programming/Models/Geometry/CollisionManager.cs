@@ -1,7 +1,16 @@
 ﻿namespace Programming
 {
+    /// <summary>
+    /// проверяет коллизии фигур 
+    /// </summary>
     public class CollisionManager
     {
+        /// <summary>
+        /// проверяет коллизию колец
+        /// </summary>
+        /// <param name="ring1">первая фигура</param>
+        /// <param name="ring2">вторая фигура</param>
+        /// <returns></returns>
         public static bool IsCollision(Ring ring1, Ring ring2)
         {
             double dx = Math.Abs(ring1.Center.X - ring2.Center.X);
@@ -15,6 +24,12 @@
                 ring2.InternalRadius + c < ring1.ExternalRadius);
         }
 
+        /// <summary>
+        /// проверяет коллизию прямоугольников
+        /// </summary>
+        /// <param name="rectangle1">первая фигура</param>
+        /// <param name="rectangle2">вторая фигура</param>
+        /// <returns></returns>
         public static bool IsCollision(Rectangle rectangle1, Rectangle rectangle2)
         {
             if (rectangle1 is null) return false;

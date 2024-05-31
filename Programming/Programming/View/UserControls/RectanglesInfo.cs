@@ -38,7 +38,7 @@
         /// <summary>
         /// при измененинии выбранного прямоугольника отображает его характеристики
         /// </summary>
-        /// <param name="sender"></param>
+        /// <param name="sender">RectanglesListBox</param>
         /// <param name="e"></param>
         private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -54,7 +54,7 @@
         /// <summary>
         /// при изменении текста в RectangleLenghtTextBox меняет значение Lenght в выбранном прямоугольнике
         /// </summary>
-        /// <param name="sender"></param>
+        /// <param name="sender">RectangleLenghtTextBox</param>
         /// <param name="e"></param>
         private void RectangleLenghtTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -73,7 +73,7 @@
         /// <summary>
         /// при изменении текста в RectangleWidthTextBox меняет значение Width в выбранном прямоугольнике
         /// </summary>
-        /// <param name="sender"></param>
+        /// <param name="sender">RectangleWidthTextBox</param>
         /// <param name="e"></param>
         private void RectangleWidthTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -92,7 +92,7 @@
         /// <summary>
         /// при изменении текста в RectangleColorTextBox меняет значение Color в выбранном прямоугольнике
         /// </summary>
-        /// <param name="sender"></param>
+        /// <param name="sender">RectangleColorTextBox</param>
         /// <param name="e"></param>
         private void RectangleColorTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -120,7 +120,7 @@
         /// <summary>
         /// Выбирает в качестве активного элемента в RectanglesListBox элемент с максимальным Width
         /// </summary>
-        /// <param name="sender"></param>
+        /// <param name="sender">FindRectangleButton</param>
         /// <param name="e"></param>
         private void FindRectangleButton_Click(object sender, EventArgs e)
         {

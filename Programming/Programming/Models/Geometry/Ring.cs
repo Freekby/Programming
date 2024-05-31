@@ -1,10 +1,20 @@
 ﻿namespace Programming
 {
+    /// <summary>
+    /// класс кольца
+    /// </summary>
     public class Ring
     {
         private double _externalRadius;
         private double _internalRadius;
 
+        /// <summary>
+        /// конструктор класса 
+        /// </summary>
+        /// <param name="externalRadius"></param>
+        /// <param name="internalRadius"></param>
+        /// <param name="centerX"></param>
+        /// <param name="centerY"></param>
         public Ring(double externalRadius, double internalRadius, double centerX, double centerY)
         {
             ExternalRadius = externalRadius;
@@ -12,8 +22,14 @@
             Center = new Point2D(centerX, centerY);
         }
 
+        /// <summary>
+        /// пустой конструктор класса
+        /// </summary>
         public Ring() { }
 
+        /// <summary>
+        /// точка центра кольца
+        /// </summary>
         public Point2D Center { get; private set; }
 
         private double GetRingArea()
@@ -21,11 +37,17 @@
             return Math.PI * ExternalRadius * ExternalRadius - Math.PI * InternalRadius * InternalRadius;
         }
 
+        /// <summary>
+        /// площадь кольца
+        /// </summary>
         public double Area
         {
             get { return GetRingArea(); }
         }
 
+        /// <summary>
+        /// внешний радиус
+        /// </summary>
         public double ExternalRadius
         {
             get { return _externalRadius; }
@@ -41,6 +63,9 @@
             }
         }
 
+        /// <summary>
+        /// внутренний радиус
+        /// </summary>
         public double InternalRadius
         {
             get { return _internalRadius; }

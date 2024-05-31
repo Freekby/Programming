@@ -1,5 +1,3 @@
-using Programming.View;
-
 namespace Programming
 {
     public partial class MainForm : Form

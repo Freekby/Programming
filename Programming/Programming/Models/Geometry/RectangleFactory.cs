@@ -1,7 +1,16 @@
 ﻿namespace Programming
 {
+    /// <summary>
+    /// класс для генерации прямоугольников
+    /// </summary>
     public class RectangleFactory
     {
+        /// <summary>
+        /// создаёт слуйсайно сгенерированый прямоугольник в границах контейнера
+        /// </summary>
+        /// <param name="regionHeight">высота контейнера</param>
+        /// <param name="regionWidth">ширина контейнера</param>
+        /// <returns>Rectangle</returns>
         public static Rectangle Randomize(int regionHeight, int regionWidth)
         {
             Random random = new Random();

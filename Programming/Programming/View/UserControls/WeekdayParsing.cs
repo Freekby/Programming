@@ -7,6 +7,11 @@
             InitializeComponent();
         }
 
+        /// <summary>
+        /// инициализирует некоторые значения при загрузке формы 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void WeekdayGroupBox_SizeChanged(object sender, EventArgs e)
         {
             WeekdayTextBox.Width = this.Width - 87;

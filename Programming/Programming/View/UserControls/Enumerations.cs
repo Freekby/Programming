@@ -7,11 +7,21 @@
             InitializeComponent();
         }
 
+        /// <summary>
+        /// инициализирует некоторые значения при загрузке формы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Enumerations_Load(object sender, EventArgs e)
         {
             EnumsListBox.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// изменяет размер элементов при изменении размеров формы 
+        /// </summary>
+        /// <param name="sender">Ennumerations</param>
+        /// <param name="e"></param>
         private void Enumerations_SizeChanged(object sender, EventArgs e)
         {
             int listBoxWidth = this.Width * 18 / 53;

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Programming.View
+﻿namespace Programming.View
 {
     public partial class RectangleCollisions : UserControl
     {
@@ -13,6 +11,11 @@ namespace Programming.View
         private static Rectangle _currentRectangle = null;
         private static List<Panel> _rectanglePanels = new List<Panel>();
 
+        /// <summary>
+        /// добавляет новый прямоугольник в список
+        /// </summary>
+        /// <param name="sender">AddRectangleButton</param>
+        /// <param name="e"></param>
         private void AddRectangleButton_Click(object sender, EventArgs e)
         {
             Rectangle newRectangle = RectangleFactory.Randomize(RectanglesPanel.Size.Height, RectanglesPanel.Size.Width);
@@ -37,6 +40,11 @@ namespace Programming.View
             ClearRectangleInfo();
         }
 
+        /// <summary>
+        /// при выборе прямоугольника отображает информацию о нём 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RectanglesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             int currentRectangleIndex = RectanglesListBox.SelectedIndex;
@@ -61,6 +69,11 @@ namespace Programming.View
             }
         }
 
+        /// <summary>
+        /// при изменении RectanglesCenterXTextBox изменяет параметр CenterX в прямоугольнике
+        /// </summary>
+        /// <param name="sender">RectanglesCenterXTextBox</param>
+        /// <param name="e"></param>
         private void RectangleCenterXTextBox_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(RectangleCenterXTextBox.Text)) return;
@@ -83,6 +96,11 @@ namespace Programming.View
             }
         }
 
+        /// <summary>
+        /// при изменении RectanglesCenterYTextBox изменяет параметр CenterY в прямоугольнике
+        /// </summary>
+        /// <param name="sender">RectanglesCenterYTextBox</param>
+        /// <param name="e"></param>
         private void RectanglesCenterYTextBox_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(RectangleCenterYTextBox.Text)) return;
@@ -105,6 +123,11 @@ namespace Programming.View
             }
         }
 
+        /// <summary>
+        /// при изменении RectangleWidthTextBox изменяет параметр Width в прямоугольнике
+        /// </summary>
+        /// <param name="sender">RectangleWidthTextBox</param>
+        /// <param name="e"></param>
         private void RectangleWidthTextBox_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(RectangleWidthTextBox.Text)) return;
@@ -125,6 +148,11 @@ namespace Programming.View
             }
         }
 
+        /// <summary>
+        /// при изменении RectangleHeightTextBox изменяет параметр в Height в прямоугольнике
+        /// </summary>
+        /// <param name="sender">RectangleHeightTextBox</param>
+        /// <param name="e"></param>
         private void RectangleHeightTextBox_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(RectangleHeightTextBox.Text)) return;
@@ -145,12 +173,18 @@ namespace Programming.View
             }
         }
 
+        /// <summary>
+        /// обновляет информацию о прямоугольнике
+        /// </summary>
         private void UpdateRectangleInfo()
         {
             Rectangle selectedRectangle = _rectangles[RectanglesListBox.SelectedIndex];
             RectanglesListBox.Items[RectanglesListBox.SelectedIndex] = $"{selectedRectangle.Id}. (X = {selectedRectangle.Center.X}, Y = {selectedRectangle.Center.Y}; W = {selectedRectangle.Width}; H = {selectedRectangle.Height})";
         }
 
+        /// <summary>
+        /// находит коллизии прямоугольников и окрашивает их
+        /// </summary>
         private void FindCollisions()
         {
             for (int i = 0; i < _rectanglePanels.Count; i++)
@@ -166,6 +200,9 @@ namespace Programming.View
             }
         }
 
+        /// <summary>
+        /// Очищает информацию о прямоугольнике
+        /// </summary>
         private void ClearRectangleInfo()
         {
             if (RectanglesListBox.SelectedIndex < 0) return;

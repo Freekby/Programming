@@ -10,6 +10,9 @@
         private Movie[] _movies = new Movie[5];
         private Movie _currentMovie;
 
+        /// <summary>
+        /// инициализирует массив _movies объектами 
+        /// </summary>
         private void InitialiseMovies()
         {
             Random random = new Random();
@@ -26,6 +29,11 @@
             }
         }
 
+        /// <summary>
+        /// при измененинии выбранного прямоугольника отображает его характеристики
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MovieListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             _currentMovie = _movies[MovieListBox.SelectedIndex];
@@ -37,6 +45,11 @@
             MovieTitleTextBox.Text = _currentMovie.Title.ToString();
         }
 
+        /// <summary>
+        /// при изменении текста в  MovieDurationTextBox меняет значение Duration в выбранном фильме
+        /// </summary>
+        /// <param name="sender">MovieDurationTextBox</param>
+        /// <param name="e"></param>
         private void MovieDurationTextBox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -51,6 +64,11 @@
             }
         }
 
+        /// <summary>
+        /// при изменении текста в MovieReleaseYearTextBox меняет значение ReleaseYear в выбранном фильме
+        /// </summary>
+        /// <param name="sender">MovieReleaseYearTextBox</param>
+        /// <param name="e"></param>
         private void MovieReleaseYearTextBox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -65,6 +83,11 @@
             }
         }
 
+        /// <summary>
+        /// при изменении текста в MovieRatingTextBox меняет значение Rating в выбранном фильме
+        /// </summary>
+        /// <param name="sender">MovieRatingTextBox</param>
+        /// <param name="e"></param>
         private void MovieRatingTextBox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -79,6 +102,11 @@
             }
         }
 
+        /// <summary>
+        /// при изменении текста в MovieTitleTextBox меняет значение Title в выбранном фильме
+        /// </summary>
+        /// <param name="sender">MovieTitleTextBox</param>
+        /// <param name="e"></param>
         private void MovieTitleTextBox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -92,6 +120,11 @@
             }
         }
 
+        /// <summary>
+        /// при изменении текста в MovieGenreTextBox меняет значение Genre в выбранном фильме
+        /// </summary>
+        /// <param name="sender">MovieGenreTextBox</param>
+        /// <param name="e"></param>
         private void MovieGenreTextBox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -105,6 +138,11 @@
             }
         }
 
+        /// <summary>
+        /// находит фильм с самым больши рейтингом в массиве
+        /// </summary>
+        /// <param name="movies">массив фильмов</param>
+        /// <returns>int</returns>
         private int FindMovieWithMaxRating(Movie[] movies)
         {
             int movieWithMaxRatingIndex = 0;
@@ -118,11 +156,21 @@
             return movieWithMaxRatingIndex;
         }
 
+        /// <summary>
+        /// устанавливает значение выбранного фильма на тот, у которого самый большой рейтиг
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MovieFindButton_Click(object sender, EventArgs e)
         {
             MovieListBox.SelectedIndex = FindMovieWithMaxRating(_movies);
         }
 
+        /// <summary>
+        /// инициаизирует некоторые значения при загрузке формы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MoviesInfo_Load(object sender, EventArgs e)
         {
             InitialiseMovies();
