@@ -22,6 +22,8 @@
         /// </summary>
         private float _cost;
 
+        public int Id { get { return _id; } }
+
         /// <summary>
         /// Возвращает и задаёт название товара. Не может быть больше 200 символов или пустым.
         /// </summary>
@@ -82,7 +84,7 @@
         //}
 
         /// <summary>
-        /// 
+        /// генератор класса Item
         /// </summary>
         /// <param name="name"></param>
         /// <param name="info"></param>
@@ -93,6 +95,11 @@
             Name = name;
             Info = info;
             Cost = cost;
+        }
+
+        public override string ToString()
+        {
+            return _name;
         }
     }
 }

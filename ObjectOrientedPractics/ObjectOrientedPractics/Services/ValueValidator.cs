@@ -3,7 +3,7 @@
     /// <summary>
     /// класс для проверки значений на правильность ввода
     /// </summary>
-    internal class ValueValidator
+    internal static class ValueValidator
     {
         /// <summary>
         /// проверка длинны строки на выход за обозначенные пределы

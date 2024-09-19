@@ -28,19 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            itemsTab1 = new Views.tabs.ItemsTab();
             SuspendLayout();
+            // 
+            // itemsTab1
+            // 
+            itemsTab1.AutoSize = true;
+            itemsTab1.Location = new Point(12, 12);
+            itemsTab1.Name = "itemsTab1";
+            itemsTab1.Size = new Size(526, 435);
+            itemsTab1.TabIndex = 0;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(550, 461);
+            Controls.Add(itemsTab1);
             Name = "MainForm";
             Text = "MainForm";
             Load += Form1_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Views.tabs.ItemsTab itemsTab1;
     }
 }
