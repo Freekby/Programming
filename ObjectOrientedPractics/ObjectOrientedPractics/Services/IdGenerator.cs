@@ -11,7 +11,7 @@
         private static int _id;
 
         /// <summary>
-        /// генерирует уникальный id
+        /// генерирует уникальный id и возвращает его
         /// </summary>
         /// <returns>int</returns>
         public static int GetNextId() 

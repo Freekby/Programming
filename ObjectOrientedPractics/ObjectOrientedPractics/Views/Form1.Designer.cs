@@ -32,7 +32,7 @@
             ItemsTabPage = new TabPage();
             itemsTab1 = new Views.tabs.ItemsTab();
             CostumersTabPage = new TabPage();
-            costumersTab1 = new Views.tabs.CostumersTab();
+            costumersTab1 = new Views.tabs.CustomersTab();
             MainTabControl.SuspendLayout();
             ItemsTabPage.SuspendLayout();
             CostumersTabPage.SuspendLayout();
@@ -46,7 +46,7 @@
             MainTabControl.Location = new Point(0, 0);
             MainTabControl.Name = "MainTabControl";
             MainTabControl.SelectedIndex = 0;
-            MainTabControl.Size = new Size(591, 463);
+            MainTabControl.Size = new Size(899, 668);
             MainTabControl.TabIndex = 0;
             // 
             // ItemsTabPage
@@ -75,7 +75,7 @@
             CostumersTabPage.Location = new Point(4, 24);
             CostumersTabPage.Name = "CostumersTabPage";
             CostumersTabPage.Padding = new Padding(3);
-            CostumersTabPage.Size = new Size(583, 435);
+            CostumersTabPage.Size = new Size(891, 640);
             CostumersTabPage.TabIndex = 1;
             CostumersTabPage.Text = "Costumers";
             CostumersTabPage.UseVisualStyleBackColor = true;
@@ -84,18 +84,17 @@
             // 
             costumersTab1.Location = new Point(0, 0);
             costumersTab1.Name = "costumersTab1";
-            costumersTab1.Size = new Size(584, 436);
+            costumersTab1.Size = new Size(882, 630);
             costumersTab1.TabIndex = 0;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(591, 463);
+            ClientSize = new Size(899, 668);
             Controls.Add(MainTabControl);
             Name = "MainForm";
             Text = "Object Oriented Practices";
-            Load += Form1_Load;
             MainTabControl.ResumeLayout(false);
             ItemsTabPage.ResumeLayout(false);
             ItemsTabPage.PerformLayout();
@@ -109,6 +108,6 @@
         private TabPage ItemsTabPage;
         private Views.tabs.ItemsTab itemsTab1;
         private TabPage CostumersTabPage;
-        private Views.tabs.CostumersTab costumersTab1;
+        private Views.tabs.CustomersTab costumersTab1;
     }
 }

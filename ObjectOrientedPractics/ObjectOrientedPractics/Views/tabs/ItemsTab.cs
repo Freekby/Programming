@@ -1,12 +1,19 @@
-﻿using System.ComponentModel;
-
-namespace ObjectOrientedPractices.Views.tabs
+﻿namespace ObjectOrientedPractices.Views.tabs
 {
     public partial class ItemsTab : UserControl
     {
+        /// <summary>
+        /// список для хранения всех товаров
+        /// </summary>
         private List<Item> _items = new();
+        /// <summary>
+        /// текущий выбранный товар
+        /// </summary>
         private Item _currentItem;
-        bool isAllOk = true;
+        /// <summary>
+        /// true если данные введены корректно, иначе - false 
+        /// </summary>
+        bool _isDataCorrect = true;
 
         public ItemsTab()
         {
@@ -26,19 +33,19 @@ namespace ObjectOrientedPractices.Views.tabs
 
         private void ItemsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!isAllOk)
+            if (ItemsListBox.SelectedItem is null) { return; }
+            if (!_isDataCorrect)
             {
                 ItemsListBox.SelectedItem = _currentItem;
                 return;
             }
 
-            if (ItemsListBox.SelectedItem is null) { return; }
             _currentItem = ItemsListBox.SelectedItem as Item;
 
             ItemIDTextBox.Text = _currentItem.Id.ToString();
             ItemCostTextBox.Text = _currentItem.Cost.ToString();
-            ItemNameTextBox.Text = _currentItem.Name.ToString();
-            ItemDescriptionTextBox.Text = _currentItem.Info.ToString();
+            ItemNameTextBox.Text = _currentItem.Name;
+            ItemDescriptionTextBox.Text = _currentItem.Info;
 
             ItemsListBox.DataSource = null;
             ItemsListBox.DataSource = _items;
@@ -46,7 +53,7 @@ namespace ObjectOrientedPractices.Views.tabs
 
         private void ItemsListBox_Click(object sender, EventArgs e)
         {
-            isAllOk = true;
+            _isDataCorrect = true;
 
             ItemCostTextBox.BackColor = Color.White;
             ItemNameTextBox.BackColor = Color.White;
@@ -60,7 +67,7 @@ namespace ObjectOrientedPractices.Views.tabs
             catch (Exception)
             {
                 ItemCostTextBox.BackColor = Color.LightPink;
-                isAllOk = false;
+                _isDataCorrect = false;
             }
             try
             {
@@ -70,7 +77,7 @@ namespace ObjectOrientedPractices.Views.tabs
             catch (Exception)
             {
                 ItemNameTextBox.BackColor = Color.LightPink;
-                isAllOk = false;
+                _isDataCorrect = false;
             }
             try
             {
@@ -80,7 +87,7 @@ namespace ObjectOrientedPractices.Views.tabs
             catch (Exception)
             {
                 ItemDescriptionTextBox.BackColor = Color.LightPink;
-                isAllOk = false;
+                _isDataCorrect = false;
             }
         }
 
