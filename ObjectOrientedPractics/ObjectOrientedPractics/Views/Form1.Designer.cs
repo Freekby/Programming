@@ -46,7 +46,7 @@
             MainTabControl.Location = new Point(0, 0);
             MainTabControl.Name = "MainTabControl";
             MainTabControl.SelectedIndex = 0;
-            MainTabControl.Size = new Size(899, 668);
+            MainTabControl.Size = new Size(589, 466);
             MainTabControl.TabIndex = 0;
             // 
             // ItemsTabPage
@@ -55,7 +55,7 @@
             ItemsTabPage.Location = new Point(4, 24);
             ItemsTabPage.Name = "ItemsTabPage";
             ItemsTabPage.Padding = new Padding(3);
-            ItemsTabPage.Size = new Size(583, 435);
+            ItemsTabPage.Size = new Size(581, 438);
             ItemsTabPage.TabIndex = 0;
             ItemsTabPage.Text = "Items";
             ItemsTabPage.UseVisualStyleBackColor = true;
@@ -66,7 +66,7 @@
             itemsTab1.Dock = DockStyle.Fill;
             itemsTab1.Location = new Point(3, 3);
             itemsTab1.Name = "itemsTab1";
-            itemsTab1.Size = new Size(577, 429);
+            itemsTab1.Size = new Size(575, 432);
             itemsTab1.TabIndex = 0;
             // 
             // CostumersTabPage
@@ -75,23 +75,24 @@
             CostumersTabPage.Location = new Point(4, 24);
             CostumersTabPage.Name = "CostumersTabPage";
             CostumersTabPage.Padding = new Padding(3);
-            CostumersTabPage.Size = new Size(891, 640);
+            CostumersTabPage.Size = new Size(581, 438);
             CostumersTabPage.TabIndex = 1;
             CostumersTabPage.Text = "Costumers";
             CostumersTabPage.UseVisualStyleBackColor = true;
             // 
             // costumersTab1
             // 
-            costumersTab1.Location = new Point(0, 0);
+            costumersTab1.Dock = DockStyle.Fill;
+            costumersTab1.Location = new Point(3, 3);
             costumersTab1.Name = "costumersTab1";
-            costumersTab1.Size = new Size(882, 630);
+            costumersTab1.Size = new Size(575, 432);
             costumersTab1.TabIndex = 0;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(899, 668);
+            ClientSize = new Size(589, 466);
             Controls.Add(MainTabControl);
             Name = "MainForm";
             Text = "Object Oriented Practices";
