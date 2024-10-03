@@ -16,7 +16,8 @@
         /// <returns> Customer </returns>
         public static Customer GetNextCustomer()
         {
-            Customer newCustomer = new Customer($"full name{_custumersGeneratedCount}", $"address{_custumersGeneratedCount}");
+            Address newAddress = new Address(100000,"", "", "", "", "");
+            Customer newCustomer = new Customer($"full name{_custumersGeneratedCount}", newAddress);
             _custumersGeneratedCount++;
             return newCustomer;
         }

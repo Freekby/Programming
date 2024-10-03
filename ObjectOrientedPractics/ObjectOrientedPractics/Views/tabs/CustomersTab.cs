@@ -43,8 +43,9 @@
             _currentCustomer = CustomersListBox.SelectedItem as Customer;
 
             CustomerIDTextBox.Text = _currentCustomer.ID.ToString();
-            CustomerAddressTextBox.Text = _currentCustomer.Address;
             CustomerNameTextBox.Text = _currentCustomer.FullName;
+            CustomerAdressControl.Address = _currentCustomer.Address;
+
 
             CustomersListBox.DataSource = null;
             CustomersListBox.DataSource = _customers;
@@ -54,19 +55,17 @@
         {
             _isDataCorrect = true;
 
-            CustomerAddressTextBox.BackColor = Color.White;
             CustomerNameTextBox.BackColor = Color.White;
 
-            try
+            if (CustomerAdressControl.TryWriteAdressData())
             {
-                string newAddress = CustomerAddressTextBox.Text;
-                _currentCustomer.Address = newAddress;
+                _currentCustomer.Address = CustomerAdressControl.Address;
             }
-            catch (Exception) 
+            else
             {
                 _isDataCorrect = false;
-                CustomerAddressTextBox.BackColor = Color.LightPink;
             }
+
 
             try
             {

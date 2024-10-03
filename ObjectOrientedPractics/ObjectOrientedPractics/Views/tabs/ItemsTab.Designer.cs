@@ -33,6 +33,8 @@
             AddItemButton = new Button();
             ItemsListBox = new ListBox();
             SelectedItemGroupBox = new GroupBox();
+            ItemCategoryComboBox = new ComboBox();
+            label5 = new Label();
             ItemDescriptionTextBox = new TextBox();
             ItemNameTextBox = new TextBox();
             ItemCostTextBox = new TextBox();
@@ -53,7 +55,7 @@
             ItemsGroupBox.Controls.Add(ItemsListBox);
             ItemsGroupBox.Location = new Point(3, 3);
             ItemsGroupBox.Name = "ItemsGroupBox";
-            ItemsGroupBox.Size = new Size(246, 294);
+            ItemsGroupBox.Size = new Size(246, 327);
             ItemsGroupBox.TabIndex = 0;
             ItemsGroupBox.TabStop = false;
             ItemsGroupBox.Text = "Items";
@@ -61,7 +63,7 @@
             // RemoveItemButton
             // 
             RemoveItemButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            RemoveItemButton.Location = new Point(126, 254);
+            RemoveItemButton.Location = new Point(126, 287);
             RemoveItemButton.Name = "RemoveItemButton";
             RemoveItemButton.Size = new Size(114, 34);
             RemoveItemButton.TabIndex = 2;
@@ -72,7 +74,7 @@
             // AddItemButton
             // 
             AddItemButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            AddItemButton.Location = new Point(6, 254);
+            AddItemButton.Location = new Point(6, 287);
             AddItemButton.Name = "AddItemButton";
             AddItemButton.Size = new Size(114, 34);
             AddItemButton.TabIndex = 1;
@@ -87,7 +89,7 @@
             ItemsListBox.ItemHeight = 15;
             ItemsListBox.Location = new Point(6, 19);
             ItemsListBox.Name = "ItemsListBox";
-            ItemsListBox.Size = new Size(234, 229);
+            ItemsListBox.Size = new Size(234, 259);
             ItemsListBox.TabIndex = 0;
             ItemsListBox.Click += ItemsListBox_Click;
             ItemsListBox.SelectedIndexChanged += ItemsListBox_SelectedIndexChanged;
@@ -95,6 +97,8 @@
             // SelectedItemGroupBox
             // 
             SelectedItemGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            SelectedItemGroupBox.Controls.Add(ItemCategoryComboBox);
+            SelectedItemGroupBox.Controls.Add(label5);
             SelectedItemGroupBox.Controls.Add(ItemDescriptionTextBox);
             SelectedItemGroupBox.Controls.Add(ItemNameTextBox);
             SelectedItemGroupBox.Controls.Add(ItemCostTextBox);
@@ -105,15 +109,33 @@
             SelectedItemGroupBox.Controls.Add(label1);
             SelectedItemGroupBox.Location = new Point(255, 3);
             SelectedItemGroupBox.Name = "SelectedItemGroupBox";
-            SelectedItemGroupBox.Size = new Size(310, 294);
+            SelectedItemGroupBox.Size = new Size(310, 327);
             SelectedItemGroupBox.TabIndex = 0;
             SelectedItemGroupBox.TabStop = false;
             SelectedItemGroupBox.Text = "Selected item";
             // 
+            // ItemCategoryComboBox
+            // 
+            ItemCategoryComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            ItemCategoryComboBox.FormattingEnabled = true;
+            ItemCategoryComboBox.Location = new Point(67, 79);
+            ItemCategoryComboBox.Name = "ItemCategoryComboBox";
+            ItemCategoryComboBox.Size = new Size(100, 23);
+            ItemCategoryComboBox.TabIndex = 9;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(6, 82);
+            label5.Name = "label5";
+            label5.Size = new Size(55, 15);
+            label5.TabIndex = 8;
+            label5.Text = "Category";
+            // 
             // ItemDescriptionTextBox
             // 
             ItemDescriptionTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            ItemDescriptionTextBox.Location = new Point(6, 199);
+            ItemDescriptionTextBox.Location = new Point(6, 230);
             ItemDescriptionTextBox.Multiline = true;
             ItemDescriptionTextBox.Name = "ItemDescriptionTextBox";
             ItemDescriptionTextBox.Size = new Size(298, 89);
@@ -122,7 +144,7 @@
             // ItemNameTextBox
             // 
             ItemNameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            ItemNameTextBox.Location = new Point(6, 92);
+            ItemNameTextBox.Location = new Point(6, 123);
             ItemNameTextBox.Multiline = true;
             ItemNameTextBox.Name = "ItemNameTextBox";
             ItemNameTextBox.Size = new Size(298, 86);
@@ -130,14 +152,14 @@
             // 
             // ItemCostTextBox
             // 
-            ItemCostTextBox.Location = new Point(50, 45);
+            ItemCostTextBox.Location = new Point(67, 45);
             ItemCostTextBox.Name = "ItemCostTextBox";
             ItemCostTextBox.Size = new Size(100, 23);
             ItemCostTextBox.TabIndex = 5;
             // 
             // ItemIDTextBox
             // 
-            ItemIDTextBox.Location = new Point(50, 16);
+            ItemIDTextBox.Location = new Point(67, 16);
             ItemIDTextBox.Name = "ItemIDTextBox";
             ItemIDTextBox.ReadOnly = true;
             ItemIDTextBox.Size = new Size(100, 23);
@@ -146,7 +168,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(6, 181);
+            label4.Location = new Point(6, 212);
             label4.Name = "label4";
             label4.Size = new Size(67, 15);
             label4.TabIndex = 3;
@@ -155,7 +177,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(6, 74);
+            label3.Location = new Point(6, 105);
             label3.Name = "label3";
             label3.Size = new Size(39, 15);
             label3.TabIndex = 2;
@@ -164,7 +186,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(6, 53);
+            label2.Location = new Point(6, 48);
             label2.Name = "label2";
             label2.Size = new Size(31, 15);
             label2.TabIndex = 1;
@@ -186,9 +208,9 @@
             AutoSize = true;
             Controls.Add(SelectedItemGroupBox);
             Controls.Add(ItemsGroupBox);
-            MinimumSize = new Size(570, 300);
+            MinimumSize = new Size(570, 333);
             Name = "ItemsTab";
-            Size = new Size(570, 300);
+            Size = new Size(570, 333);
             Load += ItemsTab_Load;
             ItemsGroupBox.ResumeLayout(false);
             SelectedItemGroupBox.ResumeLayout(false);
@@ -211,5 +233,7 @@
         private TextBox ItemNameTextBox;
         private TextBox ItemCostTextBox;
         private TextBox ItemIDTextBox;
+        private Label label5;
+        private ComboBox ItemCategoryComboBox;
     }
 }

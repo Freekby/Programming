@@ -1,28 +1,36 @@
 ﻿namespace ObjectOrientedPractices
 {
     /// <summary>
-    /// хранит информацию о товаре
+    /// Хранит информацию о товаре.
     /// </summary>
     internal class Item
     {
         /// <summary>
-        /// индивидуальный идентификатор
+        /// Индивидуальный идентификатор.
         /// </summary>
         private readonly int _id;
         /// <summary>
-        /// название товара
+        /// название товара.
         /// </summary>
         private string _name;
         /// <summary>
-        /// информация о товаре
+        /// Информация о товаре.
         /// </summary>
         private string _info;
         /// <summary>
-        /// Цена товара
+        /// Цена товара.
         /// </summary>
         private float _cost;
 
+        /// <summary>
+        /// Возвращает ID товара.
+        /// </summary>
         public int Id { get { return _id; } }
+
+        /// <summary>
+        /// Возвращает и задаёт категорию товара.
+        /// </summary>
+        public Category Category { get; set; }
 
         /// <summary>
         /// Возвращает и задаёт название товара. Не может быть больше 200 символов или пустым.
@@ -76,7 +84,7 @@
         }
 
         /// <summary>
-        /// создаёт пустой экземпляр класса <see cref="Item"/>
+        /// Создаёт пустой экземпляр класса <see cref="Item"/>.
         /// </summary>
         public Item()
         {
@@ -84,21 +92,23 @@
         }
 
         /// <summary>
-        /// создаёт пустой экземпляр класса <see cref="Item"/>
+        /// Создаёт экземпляр класса <see cref="Item"/>.
         /// </summary>
         /// <param name="name"> название </param>
         /// <param name="info"> информация </param>
         /// <param name="cost"> цена </param>
-        public Item(string name, string info, float cost)
+        /// <param name="category"> категория </param>
+        public Item(string name, string info, float cost, Category category)
         {
             _id = IdGenerator.GetNextId();
             Name = name;
             Info = info;
             Cost = cost;
+            Category = category;
         }
 
         /// <summary>
-        /// возвращает имя товара
+        /// Возвращает имя товара.
         /// </summary>
         /// <returns> string </returns>
         public override string ToString()

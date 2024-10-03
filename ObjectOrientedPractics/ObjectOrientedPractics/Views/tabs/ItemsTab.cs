@@ -29,6 +29,8 @@
 
             ItemsListBox.DataSource = _items;
             ItemsListBox.SelectedIndex = 0;
+
+            ItemCategoryComboBox.DataSource = Enum.GetValues(typeof(Category));
         }
 
         private void ItemsListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -46,6 +48,7 @@
             ItemCostTextBox.Text = _currentItem.Cost.ToString();
             ItemNameTextBox.Text = _currentItem.Name;
             ItemDescriptionTextBox.Text = _currentItem.Info;
+            ItemCategoryComboBox.SelectedItem = _currentItem.Category;
 
             ItemsListBox.DataSource = null;
             ItemsListBox.DataSource = _items;
@@ -89,6 +92,7 @@
                 ItemDescriptionTextBox.BackColor = Color.LightPink;
                 _isDataCorrect = false;
             }
+            _currentItem.Category = (Category)ItemCategoryComboBox.SelectedItem;
         }
 
         private void AddItemButton_Click(object sender, EventArgs e)

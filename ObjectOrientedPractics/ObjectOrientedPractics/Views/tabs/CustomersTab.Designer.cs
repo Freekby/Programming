@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            //Address address2 = new Address();
             CustomersGroupBox = new GroupBox();
             RemoveCustumerButton = new Button();
             AddCustumerButton = new Button();
             CustomersListBox = new ListBox();
             SelectedCustomerGroupBox = new GroupBox();
-            CustomerAddressTextBox = new TextBox();
+            CustomerAdressControl = new Controls.AddressControl();
             CustomerNameTextBox = new TextBox();
             CustomerIDTextBox = new TextBox();
-            label4 = new Label();
             label3 = new Label();
             label1 = new Label();
             CustomersGroupBox.SuspendLayout();
@@ -51,7 +51,7 @@
             CustomersGroupBox.Controls.Add(CustomersListBox);
             CustomersGroupBox.Location = new Point(0, 0);
             CustomersGroupBox.Name = "CustomersGroupBox";
-            CustomersGroupBox.Size = new Size(246, 300);
+            CustomersGroupBox.Size = new Size(246, 304);
             CustomersGroupBox.TabIndex = 1;
             CustomersGroupBox.TabStop = false;
             CustomersGroupBox.Text = "Customers";
@@ -59,7 +59,7 @@
             // RemoveCustumerButton
             // 
             RemoveCustumerButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            RemoveCustumerButton.Location = new Point(126, 260);
+            RemoveCustumerButton.Location = new Point(126, 264);
             RemoveCustumerButton.Name = "RemoveCustumerButton";
             RemoveCustumerButton.Size = new Size(114, 34);
             RemoveCustumerButton.TabIndex = 2;
@@ -70,7 +70,7 @@
             // AddCustumerButton
             // 
             AddCustumerButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            AddCustumerButton.Location = new Point(6, 260);
+            AddCustumerButton.Location = new Point(6, 264);
             AddCustumerButton.Name = "AddCustumerButton";
             AddCustumerButton.Size = new Size(114, 34);
             AddCustumerButton.TabIndex = 1;
@@ -85,7 +85,7 @@
             CustomersListBox.ItemHeight = 15;
             CustomersListBox.Location = new Point(6, 19);
             CustomersListBox.Name = "CustomersListBox";
-            CustomersListBox.Size = new Size(234, 214);
+            CustomersListBox.Size = new Size(234, 199);
             CustomersListBox.TabIndex = 0;
             CustomersListBox.Click += CustomersListBox_Click;
             CustomersListBox.SelectedIndexChanged += CustomersListBox_SelectedIndexChanged;
@@ -93,27 +93,32 @@
             // SelectedCustomerGroupBox
             // 
             SelectedCustomerGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            SelectedCustomerGroupBox.Controls.Add(CustomerAddressTextBox);
+            SelectedCustomerGroupBox.Controls.Add(CustomerAdressControl);
             SelectedCustomerGroupBox.Controls.Add(CustomerNameTextBox);
             SelectedCustomerGroupBox.Controls.Add(CustomerIDTextBox);
-            SelectedCustomerGroupBox.Controls.Add(label4);
             SelectedCustomerGroupBox.Controls.Add(label3);
             SelectedCustomerGroupBox.Controls.Add(label1);
             SelectedCustomerGroupBox.Location = new Point(252, 0);
             SelectedCustomerGroupBox.Name = "SelectedCustomerGroupBox";
-            SelectedCustomerGroupBox.Size = new Size(315, 300);
+            SelectedCustomerGroupBox.Size = new Size(558, 304);
             SelectedCustomerGroupBox.TabIndex = 2;
             SelectedCustomerGroupBox.TabStop = false;
             SelectedCustomerGroupBox.Text = "Selected customer";
             // 
-            // CustomerAddressTextBox
+            // CustomerAdressControl
             // 
-            CustomerAddressTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            CustomerAddressTextBox.Location = new Point(6, 178);
-            CustomerAddressTextBox.Multiline = true;
-            CustomerAddressTextBox.Name = "CustomerAddressTextBox";
-            CustomerAddressTextBox.Size = new Size(303, 116);
-            CustomerAddressTextBox.TabIndex = 7;
+            //address2.Apartment = null;
+            //address2.Building = null;
+            //address2.City = null;
+            //address2.Country = null;
+            //address2.Index = 0;
+            //address2.Street = null;
+            //CustomerAdressControl.Address = address2;
+            CustomerAdressControl.Location = new Point(6, 163);
+            CustomerAdressControl.MinimumSize = new Size(550, 140);
+            CustomerAdressControl.Name = "CustomerAdressControl";
+            CustomerAdressControl.Size = new Size(550, 140);
+            CustomerAdressControl.TabIndex = 3;
             // 
             // CustomerNameTextBox
             // 
@@ -121,7 +126,7 @@
             CustomerNameTextBox.Location = new Point(6, 71);
             CustomerNameTextBox.Multiline = true;
             CustomerNameTextBox.Name = "CustomerNameTextBox";
-            CustomerNameTextBox.Size = new Size(303, 86);
+            CustomerNameTextBox.Size = new Size(546, 86);
             CustomerNameTextBox.TabIndex = 6;
             // 
             // CustomerIDTextBox
@@ -131,15 +136,6 @@
             CustomerIDTextBox.ReadOnly = true;
             CustomerIDTextBox.Size = new Size(100, 23);
             CustomerIDTextBox.TabIndex = 4;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(6, 160);
-            label4.Name = "label4";
-            label4.Size = new Size(47, 15);
-            label4.TabIndex = 3;
-            label4.Text = "address";
             // 
             // label3
             // 
@@ -167,7 +163,7 @@
             Controls.Add(CustomersGroupBox);
             MinimumSize = new Size(570, 300);
             Name = "CustomersTab";
-            Size = new Size(570, 300);
+            Size = new Size(813, 304);
             Load += CostumersTab_Load;
             CustomersGroupBox.ResumeLayout(false);
             SelectedCustomerGroupBox.ResumeLayout(false);
@@ -182,11 +178,10 @@
         private Button AddCustumerButton;
         private ListBox CustomersListBox;
         private GroupBox SelectedCustomerGroupBox;
-        private TextBox CustomerAddressTextBox;
         private TextBox CustomerNameTextBox;
         private TextBox CustomerIDTextBox;
-        private Label label4;
         private Label label3;
         private Label label1;
+        private Controls.AddressControl CustomerAdressControl;
     }
 }

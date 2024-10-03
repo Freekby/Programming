@@ -16,7 +16,7 @@
         /// <summary>
         /// адрес покупателя
         /// </summary>
-        private string _address;
+        private Address _address;
 
         /// <summary>
         /// возвращает значение поля id
@@ -39,16 +39,13 @@
         }
 
         /// <summary>
-        /// возвращает и задаёт адрес покупателя. не может быть больше 500 символов или пустым 
+        /// возвращает и задаёт адрес покупателя.
         /// </summary>
-        public string Address
+        public Address Address
         {
             get { return _address; }
             set
             {
-                ValueValidator.CheckStringOnNullOrEmpty(value, nameof(Address));
-                ValueValidator.AssertStringOnLength(value, 500, nameof(Address));
-
                 _address = value;
             }
         }
@@ -66,7 +63,7 @@
         /// </summary>
         /// <param name="fullName"> имя, фамилия и отчество покупателя </param>
         /// <param name="address"> адрес покупателя </param>
-        public Customer(string fullName, string address)
+        public Customer(string fullName, Address address)
         {
             _id = IdGenerator.GetNextId();
             FullName = fullName;
