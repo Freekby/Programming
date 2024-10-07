@@ -1,4 +1,8 @@
-﻿namespace ObjectOrientedPractices
+﻿using System.Diagnostics.Metrics;
+using System.Windows.Forms;
+using System;
+
+namespace ObjectOrientedPractices
 {
     public class Address
     {
@@ -118,7 +122,12 @@
         /// </summary>
         public Address()
         {
-
+            Index = 100000;
+            Country = "";
+            City = "city";
+            Street = "";
+            Building = "";
+            Apartment = "";
         }
 
         /// <summary>

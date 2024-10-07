@@ -3,7 +3,7 @@
     /// <summary>
     /// хранит данные о покупателе
     /// </summary>
-    internal class Customer
+    public class Customer
     {
         /// <summary>
         /// уникальный идентификатор
@@ -55,7 +55,9 @@
         /// </summary>
         public Customer()
         {
-
+            _id = IdGenerator.GetNextId();
+            FullName = "fullName";
+            Address = new Address();
         }
 
         /// <summary>

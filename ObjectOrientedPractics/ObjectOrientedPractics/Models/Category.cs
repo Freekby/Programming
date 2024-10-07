@@ -1,13 +1,15 @@
 ﻿namespace ObjectOrientedPractices
 {
-    enum Category
+    public enum Category
     {
-        Category1,
-        Category2,
-        Category3,
-        Category4,
-        Category5,
-        Category6,
-        Category7,
+        Technique,
+        Food,
+        Clothes,
+        Furniture,
+        Сhildish,
+        Medicine,
+        Jewelry,
+        Sport,
+        Resting,
     }
 }

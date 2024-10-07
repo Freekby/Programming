@@ -18,17 +18,24 @@
         /// <summary>
         /// true если данные введены в поля правильно, иначе - false
         /// </summary>
-        bool _isDataCorrect = true;
+        private bool _isDataCorrect = true;
+
+        public List<Customer> Customers
+        {
+            get { return _customers; }
+            set 
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Customers не должно быть null");
+                }
+                _customers = value;
+            }
+        }
 
         private void CostumersTab_Load(object sender, EventArgs e)
         {
-            _customers.Add(CustumersGenerator.GetNextCustomer());
-            _customers.Add(CustumersGenerator.GetNextCustomer());
-            _customers.Add(CustumersGenerator.GetNextCustomer());
-            _customers.Add(CustumersGenerator.GetNextCustomer());
-
             CustomersListBox.DataSource = _customers;
-            CustomersListBox.SelectedIndex = 0;
         }
 
         private void CustomersListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -53,6 +60,8 @@
 
         private void CustomersListBox_Click(object sender, EventArgs e)
         {
+            if (CustomersListBox.SelectedItem  == null) {return;}
+
             _isDataCorrect = true;
 
             CustomerNameTextBox.BackColor = Color.White;
@@ -81,7 +90,7 @@
 
         private void AddCostumerButton_Click(object sender, EventArgs e)
         {
-            Customer newCustomer = CustumersGenerator.GetNextCustomer();
+            Customer newCustomer = CustomersGenerator.GetNextCustomer();
             _customers.Add(newCustomer);
             CustomersListBox.DataSource = null;
             CustomersListBox.DataSource = _customers;

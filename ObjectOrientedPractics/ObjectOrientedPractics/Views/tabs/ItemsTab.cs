@@ -15,6 +15,19 @@
         /// </summary>
         bool _isDataCorrect = true;
 
+        public List<Item> Items
+        {
+            get { return _items; }
+            set 
+            {
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Items не должно быть null");
+                }
+                _items = value; 
+            }
+        }
+
         public ItemsTab()
         {
             InitializeComponent();
@@ -22,14 +35,7 @@
 
         private void ItemsTab_Load(object sender, EventArgs e)
         {
-            _items.Add(ItemGenerator.Generate());
-            _items.Add(ItemGenerator.Generate());
-            _items.Add(ItemGenerator.Generate());
-            _items.Add(ItemGenerator.Generate());
-
             ItemsListBox.DataSource = _items;
-            ItemsListBox.SelectedIndex = 0;
-
             ItemCategoryComboBox.DataSource = Enum.GetValues(typeof(Category));
         }
 
@@ -56,6 +62,8 @@
 
         private void ItemsListBox_Click(object sender, EventArgs e)
         {
+            if(ItemsListBox.SelectedItem == null) { return; }
+
             _isDataCorrect = true;
 
             ItemCostTextBox.BackColor = Color.White;
@@ -97,7 +105,7 @@
 
         private void AddItemButton_Click(object sender, EventArgs e)
         {
-            Item newItem = ItemGenerator.Generate();
+            Item newItem = ItemGenerator.GetNextItem();
             _items.Add(newItem);
             ItemsListBox.DataSource = null;
             ItemsListBox.DataSource = _items;

@@ -3,7 +3,7 @@
     /// <summary>
     /// класс, генерирующий покупателей
     /// </summary>
-    internal static class CustumersGenerator
+    internal static class CustomersGenerator
     {
         /// <summary>
         /// счётчик сгенерированных покупателей
@@ -16,7 +16,7 @@
         /// <returns> Customer </returns>
         public static Customer GetNextCustomer()
         {
-            Address newAddress = new Address(100000,"", "", "", "", "");
+            Address newAddress = new Address();
             Customer newCustomer = new Customer($"full name{_custumersGeneratedCount}", newAddress);
             _custumersGeneratedCount++;
             return newCustomer;

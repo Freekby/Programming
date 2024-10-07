@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            //Address address2 = new Address();
+            Address address1 = new Address();
             CustomersGroupBox = new GroupBox();
             RemoveCustumerButton = new Button();
             AddCustumerButton = new Button();
@@ -45,13 +45,13 @@
             // 
             // CustomersGroupBox
             // 
-            CustomersGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             CustomersGroupBox.Controls.Add(RemoveCustumerButton);
             CustomersGroupBox.Controls.Add(AddCustumerButton);
             CustomersGroupBox.Controls.Add(CustomersListBox);
+            CustomersGroupBox.Dock = DockStyle.Left;
             CustomersGroupBox.Location = new Point(0, 0);
             CustomersGroupBox.Name = "CustomersGroupBox";
-            CustomersGroupBox.Size = new Size(246, 304);
+            CustomersGroupBox.Size = new Size(255, 304);
             CustomersGroupBox.TabIndex = 1;
             CustomersGroupBox.TabStop = false;
             CustomersGroupBox.Text = "Customers";
@@ -85,35 +85,35 @@
             CustomersListBox.ItemHeight = 15;
             CustomersListBox.Location = new Point(6, 19);
             CustomersListBox.Name = "CustomersListBox";
-            CustomersListBox.Size = new Size(234, 199);
+            CustomersListBox.Size = new Size(243, 199);
             CustomersListBox.TabIndex = 0;
             CustomersListBox.Click += CustomersListBox_Click;
             CustomersListBox.SelectedIndexChanged += CustomersListBox_SelectedIndexChanged;
             // 
             // SelectedCustomerGroupBox
             // 
-            SelectedCustomerGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             SelectedCustomerGroupBox.Controls.Add(CustomerAdressControl);
             SelectedCustomerGroupBox.Controls.Add(CustomerNameTextBox);
             SelectedCustomerGroupBox.Controls.Add(CustomerIDTextBox);
             SelectedCustomerGroupBox.Controls.Add(label3);
             SelectedCustomerGroupBox.Controls.Add(label1);
-            SelectedCustomerGroupBox.Location = new Point(252, 0);
+            SelectedCustomerGroupBox.Dock = DockStyle.Right;
+            SelectedCustomerGroupBox.Location = new Point(255, 0);
             SelectedCustomerGroupBox.Name = "SelectedCustomerGroupBox";
-            SelectedCustomerGroupBox.Size = new Size(558, 304);
+            SelectedCustomerGroupBox.Size = new Size(560, 304);
             SelectedCustomerGroupBox.TabIndex = 2;
             SelectedCustomerGroupBox.TabStop = false;
             SelectedCustomerGroupBox.Text = "Selected customer";
             // 
             // CustomerAdressControl
             // 
-            //address2.Apartment = null;
-            //address2.Building = null;
-            //address2.City = null;
-            //address2.Country = null;
-            //address2.Index = 0;
-            //address2.Street = null;
-            //CustomerAdressControl.Address = address2;
+            address1.Apartment = "";
+            address1.Building = "";
+            address1.City = "";
+            address1.Country = "";
+            address1.Index = 100000;
+            address1.Street = "";
+            CustomerAdressControl.Address = address1;
             CustomerAdressControl.Location = new Point(6, 163);
             CustomerAdressControl.MinimumSize = new Size(550, 140);
             CustomerAdressControl.Name = "CustomerAdressControl";
@@ -126,7 +126,7 @@
             CustomerNameTextBox.Location = new Point(6, 71);
             CustomerNameTextBox.Multiline = true;
             CustomerNameTextBox.Name = "CustomerNameTextBox";
-            CustomerNameTextBox.Size = new Size(546, 86);
+            CustomerNameTextBox.Size = new Size(548, 86);
             CustomerNameTextBox.TabIndex = 6;
             // 
             // CustomerIDTextBox
@@ -161,9 +161,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(SelectedCustomerGroupBox);
             Controls.Add(CustomersGroupBox);
-            MinimumSize = new Size(570, 300);
+            MinimumSize = new Size(815, 300);
             Name = "CustomersTab";
-            Size = new Size(813, 304);
+            Size = new Size(815, 304);
             Load += CostumersTab_Load;
             CustomersGroupBox.ResumeLayout(false);
             SelectedCustomerGroupBox.ResumeLayout(false);

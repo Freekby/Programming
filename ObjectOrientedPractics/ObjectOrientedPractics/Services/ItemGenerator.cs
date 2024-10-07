@@ -14,9 +14,9 @@
         /// генерирует экземпляр класса Item и возвращает его
         /// </summary>
         /// <returns> Item </returns>
-        public static Item Generate()
+        public static Item GetNextItem()
         {
-            Item item = new Item($"name{_itemGeneratedCount}", $"info{_itemGeneratedCount}", _itemGeneratedCount, Category.Category1);
+            Item item = new Item($"name{_itemGeneratedCount}", $"info{_itemGeneratedCount}", _itemGeneratedCount, Category.Resting);
             _itemGeneratedCount++;
             return item;
         }

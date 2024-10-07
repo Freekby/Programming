@@ -3,14 +3,14 @@
     /// <summary>
     /// Хранит информацию о товаре.
     /// </summary>
-    internal class Item
+    public class Item
     {
         /// <summary>
         /// Индивидуальный идентификатор.
         /// </summary>
         private readonly int _id;
         /// <summary>
-        /// название товара.
+        /// Название товара.
         /// </summary>
         private string _name;
         /// <summary>
@@ -88,7 +88,11 @@
         /// </summary>
         public Item()
         {
-
+            _id = IdGenerator.GetNextId();
+            Name = "name";
+            Info = "info";
+            Cost = 0;
+            Category = Category.Clothes;
         }
 
         /// <summary>
