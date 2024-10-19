@@ -45,10 +45,10 @@
             // 
             // CustomersGroupBox
             // 
+            CustomersGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             CustomersGroupBox.Controls.Add(RemoveCustumerButton);
             CustomersGroupBox.Controls.Add(AddCustumerButton);
             CustomersGroupBox.Controls.Add(CustomersListBox);
-            CustomersGroupBox.Dock = DockStyle.Left;
             CustomersGroupBox.Location = new Point(0, 0);
             CustomersGroupBox.Name = "CustomersGroupBox";
             CustomersGroupBox.Size = new Size(255, 304);
@@ -92,12 +92,12 @@
             // 
             // SelectedCustomerGroupBox
             // 
+            SelectedCustomerGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             SelectedCustomerGroupBox.Controls.Add(CustomerAdressControl);
             SelectedCustomerGroupBox.Controls.Add(CustomerNameTextBox);
             SelectedCustomerGroupBox.Controls.Add(CustomerIDTextBox);
             SelectedCustomerGroupBox.Controls.Add(label3);
             SelectedCustomerGroupBox.Controls.Add(label1);
-            SelectedCustomerGroupBox.Dock = DockStyle.Right;
             SelectedCustomerGroupBox.Location = new Point(255, 0);
             SelectedCustomerGroupBox.Name = "SelectedCustomerGroupBox";
             SelectedCustomerGroupBox.Size = new Size(560, 304);

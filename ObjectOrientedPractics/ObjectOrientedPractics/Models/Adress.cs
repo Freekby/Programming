@@ -1,8 +1,4 @@
-﻿using System.Diagnostics.Metrics;
-using System.Windows.Forms;
-using System;
-
-namespace ObjectOrientedPractices
+﻿namespace ObjectOrientedPractices
 {
     public class Address
     {

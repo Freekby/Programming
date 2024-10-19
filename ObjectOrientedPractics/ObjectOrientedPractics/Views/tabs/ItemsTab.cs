@@ -9,7 +9,7 @@
         /// <summary>
         /// текущий выбранный товар
         /// </summary>
-        private Item _currentItem;
+        private ItemItem _currentItem;
         /// <summary>
         /// true если данные введены корректно, иначе - false 
         /// </summary>
@@ -80,6 +80,7 @@
                 ItemCostTextBox.BackColor = Color.LightPink;
                 _isDataCorrect = false;
             }
+
             try
             {
                 string name = ItemNameTextBox.Text;
@@ -90,6 +91,7 @@
                 ItemNameTextBox.BackColor = Color.LightPink;
                 _isDataCorrect = false;
             }
+
             try
             {
                 string info = ItemDescriptionTextBox.Text;
