@@ -9,11 +9,11 @@
         /// <summary>
         /// текущий выбранный товар
         /// </summary>
-        private ItemItem _currentItem;
+        private Item _currentItem;
         /// <summary>
         /// true если данные введены корректно, иначе - false 
         /// </summary>
-        bool _isDataCorrect = true;
+        private bool _isDataCorrect = true;
 
         public List<Item> Items
         {

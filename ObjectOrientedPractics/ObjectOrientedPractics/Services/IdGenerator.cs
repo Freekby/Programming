@@ -3,7 +3,7 @@
     /// <summary>
     /// класс для генерации id
     /// </summary>
-    internal static class IdGenerator
+    public static class IdGenerator
     {
         /// <summary>
         /// уникальный идентификатор
