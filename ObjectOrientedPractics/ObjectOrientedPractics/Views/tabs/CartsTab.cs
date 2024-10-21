@@ -81,6 +81,7 @@
 
         private void CreateOrderButton_Click(object sender, EventArgs e)
         {
+            if (CartListBox.Items.Count == 0) { return; }
             Order newOrder = new Order(_currentCustomer.Address, _currentCustomer.Cart.Items, _currentCustomer.Cart.Amount);
             _currentCustomer.Orders.Add(newOrder);
 
