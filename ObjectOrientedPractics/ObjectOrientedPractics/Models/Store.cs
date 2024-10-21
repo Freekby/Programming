@@ -47,6 +47,9 @@
             }
         }
 
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="Store"/>.
+        /// </summary>
         public Store()
         {
             _items = new List<Item>();

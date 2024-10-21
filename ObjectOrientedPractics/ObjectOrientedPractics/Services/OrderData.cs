@@ -1,4 +1,6 @@
-﻿namespace ObjectOrientedPractices
+﻿using System.ComponentModel;
+
+namespace ObjectOrientedPractices
 {
     /// <summary>
     /// Хранит данные о заказе для заполнения таблицы
@@ -38,6 +40,7 @@
         /// <summary>
         /// Заказ с товаром
         /// </summary>
+        [Browsable(false)]
         public Order Order { get; set; }
     }
 }

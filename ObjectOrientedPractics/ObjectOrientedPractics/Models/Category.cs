@@ -1,5 +1,8 @@
 ﻿namespace ObjectOrientedPractices
 {
+    /// <summary>
+    /// Коллекция категорий товара.
+    /// </summary>
     public enum Category
     {
         Technique,

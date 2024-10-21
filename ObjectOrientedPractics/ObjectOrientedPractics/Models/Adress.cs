@@ -1,5 +1,10 @@
-﻿namespace ObjectOrientedPractices
+﻿using System.Diagnostics.Metrics;
+
+namespace ObjectOrientedPractices
 {
+    /// <summary>
+    /// Хранит данные о адресе покупателя.
+    /// </summary>
     public class Address
     {
         /// <summary>
@@ -143,6 +148,11 @@
             Street = street;
             Building = building;
             Apartment = apartment;
+        }
+
+        public override string ToString()
+        {
+            return $"{Index} {Country} {City} {Street} {Building} {Apartment}";
         }
     }
 }

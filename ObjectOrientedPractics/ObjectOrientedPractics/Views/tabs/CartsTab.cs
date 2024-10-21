@@ -2,16 +2,31 @@
 {
     public partial class CartsTab : UserControl
     {
+        /// <summary>
+        /// Список всех товаров.
+        /// </summary>
         private List<Item> _items;
+        /// <summary>
+        /// Список  всех покупателей.
+        /// </summary>
         private List<Customer> _customers;
+        /// <summary>
+        /// Выбранный покупатель.
+        /// </summary>
         private Customer _currentCustomer;
 
+        /// <summary>
+        /// Возвращает и задаёт список всех товаров.
+        /// </summary>
         public List<Item> Items
         {
             get { return _items; }
             set { _items = value; }
         }
 
+        /// <summary>
+        /// Возвращает и задаёт список всех покупателей
+        /// </summary>
         public List<Customer> Customers
         {
             get { return _customers; }
@@ -73,6 +88,9 @@
             UpdateCartData();
         }
 
+        /// <summary>
+        /// Обновляет данные о товарах в корзине.
+        /// </summary>
         private void UpdateCartData()
         {
             AmountLabel.Text = _currentCustomer.Cart.Amount.ToString();
@@ -81,6 +99,9 @@
             CartListBox.DataSource = _currentCustomer.Cart.Items;
         }
 
+        /// <summary>
+        /// Обновляет данные о товарах и покупателях
+        /// </summary>
         public void RefreshData()
         {
             CustomerComboBox.DataSource = null;

@@ -75,6 +75,7 @@
             // CustomerComboBox
             // 
             CustomerComboBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            CustomerComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             CustomerComboBox.FormattingEnabled = true;
             CustomerComboBox.Location = new Point(352, 20);
             CustomerComboBox.Margin = new Padding(4, 3, 4, 3);

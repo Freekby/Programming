@@ -53,8 +53,7 @@
             // 
             OrdersDataGridView.AllowUserToAddRows = false;
             OrdersDataGridView.AllowUserToDeleteRows = false;
-            OrdersDataGridView.AllowUserToResizeColumns = false;
-            OrdersDataGridView.AllowUserToResizeRows = false;
+            OrdersDataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             OrdersDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             OrdersDataGridView.Location = new Point(4, 31);
             OrdersDataGridView.Margin = new Padding(4, 3, 4, 3);
@@ -78,6 +77,7 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label2.Location = new Point(411, 13);
@@ -89,6 +89,7 @@
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Location = new Point(411, 45);
             label3.Margin = new Padding(4, 0, 4, 0);
@@ -99,31 +100,39 @@
             // 
             // IdTextBox
             // 
+            IdTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             IdTextBox.Location = new Point(479, 42);
             IdTextBox.Margin = new Padding(4, 3, 4, 3);
             IdTextBox.Name = "IdTextBox";
+            IdTextBox.ReadOnly = true;
             IdTextBox.Size = new Size(140, 23);
             IdTextBox.TabIndex = 5;
             // 
             // DateTextBox
             // 
+            DateTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             DateTextBox.Location = new Point(479, 72);
             DateTextBox.Margin = new Padding(4, 3, 4, 3);
             DateTextBox.Name = "DateTextBox";
+            DateTextBox.ReadOnly = true;
             DateTextBox.Size = new Size(140, 23);
             DateTextBox.TabIndex = 6;
             // 
             // StatusComboBox
             // 
+            StatusComboBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            StatusComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             StatusComboBox.FormattingEnabled = true;
             StatusComboBox.Location = new Point(479, 102);
             StatusComboBox.Margin = new Padding(4, 3, 4, 3);
             StatusComboBox.Name = "StatusComboBox";
             StatusComboBox.Size = new Size(140, 23);
             StatusComboBox.TabIndex = 7;
+            StatusComboBox.SelectedIndexChanged += StatusComboBox_SelectedIndexChanged;
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label4.AutoSize = true;
             label4.Location = new Point(411, 105);
             label4.Margin = new Padding(4, 0, 4, 0);
@@ -134,6 +143,7 @@
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label5.AutoSize = true;
             label5.Location = new Point(411, 75);
             label5.Margin = new Padding(4, 0, 4, 0);
@@ -144,6 +154,7 @@
             // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label6.Location = new Point(411, 300);
@@ -155,7 +166,7 @@
             // 
             // OrderItemsListBox
             // 
-            OrderItemsListBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            OrderItemsListBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             OrderItemsListBox.FormattingEnabled = true;
             OrderItemsListBox.ItemHeight = 15;
             OrderItemsListBox.Location = new Point(414, 318);
@@ -166,6 +177,7 @@
             // 
             // label7
             // 
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label7.AutoSize = true;
             label7.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label7.Location = new Point(411, 460);
@@ -184,6 +196,8 @@
             address1.Index = 100000;
             address1.Street = "";
             addressControl1.Address = address1;
+            addressControl1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            addressControl1.Enabled = false;
             addressControl1.Location = new Point(414, 133);
             addressControl1.Margin = new Padding(4, 3, 4, 3);
             addressControl1.MinimumSize = new Size(642, 162);
@@ -193,6 +207,7 @@
             // 
             // AmountLabel
             // 
+            AmountLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             AmountLabel.AutoSize = true;
             AmountLabel.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             AmountLabel.Location = new Point(411, 473);

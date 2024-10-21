@@ -2,15 +2,24 @@
 {
     public partial class OrdersTab : UserControl
     {
+        /// <summary>
+        /// Список покупателей.
+        /// </summary>
         private List<Customer> _customers;
 
+        /// <summary>
+        /// Список заказов.
+        /// </summary>
         private List<OrderData> _orderDatas = new List<OrderData>();
 
+        /// <summary>
+        /// Возвращает и задаёт список всех покупателей.
+        /// </summary>
         public List<Customer> Customers
         {
             get { return _customers; }
-            set 
-            { 
+            set
+            {
                 _customers = value;
             }
         }
@@ -23,6 +32,7 @@
         private void OrdersTab_Load(object sender, EventArgs e)
         {
             UpdateOrders();
+            StatusComboBox.DataSource = Enum.GetValues(typeof(OrderStatus));
         }
 
         private void OrdersDataGridView_SelectionChanged(object sender, EventArgs e)
@@ -55,7 +65,7 @@
             _orderDatas.Clear();
             foreach (var customer in Customers)
             {
-                if(customer.Orders.Count == 0) { continue; }
+                if (customer.Orders.Count == 0) { continue; }
                 foreach (var order in customer.Orders)
                 {
                     OrderData orderData = new OrderData();
@@ -72,6 +82,14 @@
                 }
             }
             OrdersDataGridView.DataSource = OrderDataBindingSource;
+        }
+
+        private void StatusComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (OrdersDataGridView.CurrentRow == null){ return; }
+            OrderData order = _orderDatas[OrdersDataGridView.CurrentRow.Index];
+            order.Order.Status = (OrderStatus)StatusComboBox.SelectedItem;
+            order.Status = StatusComboBox.SelectedItem.ToString();
         }
     }
 }

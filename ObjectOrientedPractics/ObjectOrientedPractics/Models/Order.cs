@@ -1,5 +1,8 @@
 ﻿namespace ObjectOrientedPractices
 {
+    /// <summary>
+    /// Хранит данные о заказе покупателя.
+    /// </summary>
     public class Order
     {
         /// <summary>

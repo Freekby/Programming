@@ -74,6 +74,9 @@
             }
         }
 
+        /// <summary>
+        /// Очищает корзину.
+        /// </summary>
         public void Clear() 
         { 
             _items = new List<Item>();

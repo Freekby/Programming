@@ -1,5 +1,8 @@
 ﻿namespace ObjectOrientedPractices
 {
+    /// <summary>
+    /// Коллекция возможных статусов заказа.
+    /// </summary>
     public enum OrderStatus
     {
         New,
