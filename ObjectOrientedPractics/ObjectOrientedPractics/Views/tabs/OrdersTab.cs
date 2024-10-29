@@ -1,4 +1,6 @@
-﻿namespace ObjectOrientedPractices.Views.tabs
+﻿using System.Data;
+
+namespace ObjectOrientedPractices.Views.tabs
 {
     public partial class OrdersTab : UserControl
     {
@@ -10,7 +12,7 @@
         /// <summary>
         /// Список заказов.
         /// </summary>
-        private List<OrderData> _orderDatas = new List<OrderData>();
+        private List<Order> _orders = [];
 
         /// <summary>
         /// Возвращает и задаёт список всех покупателей.
@@ -48,48 +50,51 @@
             }
             else
             {
-                OrderData order = _orderDatas[OrdersDataGridView.CurrentRow.Index];
-                IdTextBox.Text = order.Id;
-                DateTextBox.Text = order.Date;
-                StatusComboBox.Text = order.Status;
+                Order order = _orders[OrdersDataGridView.CurrentRow.Index];
+                IdTextBox.Text = order.Id.ToString();
+                DateTextBox.Text = order.Date.ToString();
+                StatusComboBox.Text = order.Status.ToString();
                 addressControl1.Address = order.Address;
-                OrderItemsListBox.DataSource = order.Order.Items;
-                AmountLabel.Text = order.Amount;
+                OrderItemsListBox.DataSource = order.Items;
+                AmountLabel.Text = order.Cost.ToString();
             }
         }
 
         public void UpdateOrders()
         {
-            OrderDataBindingSource.Clear();
-            OrdersDataGridView.DataSource = null;
-            _orderDatas.Clear();
-            foreach (var customer in Customers)
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("ID", typeof(int));
+            dataTable.Columns.Add("Address", typeof(string));
+            dataTable.Columns.Add("Status", typeof(OrderStatus));
+            dataTable.Columns.Add("Date", typeof(DateTime));
+            dataTable.Columns.Add("Amount", typeof(double));
+            dataTable.Columns.Add("CustomerName", typeof(string));
+
+            foreach (var customer in _customers)
             {
-                if (customer.Orders.Count == 0) { continue; }
                 foreach (var order in customer.Orders)
                 {
-                    OrderData orderData = new OrderData();
-                    orderData.Id = order.Id.ToString();
-                    orderData.Address = order.Address;
-                    orderData.Status = order.Status.ToString();
-                    orderData.Date = order.Date.ToString();
-                    orderData.Amount = $"{order.Cost}";
-                    orderData.FullName = customer.FullName;
-                    orderData.Order = order;
+                    _orders.Add(order);
 
-                    _orderDatas.Add(orderData);
-                    OrderDataBindingSource.Add(orderData);
+                    var row = dataTable.NewRow();
+                    row["ID"] = order.Id;
+                    row["Address"] = customer.Address.ToString();
+                    row["Status"] = order.Status;
+                    row["Date"] = order.Date;
+                    row["Amount"] = order.Cost;
+                    row["CustomerName"] = customer.FullName;
+                    dataTable.Rows.Add(row);
                 }
             }
-            OrdersDataGridView.DataSource = OrderDataBindingSource;
+
+            OrdersDataGridView.DataSource = dataTable;
         }
 
         private void StatusComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (OrdersDataGridView.CurrentRow == null){ return; }
-            OrderData order = _orderDatas[OrdersDataGridView.CurrentRow.Index];
-            order.Order.Status = (OrderStatus)StatusComboBox.SelectedItem;
-            order.Status = StatusComboBox.SelectedItem.ToString();
+            Order order = _orders[OrdersDataGridView.CurrentRow.Index];
+            order.Status = (OrderStatus)StatusComboBox.SelectedItem;
         }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             Address address1 = new Address();
             OrdersDataGridView = new DataGridView();
             label1 = new Label();
@@ -44,9 +43,7 @@
             label7 = new Label();
             addressControl1 = new Controls.AddressControl();
             AmountLabel = new Label();
-            OrderDataBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)OrdersDataGridView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)OrderDataBindingSource).BeginInit();
             SuspendLayout();
             // 
             // OrdersDataGridView
@@ -240,7 +237,6 @@
             Size = new Size(1063, 553);
             Load += OrdersTab_Load;
             ((System.ComponentModel.ISupportInitialize)OrdersDataGridView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)OrderDataBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -267,6 +263,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private Label AmountLabel;
-        private BindingSource OrderDataBindingSource;
     }
 }
