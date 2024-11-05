@@ -34,6 +34,11 @@
         public int ID { get { return _id; } }
 
         /// <summary>
+        /// определяет, является ли покупаель приоритетным
+        /// </summary>
+        public bool IsPriority { get; set; }
+
+        /// <summary>
         /// Возвращает и задаёт список заказов покупателя.
         /// </summary>
         public List<Order> Orders 

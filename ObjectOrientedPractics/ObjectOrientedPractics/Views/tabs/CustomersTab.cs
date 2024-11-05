@@ -23,7 +23,7 @@
         public List<Customer> Customers
         {
             get { return _customers; }
-            set 
+            set
             {
                 if (value == null)
                 {
@@ -52,6 +52,7 @@
             CustomerIDTextBox.Text = _currentCustomer.ID.ToString();
             CustomerNameTextBox.Text = _currentCustomer.FullName;
             CustomerAdressControl.Address = _currentCustomer.Address;
+            PriorityCheckBox.Checked = _currentCustomer.IsPriority;
 
 
             CustomersListBox.DataSource = null;
@@ -60,7 +61,7 @@
 
         private void CustomersListBox_Click(object sender, EventArgs e)
         {
-            if (CustomersListBox.SelectedItem  == null) {return;}
+            if (CustomersListBox.SelectedItem == null) { return; }
 
             _isDataCorrect = true;
 
@@ -74,7 +75,6 @@
             {
                 _isDataCorrect = false;
             }
-
 
             try
             {
@@ -103,5 +103,9 @@
             CustomersListBox.DataSource = _customers;
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            _currentCustomer.IsPriority = PriorityCheckBox.Checked;
+        }
     }
 }

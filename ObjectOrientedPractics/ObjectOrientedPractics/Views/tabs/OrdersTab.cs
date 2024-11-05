@@ -33,8 +33,8 @@ namespace ObjectOrientedPractices.Views.tabs
 
         private void OrdersTab_Load(object sender, EventArgs e)
         {
-            UpdateOrders();
             StatusComboBox.DataSource = Enum.GetValues(typeof(OrderStatus));
+            DeliveryTimeComboBox.DataSource = PriorityOrder.RangesList;
         }
 
         private void OrdersDataGridView_SelectionChanged(object sender, EventArgs e)
@@ -51,6 +51,15 @@ namespace ObjectOrientedPractices.Views.tabs
             else
             {
                 Order order = _orders[OrdersDataGridView.CurrentRow.Index];
+                if (order is PriorityOrder priorityOrder)
+                {
+                    PriorityOptionsGroupBox.Visible = true;
+                    DeliveryTimeComboBox.SelectedItem = priorityOrder.DeliveryTime;
+                }
+                else
+                { 
+                    PriorityOptionsGroupBox.Visible = false;
+                }
                 IdTextBox.Text = order.Id.ToString();
                 DateTextBox.Text = order.Date.ToString();
                 StatusComboBox.Text = order.Status.ToString();
@@ -62,6 +71,7 @@ namespace ObjectOrientedPractices.Views.tabs
 
         public void UpdateOrders()
         {
+            _orders.Clear();
             DataTable dataTable = new DataTable();
             dataTable.Columns.Add("ID", typeof(int));
             dataTable.Columns.Add("Address", typeof(string));
@@ -92,9 +102,20 @@ namespace ObjectOrientedPractices.Views.tabs
 
         private void StatusComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (OrdersDataGridView.CurrentRow == null){ return; }
+            if (OrdersDataGridView.CurrentRow == null) { return; }
             Order order = _orders[OrdersDataGridView.CurrentRow.Index];
             order.Status = (OrderStatus)StatusComboBox.SelectedItem;
+            UpdateOrders();
+        }
+
+        private void DeliveryTimeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (OrdersDataGridView.CurrentRow == null) { return; }
+
+            if(_orders[OrdersDataGridView.CurrentRow.Index] is PriorityOrder priority)
+            {
+                priority.DeliveryTime = (string)DeliveryTimeComboBox.SelectedItem;
+            }
         }
     }
 }

@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Address address1 = new Address();
+            Address address2 = new Address();
             CustomersGroupBox = new GroupBox();
             RemoveCustumerButton = new Button();
             AddCustumerButton = new Button();
             CustomersListBox = new ListBox();
             SelectedCustomerGroupBox = new GroupBox();
+            PriorityCheckBox = new CheckBox();
             CustomerAdressControl = new Controls.AddressControl();
             CustomerNameTextBox = new TextBox();
             CustomerIDTextBox = new TextBox();
@@ -93,6 +94,7 @@
             // SelectedCustomerGroupBox
             // 
             SelectedCustomerGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            SelectedCustomerGroupBox.Controls.Add(PriorityCheckBox);
             SelectedCustomerGroupBox.Controls.Add(CustomerAdressControl);
             SelectedCustomerGroupBox.Controls.Add(CustomerNameTextBox);
             SelectedCustomerGroupBox.Controls.Add(CustomerIDTextBox);
@@ -105,15 +107,26 @@
             SelectedCustomerGroupBox.TabStop = false;
             SelectedCustomerGroupBox.Text = "Selected customer";
             // 
+            // PriorityCheckBox
+            // 
+            PriorityCheckBox.AutoSize = true;
+            PriorityCheckBox.Location = new Point(156, 22);
+            PriorityCheckBox.Name = "PriorityCheckBox";
+            PriorityCheckBox.Size = new Size(75, 19);
+            PriorityCheckBox.TabIndex = 7;
+            PriorityCheckBox.Text = "Is priority";
+            PriorityCheckBox.UseVisualStyleBackColor = true;
+            PriorityCheckBox.CheckedChanged += checkBox1_CheckedChanged;
+            // 
             // CustomerAdressControl
             // 
-            address1.Apartment = "";
-            address1.Building = "";
-            address1.City = "";
-            address1.Country = "";
-            address1.Index = 100000;
-            address1.Street = "";
-            CustomerAdressControl.Address = address1;
+            address2.Apartment = "";
+            address2.Building = "";
+            address2.City = "";
+            address2.Country = "";
+            address2.Index = 100000;
+            address2.Street = "";
+            CustomerAdressControl.Address = address2;
             CustomerAdressControl.Location = new Point(6, 163);
             CustomerAdressControl.MinimumSize = new Size(550, 140);
             CustomerAdressControl.Name = "CustomerAdressControl";
@@ -183,5 +196,6 @@
         private Label label3;
         private Label label1;
         private Controls.AddressControl CustomerAdressControl;
+        private CheckBox PriorityCheckBox;
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Address address1 = new Address();
+            Address address2 = new Address();
             OrdersDataGridView = new DataGridView();
             label1 = new Label();
             label2 = new Label();
@@ -43,7 +43,11 @@
             label7 = new Label();
             addressControl1 = new Controls.AddressControl();
             AmountLabel = new Label();
+            PriorityOptionsGroupBox = new GroupBox();
+            label8 = new Label();
+            DeliveryTimeComboBox = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)OrdersDataGridView).BeginInit();
+            PriorityOptionsGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // OrdersDataGridView
@@ -186,13 +190,13 @@
             // 
             // addressControl1
             // 
-            address1.Apartment = "";
-            address1.Building = "";
-            address1.City = "";
-            address1.Country = "";
-            address1.Index = 100000;
-            address1.Street = "";
-            addressControl1.Address = address1;
+            address2.Apartment = "";
+            address2.Building = "";
+            address2.City = "";
+            address2.Country = "";
+            address2.Index = 100000;
+            address2.Street = "";
+            addressControl1.Address = address2;
             addressControl1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             addressControl1.Enabled = false;
             addressControl1.Location = new Point(414, 133);
@@ -214,10 +218,42 @@
             AmountLabel.TabIndex = 26;
             AmountLabel.Text = "0.0";
             // 
+            // PriorityOptionsGroupBox
+            // 
+            PriorityOptionsGroupBox.Controls.Add(label8);
+            PriorityOptionsGroupBox.Controls.Add(DeliveryTimeComboBox);
+            PriorityOptionsGroupBox.Location = new Point(626, 13);
+            PriorityOptionsGroupBox.Name = "PriorityOptionsGroupBox";
+            PriorityOptionsGroupBox.Size = new Size(238, 66);
+            PriorityOptionsGroupBox.TabIndex = 27;
+            PriorityOptionsGroupBox.TabStop = false;
+            PriorityOptionsGroupBox.Text = "Priority options";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(154, 25);
+            label8.Name = "label8";
+            label8.Size = new Size(76, 15);
+            label8.TabIndex = 9;
+            label8.Text = "Delivery time";
+            // 
+            // DeliveryTimeComboBox
+            // 
+            DeliveryTimeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            DeliveryTimeComboBox.FormattingEnabled = true;
+            DeliveryTimeComboBox.Location = new Point(10, 22);
+            DeliveryTimeComboBox.Margin = new Padding(4, 3, 4, 3);
+            DeliveryTimeComboBox.Name = "DeliveryTimeComboBox";
+            DeliveryTimeComboBox.Size = new Size(140, 23);
+            DeliveryTimeComboBox.TabIndex = 8;
+            DeliveryTimeComboBox.SelectedIndexChanged += DeliveryTimeComboBox_SelectedIndexChanged;
+            // 
             // OrdersTab
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(PriorityOptionsGroupBox);
             Controls.Add(AmountLabel);
             Controls.Add(OrderItemsListBox);
             Controls.Add(label7);
@@ -237,6 +273,8 @@
             Size = new Size(1063, 553);
             Load += OrdersTab_Load;
             ((System.ComponentModel.ISupportInitialize)OrdersDataGridView).EndInit();
+            PriorityOptionsGroupBox.ResumeLayout(false);
+            PriorityOptionsGroupBox.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -263,5 +301,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private Label AmountLabel;
+        private GroupBox PriorityOptionsGroupBox;
+        private Label label8;
+        private ComboBox DeliveryTimeComboBox;
     }
 }

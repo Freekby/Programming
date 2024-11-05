@@ -73,12 +73,33 @@
         }
 
         /// <summary>
-        /// Возвращает и задаёт цену заказа.
+        /// Возвращает цену заказа.
         /// </summary>
         public double Cost
         {
-            get { return _cost; }
-            set { _cost = value; }
+            get
+            { 
+                _cost = 0;
+                foreach (Item item in _items)
+                {
+                    _cost += item.Cost;
+                }
+                return _cost; 
+            }
+            private set { _cost = value; }
+        }
+
+        /// <summary>
+        /// Создаёт экземпляр класса <see cref="Order"/>.
+        /// </summary>
+        public Order()
+        {
+            _id = IdGenerator.GetNextId();
+            _date = DateTime.Now;
+            Address = new Address();
+            Items = new List<Item>();
+            Cost = 0;
+            Status = OrderStatus.New;
         }
 
         /// <summary>
