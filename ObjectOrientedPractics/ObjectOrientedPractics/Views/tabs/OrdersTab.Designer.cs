@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Address address2 = new Address();
+            Address address1 = new Address();
             OrdersDataGridView = new DataGridView();
             label1 = new Label();
             label2 = new Label();
@@ -190,13 +190,13 @@
             // 
             // addressControl1
             // 
-            address2.Apartment = "";
-            address2.Building = "";
-            address2.City = "";
-            address2.Country = "";
-            address2.Index = 100000;
-            address2.Street = "";
-            addressControl1.Address = address2;
+            address1.Apartment = "";
+            address1.Building = "";
+            address1.City = "";
+            address1.Country = "";
+            address1.Index = 100000;
+            address1.Street = "";
+            addressControl1.Address = address1;
             addressControl1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             addressControl1.Enabled = false;
             addressControl1.Location = new Point(414, 133);
@@ -228,6 +228,7 @@
             PriorityOptionsGroupBox.TabIndex = 27;
             PriorityOptionsGroupBox.TabStop = false;
             PriorityOptionsGroupBox.Text = "Priority options";
+            PriorityOptionsGroupBox.Visible = false;
             // 
             // label8
             // 

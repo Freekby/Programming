@@ -105,7 +105,7 @@ namespace ObjectOrientedPractices.Views.tabs
             if (OrdersDataGridView.CurrentRow == null) { return; }
             Order order = _orders[OrdersDataGridView.CurrentRow.Index];
             order.Status = (OrderStatus)StatusComboBox.SelectedItem;
-            UpdateOrders();
+            OrdersDataGridView.CurrentRow.Cells[2].Value = order.Status;
         }
 
         private void DeliveryTimeComboBox_SelectedIndexChanged(object sender, EventArgs e)
