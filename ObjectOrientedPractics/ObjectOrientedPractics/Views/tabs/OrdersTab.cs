@@ -1,4 +1,6 @@
 ﻿using System.Data;
+using ObjectOrientedPractices.Models;
+using ObjectOrientedPractices.Models.Orders;
 
 namespace ObjectOrientedPractices.Views.tabs
 {
@@ -65,7 +67,7 @@ namespace ObjectOrientedPractices.Views.tabs
                 StatusComboBox.Text = order.Status.ToString();
                 addressControl1.Address = order.Address;
                 OrderItemsListBox.DataSource = order.Items;
-                AmountLabel.Text = order.Cost.ToString();
+                AmountLabel.Text = order.Total.ToString();
             }
         }
 

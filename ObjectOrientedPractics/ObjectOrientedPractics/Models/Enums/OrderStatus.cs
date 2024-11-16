@@ -1,4 +1,4 @@
-﻿namespace ObjectOrientedPractices
+﻿namespace ObjectOrientedPractices.Models
 {
     /// <summary>
     /// Коллекция возможных статусов заказа.

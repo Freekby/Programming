@@ -1,4 +1,4 @@
-﻿namespace ObjectOrientedPractices
+﻿namespace ObjectOrientedPractices.Models.Enums
 {
     /// <summary>
     /// Хранит информацию о товаре.
@@ -38,11 +38,11 @@
         public string Name
         {
             get { return _name; }
-            set 
+            set
             {
                 ValueValidator.CheckStringOnNullOrEmpty(value, nameof(Name));
-                ValueValidator.AssertStringOnLength(value, 200, nameof(Name)); 
-                
+                ValueValidator.AssertStringOnLength(value, 200, nameof(Name));
+
                 _name = value;
             }
         }
@@ -68,18 +68,18 @@
         public float Cost
         {
             get { return _cost; }
-            set 
+            set
             {
-                if (value > 100000) 
+                if (value > 100000)
                 {
                     throw new ArgumentOutOfRangeException("cost should be <= 100000");
                 }
-                 if (_cost < 0)
+                if (_cost < 0)
                 {
                     throw new ArgumentOutOfRangeException("cost should be >= 0");
                 }
 
-                 _cost = value;
+                _cost = value;
             }
         }
 
@@ -89,7 +89,7 @@
         public Item()
         {
             _id = IdGenerator.GetNextId();
-            Name = "name";
+            Name = $"name{_id}";
             Info = "info";
             Cost = 0;
             Category = Category.Clothes;

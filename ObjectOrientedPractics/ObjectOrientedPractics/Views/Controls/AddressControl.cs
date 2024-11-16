@@ -1,4 +1,6 @@
-﻿namespace ObjectOrientedPractices.Views.Controls
+﻿using ObjectOrientedPractices.Models;
+
+namespace ObjectOrientedPractices.Views.Controls
 {
     public partial class AddressControl : UserControl
     {

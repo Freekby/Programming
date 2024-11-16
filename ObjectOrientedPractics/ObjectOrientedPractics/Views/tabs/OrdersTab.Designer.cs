@@ -1,4 +1,6 @@
-﻿namespace ObjectOrientedPractices.Views.tabs
+﻿using ObjectOrientedPractices.Models;
+
+namespace ObjectOrientedPractices.Views.tabs
 {
     partial class OrdersTab
     {

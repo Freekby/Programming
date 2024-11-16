@@ -1,4 +1,6 @@
-﻿namespace ObjectOrientedPractices
+﻿using ObjectOrientedPractices.Models.Enums;
+
+namespace ObjectOrientedPractices.Models.Orders
 {
     /// <summary>
     /// Хранит данные о заказе покупателя.
@@ -36,6 +38,22 @@
         private OrderStatus _status;
 
         /// <summary>
+        /// Задаёт и возвраает сумму скидки.
+        /// </summary>
+        public double DiscountAmount { get; set; }
+
+        /// <summary>
+        /// возвращает и задаёт конечную стоимость заказа.
+        /// </summary>
+        public double Total 
+        {
+            get
+            {
+                return Cost - DiscountAmount;
+            }
+        }
+
+        /// <summary>
         /// Возвращает и задаёт статус заказа.
         /// </summary>
         public OrderStatus Status
@@ -57,17 +75,17 @@
         /// <summary>
         /// Возвращает и задаёт адрес доставки заказа.
         /// </summary>
-        public Address Address 
-        { 
-            get { return _address; } 
+        public Address Address
+        {
+            get { return _address; }
             set { _address = value; }
         }
 
         /// <summary>
         /// Возвращает и задаёт список товаров в заказе.
         /// </summary>
-        public List<Item> Items 
-        {  
+        public List<Item> Items
+        {
             get { return _items; }
             set { _items = value; }
         }
@@ -78,15 +96,14 @@
         public double Cost
         {
             get
-            { 
+            {
                 _cost = 0;
                 foreach (Item item in _items)
                 {
                     _cost += item.Cost;
                 }
-                return _cost; 
+                return _cost;
             }
-            private set { _cost = value; }
         }
 
         /// <summary>
@@ -98,7 +115,6 @@
             _date = DateTime.Now;
             Address = new Address();
             Items = new List<Item>();
-            Cost = 0;
             Status = OrderStatus.New;
         }
 
@@ -108,13 +124,13 @@
         /// <param name="address"></param>
         /// <param name="items"></param>
         /// <param name="cost"></param>
-        public Order(Address address, List<Item> items, double cost)
+        public Order(Address address, List<Item> items, double discountAmount)
         {
             _id = IdGenerator.GetNextId();
             _date = DateTime.Now;
             Address = address;
             Items = items;
-            Cost = cost;
+            DiscountAmount = discountAmount;
             Status = OrderStatus.New;
         }
     }

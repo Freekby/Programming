@@ -1,4 +1,4 @@
-﻿namespace ObjectOrientedPractices
+﻿namespace ObjectOrientedPractices.Models.Enums
 {
     /// <summary>
     /// Коллекция категорий товара.

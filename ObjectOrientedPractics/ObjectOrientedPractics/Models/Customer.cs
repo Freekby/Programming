@@ -1,4 +1,7 @@
-﻿namespace ObjectOrientedPractices
+﻿using ObjectOrientedPractices.Models.Discounts;
+using ObjectOrientedPractices.Models.Orders;
+
+namespace ObjectOrientedPractices.Models
 {
     /// <summary>
     /// Хранит данные о покупателе.
@@ -29,6 +32,11 @@
         private List<Order> _orders;
 
         /// <summary>
+        /// Хранит все скидки, имеющиеся у покупателя
+        /// </summary>
+        public List<IDiscount> Discounts { get; private set; }
+
+        /// <summary>
         /// Возвращает значение поля id.
         /// </summary>
         public int ID { get { return _id; } }
@@ -41,18 +49,18 @@
         /// <summary>
         /// Возвращает и задаёт список заказов покупателя.
         /// </summary>
-        public List<Order> Orders 
-        { 
-            get { return _orders; } 
+        public List<Order> Orders
+        {
+            get { return _orders; }
             set { _orders = value; }
         }
 
         /// <summary>
         /// Возвращает значение корзины покупателя.
         /// </summary>
-        public Cart Cart 
-        { 
-            get { return _cart; } 
+        public Cart Cart
+        {
+            get { return _cart; }
             private set { _cart = value; }
         }
 
@@ -89,10 +97,11 @@
         public Customer()
         {
             _id = IdGenerator.GetNextId();
-            FullName = "fullName";
+            FullName = $"fullName{_id}";
             Address = new Address();
             Cart = new Cart();
             Orders = new List<Order>();
+            Discounts = new List<IDiscount> { new PointsDiscount() };
         }
 
         /// <summary>
@@ -107,6 +116,7 @@
             Address = address;
             Cart = new Cart();
             Orders = new List<Order>();
+            Discounts = new List<IDiscount> { new PointsDiscount() };
         }
 
         /// <summary>

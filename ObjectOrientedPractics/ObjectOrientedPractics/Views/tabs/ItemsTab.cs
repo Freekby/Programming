@@ -1,4 +1,6 @@
-﻿namespace ObjectOrientedPractices.Views.tabs
+﻿using ObjectOrientedPractices.Models.Enums;
+
+namespace ObjectOrientedPractices.Views.tabs
 {
     public partial class ItemsTab : UserControl
     {

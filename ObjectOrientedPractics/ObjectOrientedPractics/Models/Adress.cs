@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.Metrics;
-
-namespace ObjectOrientedPractices
+﻿namespace ObjectOrientedPractices.Models
 {
     /// <summary>
     /// Хранит данные о адресе покупателя.

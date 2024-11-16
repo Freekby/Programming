@@ -1,4 +1,6 @@
-﻿namespace ObjectOrientedPractices
+﻿using ObjectOrientedPractices.Models;
+
+namespace ObjectOrientedPractices
 {
     /// <summary>
     /// класс, генерирующий покупателей
@@ -6,19 +8,12 @@
     internal static class CustomersGenerator
     {
         /// <summary>
-        /// счётчик сгенерированных покупателей
-        /// </summary>
-        private static int _custumersGeneratedCount = 0;
-        
-        /// <summary>
         /// генерирует экземпляр класса Customer и возвращает его
         /// </summary>
         /// <returns> Customer </returns>
         public static Customer GetNextCustomer()
         {
-            Address newAddress = new Address();
-            Customer newCustomer = new Customer($"full name{_custumersGeneratedCount}", newAddress);
-            _custumersGeneratedCount++;
+            Customer newCustomer = new Customer();
             return newCustomer;
         }
     }

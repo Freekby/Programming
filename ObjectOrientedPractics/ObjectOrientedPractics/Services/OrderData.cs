@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel;
+using ObjectOrientedPractices.Models;
+using ObjectOrientedPractices.Models.Orders;
 
 namespace ObjectOrientedPractices
 {

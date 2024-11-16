@@ -1,15 +1,17 @@
-﻿namespace ObjectOrientedPractices
+﻿using ObjectOrientedPractices.Models.Enums;
+
+namespace ObjectOrientedPractices.Models.Orders
 {
     internal class PriorityOrder : Order
     {
-        private static List<string> _rangesList = new List<string> { "9:00 – 11:00", "11:00 – 13:00", "13:00 – 15:00", "15:00 – 17:00", "17:00 – 19:00", "19:00 – 21:00"};
+        private static List<string> _rangesList = new List<string> { "9:00 – 11:00", "11:00 – 13:00", "13:00 – 15:00", "15:00 – 17:00", "17:00 – 19:00", "19:00 – 21:00" };
         private DateTime _deliveryDate;
         private string _deliveryTime;
 
         public static List<string> RangesList { get { return new List<string>(_rangesList); } }
 
-        public DateTime DeliveryDate 
-        { 
+        public DateTime DeliveryDate
+        {
             get { return _deliveryDate; }
             set
             {
@@ -40,7 +42,7 @@
             DeliveryDate = DateTime.Now.AddDays(1);
             DeliveryTime = _rangesList[0];
         }
-        
+
         public PriorityOrder(DateTime deliveryDate, string deliveryTime, Address address, List<Item> items, double cost) : base(address, items, cost)
         {
             DeliveryDate = deliveryDate;

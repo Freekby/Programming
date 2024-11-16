@@ -1,4 +1,6 @@
-﻿namespace ObjectOrientedPractices
+﻿using ObjectOrientedPractices.Models.Enums;
+
+namespace ObjectOrientedPractices.Models
 {
     /// <summary>
     /// Хранит данные о заказе покупателя.
@@ -66,7 +68,7 @@
         /// Удаляет товары из корзины.
         /// </summary>
         /// <param name="item"> удаляемый товар. </param>
-        public void RemoveItem(Item item) 
+        public void RemoveItem(Item item)
         {
             if (item != null)
             {
@@ -77,8 +79,8 @@
         /// <summary>
         /// Очищает корзину.
         /// </summary>
-        public void Clear() 
-        { 
+        public void Clear()
+        {
             _items = new List<Item>();
         }
     }

@@ -1,3 +1,5 @@
+using ObjectOrientedPractices.Models;
+
 namespace ObjectOrientedPractices
 {
     public partial class MainForm : Form

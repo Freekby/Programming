@@ -1,4 +1,9 @@
-﻿namespace ObjectOrientedPractices.Views.tabs
+﻿using ObjectOrientedPractices.Models;
+using ObjectOrientedPractices.Models.Discounts;
+using ObjectOrientedPractices.Models.Enums;
+using ObjectOrientedPractices.Views.Forms;
+
+namespace ObjectOrientedPractices.Views.tabs
 {
     public partial class CustomersTab : UserControl
     {
@@ -54,6 +59,7 @@
             CustomerAdressControl.Address = _currentCustomer.Address;
             PriorityCheckBox.Checked = _currentCustomer.IsPriority;
 
+            CustomersDiscountsListBox.DataSource = _currentCustomer.Discounts;
 
             CustomersListBox.DataSource = null;
             CustomersListBox.DataSource = _customers;
@@ -103,9 +109,47 @@
             CustomersListBox.DataSource = _customers;
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void PriorityCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             _currentCustomer.IsPriority = PriorityCheckBox.Checked;
+        }
+
+        private void AddDiscountButton_Click(object sender, EventArgs e)
+        {
+            if (CustomersListBox.SelectedItem is null) return;
+
+            using (AddDiscountForm addDiscountForm = new AddDiscountForm())
+            {
+                if (addDiscountForm.ShowDialog() == DialogResult.OK)
+                {
+                    Category selectedCategory = addDiscountForm.SelectedCategory;
+
+                    foreach (IDiscount discount in _currentCustomer.Discounts)
+                    {
+                        if (discount is PercentDiscount percentDiscount && percentDiscount.Category == selectedCategory)
+                        {
+                            MessageBox.Show("Скидка для этой категории уже существует.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+
+                    PercentDiscount newDiscount = new PercentDiscount(selectedCategory);
+                    _currentCustomer.Discounts.Add(newDiscount);
+
+                    CustomersDiscountsListBox.DataSource = null;
+                    CustomersDiscountsListBox.DataSource = _currentCustomer.Discounts;
+                }
+            }
+        }
+
+        private void RemoveDiscountButton_Click(object sender, EventArgs e)
+        {
+            if (CustomersListBox.SelectedItem is null || CustomersDiscountsListBox.SelectedIndex < 1) return;
+
+            _currentCustomer.Discounts.RemoveAt(CustomersDiscountsListBox.SelectedIndex);
+
+            CustomersDiscountsListBox.DataSource = null;
+            CustomersDiscountsListBox.DataSource = _currentCustomer.Discounts;
         }
     }
 }

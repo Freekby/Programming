@@ -1,4 +1,6 @@
-﻿namespace ObjectOrientedPractices.Views.tabs
+﻿using ObjectOrientedPractices.Models;
+
+namespace ObjectOrientedPractices.Views.tabs
 {
     partial class CustomersTab
     {
@@ -28,20 +30,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Address address2 = new Address();
+            Address address1 = new Address();
             CustomersGroupBox = new GroupBox();
             RemoveCustumerButton = new Button();
             AddCustumerButton = new Button();
             CustomersListBox = new ListBox();
             SelectedCustomerGroupBox = new GroupBox();
+            CustomersDiscountsGroupBox = new GroupBox();
+            CustomersDiscountsListBox = new ListBox();
+            AddDiscountButton = new Button();
+            RemoveDiscountButton = new Button();
             PriorityCheckBox = new CheckBox();
             CustomerAdressControl = new Controls.AddressControl();
             CustomerNameTextBox = new TextBox();
             CustomerIDTextBox = new TextBox();
             label3 = new Label();
             label1 = new Label();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             CustomersGroupBox.SuspendLayout();
             SelectedCustomerGroupBox.SuspendLayout();
+            CustomersDiscountsGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // CustomersGroupBox
@@ -52,7 +60,7 @@
             CustomersGroupBox.Controls.Add(CustomersListBox);
             CustomersGroupBox.Location = new Point(0, 0);
             CustomersGroupBox.Name = "CustomersGroupBox";
-            CustomersGroupBox.Size = new Size(255, 304);
+            CustomersGroupBox.Size = new Size(255, 528);
             CustomersGroupBox.TabIndex = 1;
             CustomersGroupBox.TabStop = false;
             CustomersGroupBox.Text = "Customers";
@@ -60,7 +68,7 @@
             // RemoveCustumerButton
             // 
             RemoveCustumerButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            RemoveCustumerButton.Location = new Point(126, 264);
+            RemoveCustumerButton.Location = new Point(126, 488);
             RemoveCustumerButton.Name = "RemoveCustumerButton";
             RemoveCustumerButton.Size = new Size(114, 34);
             RemoveCustumerButton.TabIndex = 2;
@@ -71,7 +79,7 @@
             // AddCustumerButton
             // 
             AddCustumerButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            AddCustumerButton.Location = new Point(6, 264);
+            AddCustumerButton.Location = new Point(6, 488);
             AddCustumerButton.Name = "AddCustumerButton";
             AddCustumerButton.Size = new Size(114, 34);
             AddCustumerButton.TabIndex = 1;
@@ -81,12 +89,12 @@
             // 
             // CustomersListBox
             // 
-            CustomersListBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            CustomersListBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             CustomersListBox.FormattingEnabled = true;
             CustomersListBox.ItemHeight = 15;
             CustomersListBox.Location = new Point(6, 19);
             CustomersListBox.Name = "CustomersListBox";
-            CustomersListBox.Size = new Size(243, 199);
+            CustomersListBox.Size = new Size(243, 409);
             CustomersListBox.TabIndex = 0;
             CustomersListBox.Click += CustomersListBox_Click;
             CustomersListBox.SelectedIndexChanged += CustomersListBox_SelectedIndexChanged;
@@ -94,6 +102,7 @@
             // SelectedCustomerGroupBox
             // 
             SelectedCustomerGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            SelectedCustomerGroupBox.Controls.Add(CustomersDiscountsGroupBox);
             SelectedCustomerGroupBox.Controls.Add(PriorityCheckBox);
             SelectedCustomerGroupBox.Controls.Add(CustomerAdressControl);
             SelectedCustomerGroupBox.Controls.Add(CustomerNameTextBox);
@@ -102,10 +111,55 @@
             SelectedCustomerGroupBox.Controls.Add(label1);
             SelectedCustomerGroupBox.Location = new Point(255, 0);
             SelectedCustomerGroupBox.Name = "SelectedCustomerGroupBox";
-            SelectedCustomerGroupBox.Size = new Size(560, 304);
+            SelectedCustomerGroupBox.Size = new Size(557, 522);
             SelectedCustomerGroupBox.TabIndex = 2;
             SelectedCustomerGroupBox.TabStop = false;
             SelectedCustomerGroupBox.Text = "Selected customer";
+            // 
+            // CustomersDiscountsGroupBox
+            // 
+            CustomersDiscountsGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            CustomersDiscountsGroupBox.Controls.Add(CustomersDiscountsListBox);
+            CustomersDiscountsGroupBox.Controls.Add(AddDiscountButton);
+            CustomersDiscountsGroupBox.Controls.Add(RemoveDiscountButton);
+            CustomersDiscountsGroupBox.Location = new Point(6, 309);
+            CustomersDiscountsGroupBox.Name = "CustomersDiscountsGroupBox";
+            CustomersDiscountsGroupBox.Size = new Size(370, 119);
+            CustomersDiscountsGroupBox.TabIndex = 3;
+            CustomersDiscountsGroupBox.TabStop = false;
+            CustomersDiscountsGroupBox.Text = "Discounts";
+            // 
+            // CustomersDiscountsListBox
+            // 
+            CustomersDiscountsListBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            CustomersDiscountsListBox.FormattingEnabled = true;
+            CustomersDiscountsListBox.ItemHeight = 15;
+            CustomersDiscountsListBox.Location = new Point(6, 18);
+            CustomersDiscountsListBox.Name = "CustomersDiscountsListBox";
+            CustomersDiscountsListBox.Size = new Size(248, 94);
+            CustomersDiscountsListBox.TabIndex = 3;
+            // 
+            // AddDiscountButton
+            // 
+            AddDiscountButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            AddDiscountButton.Location = new Point(271, 22);
+            AddDiscountButton.Name = "AddDiscountButton";
+            AddDiscountButton.Size = new Size(93, 42);
+            AddDiscountButton.TabIndex = 2;
+            AddDiscountButton.Text = "Add";
+            AddDiscountButton.UseVisualStyleBackColor = true;
+            AddDiscountButton.Click += AddDiscountButton_Click;
+            // 
+            // RemoveDiscountButton
+            // 
+            RemoveDiscountButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            RemoveDiscountButton.Location = new Point(271, 71);
+            RemoveDiscountButton.Name = "RemoveDiscountButton";
+            RemoveDiscountButton.Size = new Size(93, 42);
+            RemoveDiscountButton.TabIndex = 1;
+            RemoveDiscountButton.Text = "Remove";
+            RemoveDiscountButton.UseVisualStyleBackColor = true;
+            RemoveDiscountButton.Click += RemoveDiscountButton_Click;
             // 
             // PriorityCheckBox
             // 
@@ -116,17 +170,18 @@
             PriorityCheckBox.TabIndex = 7;
             PriorityCheckBox.Text = "Is priority";
             PriorityCheckBox.UseVisualStyleBackColor = true;
-            PriorityCheckBox.CheckedChanged += checkBox1_CheckedChanged;
+            PriorityCheckBox.CheckedChanged += PriorityCheckBox_CheckedChanged;
             // 
             // CustomerAdressControl
             // 
-            address2.Apartment = "";
-            address2.Building = "";
-            address2.City = "";
-            address2.Country = "";
-            address2.Index = 100000;
-            address2.Street = "";
-            CustomerAdressControl.Address = address2;
+            address1.Apartment = "";
+            address1.Building = "";
+            address1.City = "";
+            address1.Country = "";
+            address1.Index = 100000;
+            address1.Street = "";
+            CustomerAdressControl.Address = address1;
+            CustomerAdressControl.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             CustomerAdressControl.Location = new Point(6, 163);
             CustomerAdressControl.MinimumSize = new Size(550, 140);
             CustomerAdressControl.Name = "CustomerAdressControl";
@@ -139,7 +194,7 @@
             CustomerNameTextBox.Location = new Point(6, 71);
             CustomerNameTextBox.Multiline = true;
             CustomerNameTextBox.Name = "CustomerNameTextBox";
-            CustomerNameTextBox.Size = new Size(548, 86);
+            CustomerNameTextBox.Size = new Size(545, 86);
             CustomerNameTextBox.TabIndex = 6;
             // 
             // CustomerIDTextBox
@@ -176,11 +231,12 @@
             Controls.Add(CustomersGroupBox);
             MinimumSize = new Size(815, 300);
             Name = "CustomersTab";
-            Size = new Size(815, 304);
+            Size = new Size(815, 528);
             Load += CostumersTab_Load;
             CustomersGroupBox.ResumeLayout(false);
             SelectedCustomerGroupBox.ResumeLayout(false);
             SelectedCustomerGroupBox.PerformLayout();
+            CustomersDiscountsGroupBox.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -197,5 +253,10 @@
         private Label label1;
         private Controls.AddressControl CustomerAdressControl;
         private CheckBox PriorityCheckBox;
+        private GroupBox CustomersDiscountsGroupBox;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Button AddDiscountButton;
+        private Button RemoveDiscountButton;
+        private ListBox CustomersDiscountsListBox;
     }
 }
