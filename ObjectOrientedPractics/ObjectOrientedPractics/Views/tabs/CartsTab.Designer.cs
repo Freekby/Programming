@@ -204,7 +204,7 @@
             DiscountsCheckedListBox.Name = "DiscountsCheckedListBox";
             DiscountsCheckedListBox.Size = new Size(154, 94);
             DiscountsCheckedListBox.TabIndex = 25;
-            DiscountsCheckedListBox.Click += DiscountsCheckedListBox_Click;
+            DiscountsCheckedListBox.MouseUp += DiscountsCheckedListBox_KeyUp;
             // 
             // DiscountAmountLabel
             // 

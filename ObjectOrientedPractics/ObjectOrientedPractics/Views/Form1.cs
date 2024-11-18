@@ -5,7 +5,7 @@ namespace ObjectOrientedPractices
     public partial class MainForm : Form
     {
         /// <summary>
-        /// 
+        /// Хранит информацию о клиентах и товарах.
         /// </summary>
         private Store _store = new Store();
 

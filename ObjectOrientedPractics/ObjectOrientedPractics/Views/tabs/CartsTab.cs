@@ -78,12 +78,16 @@ namespace ObjectOrientedPractices.Views.tabs
             UpdateCartData();
         }
 
-
         private void ClearCartButton_Click(object sender, EventArgs e)
         {
             if (_currentCustomer is null) { return; }
             _currentCustomer.Cart.Items.Clear();
 
+            UpdateCartData();
+        }
+
+        private void DiscountsCheckedListBox_KeyUp(object sender, MouseEventArgs e)
+        {
             UpdateCartData();
         }
 
@@ -124,11 +128,6 @@ namespace ObjectOrientedPractices.Views.tabs
             DiscountsCheckedListBox.DataSource = _currentCustomer.Discounts;
 
             _currentCustomer.Cart.Clear();
-            UpdateCartData();
-        }
-
-        private void DiscountsCheckedListBox_Click(object sender, EventArgs e)
-        {
             UpdateCartData();
         }
 
@@ -175,6 +174,5 @@ namespace ObjectOrientedPractices.Views.tabs
             CustomerComboBox.DataSource = Customers;
             ItemsListBox.DataSource = Items;
         }
-
     }
 }

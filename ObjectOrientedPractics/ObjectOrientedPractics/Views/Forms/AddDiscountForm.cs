@@ -4,6 +4,9 @@ namespace ObjectOrientedPractices.Views.Forms
 {
     public partial class AddDiscountForm : Form
     {
+        /// <summary>
+        /// Хранит выбранную категорию товара
+        /// </summary>
         public Category SelectedCategory { get; private set; }
 
         public AddDiscountForm()

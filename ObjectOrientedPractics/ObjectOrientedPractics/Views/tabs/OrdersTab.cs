@@ -71,6 +71,28 @@ namespace ObjectOrientedPractices.Views.tabs
             }
         }
 
+
+        private void StatusComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (OrdersDataGridView.CurrentRow == null) { return; }
+            Order order = _orders[OrdersDataGridView.CurrentRow.Index];
+            order.Status = (OrderStatus)StatusComboBox.SelectedItem;
+            OrdersDataGridView.CurrentRow.Cells[2].Value = order.Status;
+        }
+
+        private void DeliveryTimeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (OrdersDataGridView.CurrentRow == null) { return; }
+
+            if(_orders[OrdersDataGridView.CurrentRow.Index] is PriorityOrder priority)
+            {
+                priority.DeliveryTime = (string)DeliveryTimeComboBox.SelectedItem;
+            }
+        }
+
+        /// <summary>
+        /// Обновляет информацию о заказах.
+        /// </summary>
         public void UpdateOrders()
         {
             _orders.Clear();
@@ -100,24 +122,6 @@ namespace ObjectOrientedPractices.Views.tabs
             }
 
             OrdersDataGridView.DataSource = dataTable;
-        }
-
-        private void StatusComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (OrdersDataGridView.CurrentRow == null) { return; }
-            Order order = _orders[OrdersDataGridView.CurrentRow.Index];
-            order.Status = (OrderStatus)StatusComboBox.SelectedItem;
-            OrdersDataGridView.CurrentRow.Cells[2].Value = order.Status;
-        }
-
-        private void DeliveryTimeComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (OrdersDataGridView.CurrentRow == null) { return; }
-
-            if(_orders[OrdersDataGridView.CurrentRow.Index] is PriorityOrder priority)
-            {
-                priority.DeliveryTime = (string)DeliveryTimeComboBox.SelectedItem;
-            }
         }
     }
 }
