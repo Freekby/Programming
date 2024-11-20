@@ -74,7 +74,7 @@
                 {
                     throw new ArgumentOutOfRangeException("cost should be <= 100000");
                 }
-                if (_cost < 0)
+                if (value < 0)
                 {
                     throw new ArgumentOutOfRangeException("cost should be >= 0");
                 }

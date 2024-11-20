@@ -1,4 +1,5 @@
 ﻿using ObjectOrientedPractices.Models.Enums;
+using ObjectOrientedPractices.Services;
 
 namespace ObjectOrientedPractices.Views.tabs
 {
@@ -9,24 +10,26 @@ namespace ObjectOrientedPractices.Views.tabs
         /// </summary>
         private List<Item> _items = new();
         /// <summary>
+        /// отфильтрованый список всех товаров
+        /// </summary>
+        private List<Item> _filteredItems;
+        /// <summary>
         /// текущий выбранный товар
         /// </summary>
         private Item _currentItem;
-        /// <summary>
-        /// true если данные введены корректно, иначе - false 
-        /// </summary>
-        private bool _isDataCorrect = true;
+
+        private bool isNameChanged = false;
 
         public List<Item> Items
         {
             get { return _items; }
-            set 
+            set
             {
                 if (value == null)
                 {
                     throw new ArgumentNullException("Items не должно быть null");
                 }
-                _items = value; 
+                _items = value;
             }
         }
 
@@ -37,17 +40,21 @@ namespace ObjectOrientedPractices.Views.tabs
 
         private void ItemsTab_Load(object sender, EventArgs e)
         {
-            ItemsListBox.DataSource = _items;
+            _filteredItems = DataTools.Filter(_items, item => item.Name.Contains(SearchTextBox.Text));
+
             ItemCategoryComboBox.DataSource = Enum.GetValues(typeof(Category));
+            SortComboBox.SelectedIndex = 0;
+            ItemsListBox.DataSource = _filteredItems;
         }
 
         private void ItemsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ItemsListBox.SelectedItem is null) { return; }
-            if (!_isDataCorrect)
+
+            if (isNameChanged)
             {
-                ItemsListBox.SelectedItem = _currentItem;
-                return;
+                FilterItems();
+                isNameChanged = false;
             }
 
             _currentItem = ItemsListBox.SelectedItem as Item;
@@ -57,21 +64,51 @@ namespace ObjectOrientedPractices.Views.tabs
             ItemNameTextBox.Text = _currentItem.Name;
             ItemDescriptionTextBox.Text = _currentItem.Info;
             ItemCategoryComboBox.SelectedItem = _currentItem.Category;
-
-            ItemsListBox.DataSource = null;
-            ItemsListBox.DataSource = _items;
         }
 
-        private void ItemsListBox_Click(object sender, EventArgs e)
+        private void AddItemButton_Click(object sender, EventArgs e)
         {
-            if(ItemsListBox.SelectedItem == null) { return; }
+            Item newItem = ItemGenerator.GetNextItem();
+            _items.Add(newItem);
+            _filteredItems = DataTools.Filter(_items, item => item.Name.Contains(SearchTextBox.Text));
+            FilterItems();
+        }
 
-            _isDataCorrect = true;
+        private void RemoveItemButton_Click(object sender, EventArgs e)
+        {
+            _items.Remove(_currentItem);
+            _filteredItems = DataTools.Filter(_items, item => item.Name.Contains(SearchTextBox.Text));
 
-            ItemCostTextBox.BackColor = Color.White;
+            UpdateListBoxData();
+        }
+
+        private void SearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            _filteredItems = DataTools.Filter(_items, item => item.Name.Contains(SearchTextBox.Text));
+            UpdateListBoxData();
+        }
+
+        private void ItemNameTextBox_TextChanged(object sender, EventArgs e)
+        {
             ItemNameTextBox.BackColor = Color.White;
-            ItemDescriptionTextBox.BackColor = Color.White;
+            try
+            {
+                string name = ItemNameTextBox.Text;
+                if (name != _currentItem.Name) 
+                { 
+                    isNameChanged = true;
+                }
+                _currentItem.Name = name;
+            }
+            catch (Exception)
+            {
+                ItemNameTextBox.BackColor = Color.LightPink;
+            }
+        }
 
+        private void ItemCostTextBox_TextChanged(object sender, EventArgs e)
+        {
+            ItemCostTextBox.BackColor = Color.White;
             try
             {
                 float cost = float.Parse(ItemCostTextBox.Text);
@@ -80,20 +117,18 @@ namespace ObjectOrientedPractices.Views.tabs
             catch (Exception)
             {
                 ItemCostTextBox.BackColor = Color.LightPink;
-                _isDataCorrect = false;
             }
+        }
 
-            try
-            {
-                string name = ItemNameTextBox.Text;
-                _currentItem.Name = name;
-            }
-            catch (Exception)
-            {
-                ItemNameTextBox.BackColor = Color.LightPink;
-                _isDataCorrect = false;
-            }
+        private void ItemCategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (_currentItem is null) { return; }
+            _currentItem.Category = (Category)ItemCategoryComboBox.SelectedItem;
+        }
 
+        private void ItemDescriptionTextBox_TextChanged(object sender, EventArgs e)
+        {
+            ItemDescriptionTextBox.BackColor = Color.White;
             try
             {
                 string info = ItemDescriptionTextBox.Text;
@@ -102,24 +137,49 @@ namespace ObjectOrientedPractices.Views.tabs
             catch (Exception)
             {
                 ItemDescriptionTextBox.BackColor = Color.LightPink;
-                _isDataCorrect = false;
             }
-            _currentItem.Category = (Category)ItemCategoryComboBox.SelectedItem;
         }
 
-        private void AddItemButton_Click(object sender, EventArgs e)
+        void UpdateListBoxData()
         {
-            Item newItem = ItemGenerator.GetNextItem();
-            _items.Add(newItem);
             ItemsListBox.DataSource = null;
-            ItemsListBox.DataSource = _items;
+            ItemsListBox.DataSource = _filteredItems;
         }
 
-        private void RemoveItemButton_Click(object sender, EventArgs e)
+        private void SortComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _items.Remove(_currentItem);
-            ItemsListBox.DataSource = null;
-            ItemsListBox.DataSource = _items;
+            FilterItems();
+        }
+
+        void FilterItems()
+        {
+            if (_items == null) return;
+
+            string searchText = SearchTextBox.Text;
+            string selectedOrder = SortComboBox.SelectedItem.ToString();
+
+            _filteredItems = DataTools.Filter(_items, item =>
+                 item.Name.Contains(searchText)
+                 );
+            switch (selectedOrder)
+            {
+                case "Name":
+                    _filteredItems = DataTools.Sort(_filteredItems, DataTools.CompareByName);
+
+                    break;
+                case "Cost (Ascending)":
+
+                    _filteredItems = DataTools.Sort(_filteredItems, DataTools.CompareByCostAscending);
+
+                    break;
+                case "Cost (Descending)":
+
+                    _filteredItems = DataTools.Sort(_filteredItems, DataTools.CompareByCostDescending);
+
+                    break;
+            }
+
+            UpdateListBoxData();
         }
     }
 }

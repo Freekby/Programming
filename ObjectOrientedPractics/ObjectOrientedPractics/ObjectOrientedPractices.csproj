@@ -8,4 +8,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Services\DataTools\**" />
+    <EmbeddedResource Remove="Services\DataTools\**" />
+    <None Remove="Services\DataTools\**" />
+  </ItemGroup>
+
 </Project>
