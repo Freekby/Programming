@@ -3,7 +3,7 @@
     /// <summary>
     /// Хранит информацию о товаре.
     /// </summary>
-    public class Item
+    public class Item : ICloneable, IEquatable<Item>, IComparable<Item>
     {
         /// <summary>
         /// Индивидуальный идентификатор.
@@ -118,6 +118,40 @@
         public override string ToString()
         {
             return _name;
+        }
+
+        /// <inheritdoc/>
+        public object Clone()
+        {
+            return new Item(Name, Info, Cost, Category);
+        }
+
+        /// <inheritdoc/>
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        /// <inheritdoc/>
+        public bool Equals(Item other)
+        {
+            if (other is null) return false;
+            if (ReferenceEquals(this, other)) return true;
+            return Id == other.Id;
+        }
+
+        /// <inheritdoc/>
+        public override bool Equals(object other)
+        {
+            if (other is null) return false;
+            if (ReferenceEquals(this, other)) return true;
+            if (other.GetType() != this.GetType()) return false;
+            return Equals((Item)other);
+        }
+
+        public int CompareTo(Item? other)
+        {
+            return Cost.CompareTo(other.CompareTo);
         }
     }
 }

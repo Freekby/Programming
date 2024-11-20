@@ -3,7 +3,7 @@
     /// <summary>
     /// Хранит данные о адресе покупателя.
     /// </summary>
-    public class Address
+    public class Address : ICloneable, IEquatable<Address>
     {
         /// <summary>
         /// Почтовый индекс.
@@ -151,6 +151,39 @@
         public override string ToString()
         {
             return $"{Index} {Country} {City} {Street} {Building} {Apartment}";
+        }
+
+        public object Clone()
+        {
+            return new Address(Index, Country, City, Street, Building, Apartment);
+        }
+
+        /// <inheritdoc/>
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        /// <inheritdoc/>
+        public bool Equals(Address other)
+        {
+            if (other is null) return false;
+            if (ReferenceEquals(this, other)) return true;
+            return (Index == other.Index &&
+                Country == other.Country &&
+                City == other.City &&
+                Street == other.Street &&
+                Building == other.Building &&
+                Apartment == other.Apartment);
+        }
+
+        /// <inheritdoc/>
+        public override bool Equals(object other)
+        {
+            if (other is null) return false;
+            if (ReferenceEquals(this, other)) return true;
+            if (other.GetType() != this.GetType()) return false;
+            return Equals((Address)other);
         }
     }
 }

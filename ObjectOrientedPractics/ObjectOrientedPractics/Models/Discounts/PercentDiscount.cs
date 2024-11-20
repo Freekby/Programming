@@ -2,7 +2,7 @@
 
 namespace ObjectOrientedPractices.Models.Discounts
 {
-    public class PercentDiscount : IDiscount
+    public class PercentDiscount : IDiscount, IComparable<PercentDiscount>
     {
         /// <summary>
         /// Текущая скидка в процентах
@@ -128,6 +128,11 @@ namespace ObjectOrientedPractices.Models.Discounts
         public override string ToString()
         {
             return Info;
+        }
+
+        public int CompareTo(PercentDiscount? other)
+        {
+            return Percent.CompareTo(other.Percent);
         }
     }
 }

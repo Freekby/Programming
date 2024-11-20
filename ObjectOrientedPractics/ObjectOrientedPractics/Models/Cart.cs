@@ -5,7 +5,7 @@ namespace ObjectOrientedPractices.Models
     /// <summary>
     /// Хранит данные о заказе покупателя.
     /// </summary>
-    public class Cart
+    public class Cart : ICloneable 
     {
         /// <summary>
         /// Поле списка товаров.
@@ -19,6 +19,7 @@ namespace ObjectOrientedPractices.Models
         public List<Item> Items
         {
             get { return _items; }
+            private set { _items = value; }
         }
 
         /// <summary>
@@ -52,6 +53,11 @@ namespace ObjectOrientedPractices.Models
             _items = new List<Item>();
         }
 
+        public Cart(List<Item> items)
+        {
+            Items = new List<Item>(items);
+        }
+
         /// <summary>
         /// Добавляет товары в корзину.
         /// </summary>
@@ -82,6 +88,12 @@ namespace ObjectOrientedPractices.Models
         public void Clear()
         {
             _items = new List<Item>();
+        }
+
+        /// <inheritdoc/>
+        public object Clone()
+        {
+            return new Cart(Items);
         }
     }
 }
