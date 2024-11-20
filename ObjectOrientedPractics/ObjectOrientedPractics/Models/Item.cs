@@ -5,18 +5,37 @@
     /// </summary>
     public class Item : ICloneable, IEquatable<Item>, IComparable<Item>
     {
+
+        /// <summary>
+        /// Событие для изменения названия товара
+        /// </summary>
+        public event EventHandler NameChanged;
+
+        /// <summary>
+        /// Событие для изменения цены товара
+        /// </summary>
+        public event EventHandler CostChanged;
+
+        /// <summary>
+        /// Событие для изменения информации товара
+        /// </summary>
+        public event EventHandler InfoChanged;
+
         /// <summary>
         /// Индивидуальный идентификатор.
         /// </summary>
         private readonly int _id;
+
         /// <summary>
         /// Название товара.
         /// </summary>
         private string _name;
+
         /// <summary>
         /// Информация о товаре.
         /// </summary>
         private string _info;
+
         /// <summary>
         /// Цена товара.
         /// </summary>
@@ -43,7 +62,11 @@
                 ValueValidator.CheckStringOnNullOrEmpty(value, nameof(Name));
                 ValueValidator.AssertStringOnLength(value, 200, nameof(Name));
 
-                _name = value;
+                if (_name != value)
+                {
+                    NameChanged?.Invoke(this, new EventArgs());
+                    _name = value;
+                }
             }
         }
 
@@ -58,7 +81,11 @@
                 ValueValidator.CheckStringOnNullOrEmpty(value, nameof(Info));
                 ValueValidator.AssertStringOnLength(value, 1000, nameof(Info));
 
-                _info = value;
+                if (_info != value)
+                {
+                    _info = value;
+                    InfoChanged?.Invoke(this, EventArgs.Empty);
+                }
             }
         }
 
@@ -79,7 +106,11 @@
                     throw new ArgumentOutOfRangeException("cost should be >= 0");
                 }
 
-                _cost = value;
+                if (_cost != value)
+                {
+                    _cost = value;
+                    CostChanged?.Invoke(this, EventArgs.Empty);
+                }
             }
         }
 

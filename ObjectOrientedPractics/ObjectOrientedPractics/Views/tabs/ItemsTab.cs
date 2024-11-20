@@ -6,15 +6,22 @@ namespace ObjectOrientedPractices.Views.tabs
     public partial class ItemsTab : UserControl
     {
         /// <summary>
-        /// список для хранения всех товаров
+        /// Событие для изменения информации о товарах.
+        /// </summary>
+        public event EventHandler ItemsChanged;
+
+        /// <summary>
+        /// Список для хранения всех товаров.
         /// </summary>
         private List<Item> _items = new();
+
         /// <summary>
-        /// отфильтрованый список всех товаров
+        /// Отфильтрованый список всех товаров.
         /// </summary>
         private List<Item> _filteredItems;
+
         /// <summary>
-        /// текущий выбранный товар
+        /// Текущий выбранный товар
         /// </summary>
         private Item _currentItem;
 
@@ -71,7 +78,10 @@ namespace ObjectOrientedPractices.Views.tabs
             Item newItem = ItemGenerator.GetNextItem();
             _items.Add(newItem);
             _filteredItems = DataTools.Filter(_items, item => item.Name.Contains(SearchTextBox.Text));
+
             FilterItems();
+
+            ItemsChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void RemoveItemButton_Click(object sender, EventArgs e)
@@ -80,11 +90,14 @@ namespace ObjectOrientedPractices.Views.tabs
             _filteredItems = DataTools.Filter(_items, item => item.Name.Contains(SearchTextBox.Text));
 
             UpdateListBoxData();
+
+            ItemsChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
             _filteredItems = DataTools.Filter(_items, item => item.Name.Contains(SearchTextBox.Text));
+
             UpdateListBoxData();
         }
 
@@ -99,6 +112,8 @@ namespace ObjectOrientedPractices.Views.tabs
                     isNameChanged = true;
                 }
                 _currentItem.Name = name;
+
+                ItemsChanged?.Invoke(this, EventArgs.Empty);
             }
             catch (Exception)
             {
@@ -113,6 +128,8 @@ namespace ObjectOrientedPractices.Views.tabs
             {
                 float cost = float.Parse(ItemCostTextBox.Text);
                 _currentItem.Cost = cost;
+
+                ItemsChanged?.Invoke(this, EventArgs.Empty);
             }
             catch (Exception)
             {
@@ -124,6 +141,8 @@ namespace ObjectOrientedPractices.Views.tabs
         {
             if (_currentItem is null) { return; }
             _currentItem.Category = (Category)ItemCategoryComboBox.SelectedItem;
+
+            ItemsChanged?.Invoke(this, EventArgs.Empty);
         }
 
         private void ItemDescriptionTextBox_TextChanged(object sender, EventArgs e)
@@ -133,6 +152,8 @@ namespace ObjectOrientedPractices.Views.tabs
             {
                 string info = ItemDescriptionTextBox.Text;
                 _currentItem.Info = info;
+
+                ItemsChanged?.Invoke(this, EventArgs.Empty);
             }
             catch (Exception)
             {
@@ -140,17 +161,23 @@ namespace ObjectOrientedPractices.Views.tabs
             }
         }
 
+        private void SortComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterItems();
+        }
+
+        /// <summary>
+        /// Обновляет информацию в ListBox.
+        /// </summary>
         void UpdateListBoxData()
         {
             ItemsListBox.DataSource = null;
             ItemsListBox.DataSource = _filteredItems;
         }
 
-        private void SortComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FilterItems();
-        }
-
+        /// <summary>
+        /// Фильтрует и обновляет товары.
+        /// </summary>
         void FilterItems()
         {
             if (_items == null) return;

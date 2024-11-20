@@ -30,6 +30,8 @@ namespace ObjectOrientedPractices
             itemsTab.Items = _store.Items;
             cartsTab.Items = _store.Items;
             priorityOrdersTab1.Items = _store.Items;
+
+            itemsTab.ItemsChanged += RefreshTabsData;
         }
 
         private void MainTabControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -43,6 +45,12 @@ namespace ObjectOrientedPractices
                     ordersTab1.UpdateOrders();
                     break;
             }
+        }
+
+        void RefreshTabsData(object sender, EventArgs e)
+        {
+            cartsTab.RefreshData();
+            ordersTab1.UpdateOrders();
         }
     }
 }
