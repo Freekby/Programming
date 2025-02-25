@@ -10,10 +10,12 @@ namespace View.ViewModel
     /// </summary>
     class MainVM : INotifyPropertyChanged
     {
-        private string _name;
-        private string _email;
-        private string _phoneNumber;
+        private string _name = string.Empty;
+        private string _email = string.Empty;
+        private string _phoneNumber = string.Empty;
         private Contact _contact = new Contact();
+        private ICommand _loadCommand;
+        private ICommand _saveCommand;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -67,7 +69,9 @@ namespace View.ViewModel
             get { return _contact; }
         }
 
-        private ICommand _loadCommand;
+        /// <summary>
+        /// Возвращает команду загрузки данных.
+        /// </summary>
         public ICommand LoadCommand
         {
             get
@@ -77,7 +81,9 @@ namespace View.ViewModel
             }
         }
 
-        private ICommand _saveCommand;
+        /// <summary>
+        /// Возвращает команду выгрузки данных.
+        /// </summary>
         public ICommand SaveCommand
         {
             get

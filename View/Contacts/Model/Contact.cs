@@ -42,7 +42,7 @@
         /// <param name="name">Имя.</param>
         /// <param name="email">Почта.</param>
         /// <param name="phoneNumber">Номер телефона.</param>
-        public Contact(string name = "test", string email = "test@gmail.com", string phoneNumber = "123")
+        public Contact(string name = "", string email = "", string phoneNumber = "")
         {
             Name = name;
             Email = email;

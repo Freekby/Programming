@@ -9,7 +9,7 @@ namespace View.ViewModel
     /// </summary>
     internal class LoadCommand : ICommand
     {
-        private MainVM _mainVM;
+        private readonly MainVM _mainVM;
 
         public event EventHandler? CanExecuteChanged;
 
@@ -27,6 +27,10 @@ namespace View.ViewModel
             _mainVM.Email = savedContact.Email;
         }
 
+        /// <summary>
+        /// Конструктор класса <see cref="LoadCommand"/>.
+        /// </summary>
+        /// <param name="mainVM">Экземпляр класса <see cref="MainVM"/></param>
         public LoadCommand(MainVM mainVM)
         {
             _mainVM = mainVM;

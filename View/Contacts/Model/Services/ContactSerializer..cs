@@ -16,7 +16,7 @@ namespace View.Model.Services
         /// <param name="contact"></param>
         static public void Serialize(Contact contact) 
         {
-            if (!Directory.Exists(Path.GetDirectoryName(_saveFilePath)))
+            if (!CheckSaveOnExist())
             {
                 Directory.CreateDirectory(Path.GetDirectoryName(_saveFilePath));
             }
@@ -33,6 +33,11 @@ namespace View.Model.Services
         /// <exception cref="Exception"> =</exception>
         static public Contact DeSerialise()
         {
+            if (!CheckSaveOnExist())
+            {
+                Serialize(new Contact());
+            }
+
             string serialisedData = File.ReadAllText(_saveFilePath);
 
             if (string.IsNullOrEmpty(serialisedData))
@@ -43,6 +48,16 @@ namespace View.Model.Services
             Contact deSerialisedContact = JsonConvert.DeserializeObject<Contact>(serialisedData);
 
             return deSerialisedContact;
+        }
+
+        private static bool CheckSaveOnExist()
+        {
+            if (File.Exists(_saveFilePath))
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
