@@ -9,13 +9,16 @@ namespace View.ViewModel
     /// </summary>
     internal class SaveCommand : ICommand
     {
+        /// <inheritdoc/>
         public event EventHandler? CanExecuteChanged;
 
+        /// <inheritdoc/>
         public bool CanExecute(object? parameter)
         {
             return true;
         }
 
+        /// <inheritdoc/>
         public void Execute(object? parameter)
         {
             Contact contact = (Contact)parameter;

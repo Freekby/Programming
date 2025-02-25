@@ -8,13 +8,15 @@ namespace View.Model.Services
     /// </summary>
     static class ContactSerializer
     {
-        static private string _saveFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), ".\\Contacts\\contacts.json");
+        private static string _saveFilePath = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.Personal), 
+            ".\\Contacts\\contacts.json");
 
         /// <summary>
         /// Запись информации о контакте.
         /// </summary>
         /// <param name="contact"></param>
-        static public void Serialize(Contact contact) 
+        public static void Serialize(Contact contact) 
         {
             if (!CheckSaveOnExist())
             {
@@ -31,7 +33,7 @@ namespace View.Model.Services
         /// </summary>
         /// <returns>Экземпляр класса <see cref="Contact"/></returns>
         /// <exception cref="Exception"> =</exception>
-        static public Contact DeSerialise()
+        public static Contact DeSerialise()
         {
             if (!CheckSaveOnExist())
             {

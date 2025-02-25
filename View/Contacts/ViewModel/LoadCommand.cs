@@ -9,15 +9,22 @@ namespace View.ViewModel
     /// </summary>
     internal class LoadCommand : ICommand
     {
+        /// <summary>
+        /// Экземпляр класса <see cref="MainVM"/>.
+        /// Нужен для изменения данных контакта.
+        /// </summary>
         private readonly MainVM _mainVM;
 
+        /// <inheritdoc/>
         public event EventHandler? CanExecuteChanged;
 
+        /// <inheritdoc/>
         public bool CanExecute(object? parameter)
         {
             return true;
         }
 
+        /// <inheritdoc/>
         public void Execute(object? parameter)
         {
             Contact savedContact = ContactSerializer.DeSerialise();
