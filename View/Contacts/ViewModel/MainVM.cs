@@ -17,6 +17,7 @@ namespace View.ViewModel
         private ICommand _loadCommand;
         private ICommand _saveCommand;
 
+        /// <inheritdoc/>
         public event PropertyChangedEventHandler? PropertyChanged;
 
         /// <summary>

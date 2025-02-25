@@ -8,6 +8,9 @@ namespace View.Model.Services
     /// </summary>
     static class ContactSerializer
     {
+        /// <summary>
+        /// Путь к файлу сохранения.
+        /// </summary>
         private static string _saveFilePath = Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.Personal), 
             ".\\Contacts\\contacts.json");
@@ -52,6 +55,10 @@ namespace View.Model.Services
             return deSerialisedContact;
         }
 
+        /// <summary>
+        /// Проверяет существование файла сохранения.
+        /// </summary>
+        /// <returns>true, если существует. Иначе - false.</returns>
         private static bool CheckSaveOnExist()
         {
             if (File.Exists(_saveFilePath))
