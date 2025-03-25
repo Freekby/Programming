@@ -59,7 +59,7 @@
                 <Button x:Name="RemoveButton" Content="Remove" Grid.Column="2" Command="{Binding RemoveCommand}" CommandParameter="{Binding CurrentContact}"/>
             </Grid>
 
-            <ListBox x:Name="ContactsListBox" DisplayMemberPath="Name" ItemsSource="{Binding Contacts}" SelectedItem="{Binding CurrentContact}"/>
+            <ListBox x:Name="ContactsListBox" DisplayMemberPath="Name" ItemsSource="{Binding Contacts, UpdateSourceTrigger=Explicit}" SelectedItem="{Binding CurrentContact}"/>
         </DockPanel>
 
         <GridSplitter Grid.Column="1" Width="10" Visibility="Hidden"/>

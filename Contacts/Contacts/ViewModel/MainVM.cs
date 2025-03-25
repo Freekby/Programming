@@ -12,11 +12,34 @@ namespace Contacts.ViewModel
     /// </summary>
     public class MainVM : INotifyPropertyChanged
     {
+        /// <summary>
+        /// Текущий выбранный контакт.
+        /// </summary>
         private Contact _currentContact;
+
+        /// <summary>
+        /// Показывает включен ли режим редактирования или нет.
+        /// </summary>
         private bool _isEditMode = false;
+
+        /// <summary>
+        /// Команда добавления элемента.
+        /// </summary>
         private ICommand _addCommand;
+
+        /// <summary>
+        /// Команда удаления элемента.
+        /// </summary>
         private ICommand _removeCommand;
+
+        /// <summary>
+        /// Команада изменения элемента.
+        /// </summary>
         private ICommand _editCommand;
+
+        /// <summary>
+        /// Команда применения изменений.
+        /// </summary>
         private ICommand _applyCommand;
 
         /// <summary>

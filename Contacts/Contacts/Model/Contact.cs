@@ -8,9 +8,24 @@ namespace Contacts.Model
     /// </summary>
     public class Contact: INotifyPropertyChanged, IEditableObject
     {
+        /// <summary>
+        /// Хранит данные контакта до изменения.
+        /// </summary>
         private Contact _lastContact;
+
+        /// <summary>
+        /// Имя контакта.
+        /// </summary>
         private string _name;
+
+        /// <summary>
+        /// Номер теефлна.
+        /// </summary>
         private string _phoneNumber;
+
+        /// <summary>
+        /// Электронная почта.
+        /// </summary>
         private string _email;
         
         /// <summary>

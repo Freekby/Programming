@@ -7,7 +7,14 @@ namespace Contacts.ViewModel
     /// </summary>
     class RelayCommand : ICommand
     {
+        /// <summary>
+        /// Хранит функцию для выполнения.
+        /// </summary>
         private readonly Action<object> _execute;
+
+        /// <summary>
+        /// Хранит функцию для проверки возможности выполнения.
+        /// </summary>
         private readonly Predicate<object>? _canExecute;
 
         ///<inheritdoc/>
