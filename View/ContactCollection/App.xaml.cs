@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace Contacts;
+namespace ContactCollection;
 
 /// <summary>
 /// Interaction logic for App.xaml

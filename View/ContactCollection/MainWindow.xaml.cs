@@ -1,7 +1,7 @@
-﻿using Contacts.Model;
-using Contacts.ViewModel;
-using System.Windows;
-namespace Contacts;
+﻿using System.Windows;
+using ContactCollection.ViewModel;
+
+namespace ContactCollection;
 
 /// <summary>
 /// Interaction logic for MainWindow.xaml

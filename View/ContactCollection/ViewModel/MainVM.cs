@@ -1,26 +1,37 @@
-﻿using Contacts.Model;
-using Contacts.Model.Services;
+﻿using ContactCollection.Model.Services;
+using ContactCollection.Model;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Windows.Input;
+using System.Runtime.CompilerServices;
 
-namespace Contacts.ViewModel
+namespace ContactCollection.ViewModel
 {
     /// <summary>
-    /// Класс для привязки данных к форме.
+    /// Основной класс ViewModel (MainVM) для управления контактами.
+    /// Реализует интерфейс INotifyPropertyChanged для обновления данных в UI.
     /// </summary>
     public class MainVM : INotifyPropertyChanged
     {
         /// <summary>
         /// Текущий выбранный контакт.
         /// </summary>
-        private Contact _currentContact;
+        private Contact _currentContact;   
 
         /// <summary>
         /// Показывает включен ли режим редактирования или нет.
         /// </summary>
         private bool _isEditMode = false;
+
+        /// <summary>
+        /// Показывает создан ли контакт.
+        /// </summary>
+        private bool _isNewContact = false;
+
+        /// <summary>
+        /// Индекс редактируемого контакта.
+        /// </summary>
+        private int _editedContactIndex = -1;
 
         /// <summary>
         /// Команда добавления элемента.
@@ -48,12 +59,18 @@ namespace Contacts.ViewModel
         /// <param name="obj"></param>
         private void Apply(object obj)
         {
-            if (!CurrentContact.IsEdited)
+            if (_isNewContact)
             {
                 Contacts.Add(CurrentContact);
+                _isNewContact = false;
+            }
+            else
+            {
+                Contacts[_editedContactIndex] = CurrentContact;
+                CurrentContact = Contacts[_editedContactIndex];
+                _editedContactIndex = -1;
             }
 
-            CurrentContact.EndEdit();
             IsEditMode = false;
             SaveContacts();
 
@@ -63,12 +80,34 @@ namespace Contacts.ViewModel
         }
 
         /// <summary>
+        /// Проверяет возможность сохранения данных о контакте.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        private bool CanApply(object obj)
+        {
+            return CurrentContact != null &&
+                   string.IsNullOrEmpty(CurrentContact[nameof(Contact.Name)]) &&
+                   string.IsNullOrEmpty(CurrentContact[nameof(Contact.PhoneNumber)]) &&
+                   string.IsNullOrEmpty(CurrentContact[nameof(Contact.Email)]);
+        }
+
+        /// <summary>
         /// Функция начала редактирования контакта.
         /// </summary>
         /// <param name="obj"></param>
         private void Edit(object obj)
         {
-            CurrentContact.BeginEdit();
+            var clonnedContact = new Contact()
+            {
+                Email = CurrentContact.Email,
+                PhoneNumber = CurrentContact.PhoneNumber,
+                Name = CurrentContact.Name
+            };
+            _editedContactIndex = Contacts.IndexOf(CurrentContact);
+            CurrentContact = clonnedContact;
+
+            _isNewContact = false;
             IsEditMode = true;
         }
 
@@ -76,7 +115,7 @@ namespace Contacts.ViewModel
         /// Проверяет возможность редактирования контакта.
         /// </summary>
         /// <param name="obj"></param>
-        /// <returns></returns>
+        /// <returns>true если возможно. Иначе false</returns>
         private bool CanEdit(object obj)
         {
             return Contacts.Contains((Contact)obj);
@@ -90,7 +129,7 @@ namespace Contacts.ViewModel
         {
             Contact newContact = new Contact();
             CurrentContact = newContact;
-            CurrentContact.BeginEdit();
+            _isNewContact = true;
             IsEditMode = true;
         }
 
@@ -133,22 +172,8 @@ namespace Contacts.ViewModel
         /// </summary>
         private void SaveContacts()
         {
-            CurrentContact?.EndEdit();
             ContactSerializer.SaveContacts(Contacts);
         }
-
-        /// <summary>
-        /// Функция отмены добавления контакта.
-        /// </summary>
-        /// <param name="newContact"></param>
-        private void CancelAdding(Contact newContact)
-        {
-            if (!newContact.IsEdited)
-            {
-                Contacts.Remove(newContact);
-            }
-        }
-
 
         /// <inheritdoc/>
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -159,14 +184,13 @@ namespace Contacts.ViewModel
         public Contact CurrentContact
         {
             get { return _currentContact; }
-            set 
+            set
             {
                 if (CurrentContact is not null && CurrentContact != value)
                 {
                     IsEditMode = false;
-                    CurrentContact.CancelEdit();
-                    CancelAdding(CurrentContact);
                 }
+
                 _currentContact = value;
                 OnPropertyChanged(nameof(CurrentContact));
             }
@@ -197,11 +221,11 @@ namespace Contacts.ViewModel
         {
             get
             {
-                return _addCommand ?? 
+                return _addCommand ??
                     (_addCommand = new RelayCommand(Add));
             }
         }
-        
+
         /// <summary>
         /// Команда удаления контакта.
         /// </summary>
@@ -234,7 +258,7 @@ namespace Contacts.ViewModel
             get
             {
                 return _applyCommand ??
-                    (_applyCommand = new RelayCommand(Apply));
+                    (_applyCommand = new RelayCommand(Apply, CanApply));
             }
         }
 
@@ -243,7 +267,8 @@ namespace Contacts.ViewModel
         /// </summary>
         public MainVM()
         {
-            Contacts = ContactSerializer.LoadContacts();
+            ObservableCollection<Contact> loadedContacts = ContactSerializer.LoadContacts();
+            Contacts = loadedContacts;
         }
 
         /// <summary>

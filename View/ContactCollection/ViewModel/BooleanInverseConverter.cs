@@ -1,19 +1,17 @@
 ﻿using System.Globalization;
-using System.Windows;
 using System.Windows.Data;
 
-namespace Contacts.ViewModel
+namespace ContactCollection.ViewModel
 {
     /// <summary>
-    /// Конвертирует значение типа <see cref="bool"/> в <see cref="Visibility"/>.
+    /// Инвертирует булево значение (true меняется на false и наоборот).
     /// </summary>
-    class BooleanToVisibilityConverter : IValueConverter
+    class BooleanInverseConverter : IValueConverter
     {
         ///<inheritdoc/>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            bool boolValue = (bool)value;
-            return boolValue ? Visibility.Visible : Visibility.Hidden;
+            return !(bool)value;
         }
 
         ///<inheritdoc/>
