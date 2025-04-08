@@ -91,27 +91,43 @@ namespace ContactCollection.Model
                 {
                     case nameof(Name):
                         if (string.IsNullOrEmpty(Name))
+                        {
                             error = "Имя не может быть пустым.";
+                        }
                         else if (Name?.Length > 100)
+                        {
                             error = "Имя не должно превышать 100 символов.";
+                        }
 
                         break;
                     case nameof(PhoneNumber):
                         if (string.IsNullOrEmpty(PhoneNumber))
+                        {
                             error = "Номер телефона не может быть пустым.";
+                        }
                         else if (PhoneNumber?.Length > 100)
+                        {
                             error = "Номер телефона не должен превышать 100 символов.";
+                        }
                         else if (!System.Text.RegularExpressions.Regex.IsMatch(PhoneNumber, @"^\+[0-9]\s?\(?\d{3}\)?\s?\d{3}[-\s]?\d{2}[-\s]?\d{2}$"))
+                        {
                             error = "Номер телефона должен содержать только цифры или символы +-().";
+                        }
 
                         break;
                     case nameof(Email):
                         if (string.IsNullOrEmpty(Email))
+                        {
                             error = "Адрес почты не может быть пустым.";
+                        }
                         else if (Email?.Length > 100)
+                        {
                             error = "Адрес почты не должен превышать 100 символов.";
+                        }
                         else if (!System.Text.RegularExpressions.Regex.IsMatch(Email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+                        {
                             error = "Неправильный формат адреса почты.";
+                        }
 
                         break;
                 }
@@ -140,7 +156,7 @@ namespace ContactCollection.Model
         /// Событие изменения свойства.
         /// </summary>
         /// <param name="propertyName">Имя свойства вызвавшего событие.</param>
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }

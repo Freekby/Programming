@@ -10,6 +10,9 @@ namespace ContactCollection.Controls
     /// </summary>
     public partial class ContactControl : UserControl
     {
+        /// <summary>
+        /// конструктор класса <see cref="ContactControl"/>
+        /// </summary>
         public ContactControl()
         {
             InitializeComponent();
