@@ -90,6 +90,7 @@ namespace ContactCollection.Model
                 switch (propertyName)
                 {
                     case nameof(Name):
+                    {
                         if (string.IsNullOrEmpty(Name))
                         {
                             error = "Имя не может быть пустым.";
@@ -100,7 +101,9 @@ namespace ContactCollection.Model
                         }
 
                         break;
+                    }
                     case nameof(PhoneNumber):
+                    {
                         if (string.IsNullOrEmpty(PhoneNumber))
                         {
                             error = "Номер телефона не может быть пустым.";
@@ -115,7 +118,10 @@ namespace ContactCollection.Model
                         }
 
                         break;
+                    }
+                        
                     case nameof(Email):
+                    {
                         if (string.IsNullOrEmpty(Email))
                         {
                             error = "Адрес почты не может быть пустым.";
@@ -130,6 +136,7 @@ namespace ContactCollection.Model
                         }
 
                         break;
+                    }
                 }
 
                 return error;
