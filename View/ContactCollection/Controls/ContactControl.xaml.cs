@@ -15,6 +15,11 @@ namespace ContactCollection.Controls
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Проверяет вводимые данные на корректность и отменяет ввод, если они неправильные.
+        /// </summary>
+        /// <param name="sender">PhoneNumberTextBox</param>
+        /// <param name="e"></param>
         private void PhoneNumberTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             string newText = (sender as TextBox).Text + e.Text;
@@ -22,6 +27,11 @@ namespace ContactCollection.Controls
             e.Handled = regex.IsMatch(e.Text) || newText.Length > 100;
         }
 
+        /// <summary>
+        /// Проверяет вставляемые данные на корректность и отменяет ввод, если они неправильные.
+        /// </summary>
+        /// <param name="sender">PhoneNumberTextBox</param>
+        /// <param name="e"></param>
         private void PhoneNumberTextBox_Pasting(object sender, DataObjectPastingEventArgs e)
         {
             if (e.DataObject.GetDataPresent(typeof(string)))

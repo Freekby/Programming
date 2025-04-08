@@ -9,6 +9,18 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <vm:BooleanInverseConverter x:Key="BooleanInverse"/>
+        
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="3"/>
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="True">
+                    <Setter Property="ToolTip"
+                Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+                    <Setter Property="Foreground" Value="Red"/>
+                    <Setter Property="Margin" Value="3"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </UserControl.Resources>
     <Grid>
         <StackPanel Grid.Column="2" Background="White" Margin="8">

@@ -16,9 +16,7 @@ namespace ContactCollection.ViewModel
         /// <summary>
         /// Текущий выбранный контакт.
         /// </summary>
-        private Contact _currentContact;
-
-        private ContactSerializer _serializer = new ContactSerializer();    
+        private Contact _currentContact;   
 
         /// <summary>
         /// Показывает включен ли режим редактирования или нет.
@@ -81,6 +79,11 @@ namespace ContactCollection.ViewModel
             CurrentContact = contactContainer;
         }
 
+        /// <summary>
+        /// Проверяет возможность сохранения данных о контакте.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         private bool CanApply(object obj)
         {
             return CurrentContact != null &&
@@ -112,7 +115,7 @@ namespace ContactCollection.ViewModel
         /// Проверяет возможность редактирования контакта.
         /// </summary>
         /// <param name="obj"></param>
-        /// <returns></returns>
+        /// <returns>true если возможно. Иначе false</returns>
         private bool CanEdit(object obj)
         {
             return Contacts.Contains((Contact)obj);
@@ -169,7 +172,7 @@ namespace ContactCollection.ViewModel
         /// </summary>
         private void SaveContacts()
         {
-            _serializer.SaveContacts(Contacts);
+            ContactSerializer.SaveContacts(Contacts);
         }
 
         /// <inheritdoc/>
@@ -264,7 +267,7 @@ namespace ContactCollection.ViewModel
         /// </summary>
         public MainVM()
         {
-            ObservableCollection<Contact> loadedContacts = _serializer.LoadContacts();
+            ObservableCollection<Contact> loadedContacts = ContactSerializer.LoadContacts();
             Contacts = loadedContacts;
         }
 
