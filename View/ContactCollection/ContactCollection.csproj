@@ -9,7 +9,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ViewModel\**" />
+    <EmbeddedResource Remove="ViewModel\**" />
+    <None Remove="ViewModel\**" />
+    <Page Remove="ViewModel\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ViewModel\ViewModel.csproj" />
   </ItemGroup>
 
 </Project>

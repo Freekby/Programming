@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Data;
 
-namespace ContactCollection.ViewModel
+namespace ContactCollection.Converters
 {
     /// <summary>
     /// Конвертер для преобразования значения типа <see cref="bool"/> в <see cref="Visibility"/>.

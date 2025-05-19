@@ -3,12 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ContactCollection.Controls"
-             xmlns:vm="clr-namespace:ContactCollection.ViewModel"
+             xmlns:local="clr-namespace:ContactCollection.Controls" 
+             xmlns:converters="clr-namespace:ContactCollection.Converters" 
+             xmlns:vm="clr-namespace:ViewModel;assembly=ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <vm:BooleanInverseConverter x:Key="BooleanInverse"/>
+        <converters:BooleanInverseConverter x:Key="BooleanInverse"/>
         
         <Style TargetType="TextBox">
             <Setter Property="Margin" Value="3"/>
@@ -22,6 +23,7 @@
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
+    
     <Grid>
         <StackPanel Grid.Column="2" Background="White" Margin="8">
             <Grid Margin="3, 15, 15,3">
@@ -29,7 +31,7 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Image Source="C:\Users\скда\source\repos\Project333\jFLd-SJBw7Y.jpg" Width="100" Height="100" Grid.RowSpan="2"/>
+                <Canvas Width="100" Height="100" Grid.RowSpan="2"/>
 
                 <StackPanel Grid.Column="1">
                     <Label Content="Name:"/>

@@ -4,18 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ContactCollection"
+        xmlns:vm="clr-namespace:ViewModel;assembly=ViewModel"
+        xmlns:controls="clr-namespace:ContactCollection.Controls" xmlns:converters="clr-namespace:ContactCollection.Converters"
         mc:Ignorable="d"
-        Title="Contacts" Height="516" Width="710" MinWidth="730"
-        xmlns:vm="clr-namespace:ContactCollection.ViewModel"
-        xmlns:controls="clr-namespace:ContactCollection.Controls">
-
-    <Window.DataContext>
-        <vm:MainVM/>
-    </Window.DataContext>
+        Title="Contacts" Height="516" Width="710" MinWidth="730">
 
     <Window.Resources>
-        <vm:BoolToVisibilityConverter x:Key="BooleanToVisibility"/>
-        <vm:BooleanInverseConverter x:Key="BooleanInverse"/>
+        <converters:BoolToVisibilityConverter x:Key="BooleanToVisibility"/>
+        <converters:BooleanInverseConverter x:Key="BooleanInverse"/>
 
         <DataTemplate x:Key="contactTemplate">
             <StackPanel Margin="3" Orientation="Horizontal">

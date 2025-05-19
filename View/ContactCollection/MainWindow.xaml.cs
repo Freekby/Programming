@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using ContactCollection.ViewModel;
+using ViewModel;
 
 namespace ContactCollection;
 

@@ -1,26 +1,34 @@
-﻿using ContactCollection.Model.Services;
-using ContactCollection.Model;
+﻿using CommunityToolkit.Mvvm.ComponentModel; 
+using CommunityToolkit.Mvvm.Input;
+using Model;
+using Model.Services;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Windows.Input;
-using System.Runtime.CompilerServices;
 
-namespace ContactCollection.ViewModel
+namespace ViewModel
 {
     /// <summary>
     /// Основной класс ViewModel (MainVM) для управления контактами.
     /// Реализует интерфейс INotifyPropertyChanged для обновления данных в UI.
     /// </summary>
-    public class MainVM : INotifyPropertyChanged
+    public partial class MainVM : ObservableObject
     {
         /// <summary>
         /// Текущий выбранный контакт.
         /// </summary>
-        private Contact _currentContact;   
+        [ObservableProperty]
+        [NotifyCanExecuteChangedFor(nameof(ApplyCommand))]
+        [NotifyCanExecuteChangedFor(nameof(EditCommand))]
+        [NotifyCanExecuteChangedFor(nameof(RemoveCommand))]
+        private Contact _currentContact;
 
         /// <summary>
         /// Показывает включен ли режим редактирования или нет.
         /// </summary>
+        [ObservableProperty]
+        [NotifyCanExecuteChangedFor(nameof(ApplyCommand))]
+        [NotifyCanExecuteChangedFor(nameof(EditCommand))]
+        [NotifyCanExecuteChangedFor(nameof(RemoveCommand))]
         private bool _isEditMode = false;
 
         /// <summary>
@@ -34,31 +42,19 @@ namespace ContactCollection.ViewModel
         private int _editedContactIndex = -1;
 
         /// <summary>
-        /// Команда добавления элемента.
+        /// Список всех контактов.
         /// </summary>
-        private ICommand _addCommand;
-
-        /// <summary>
-        /// Команда удаления элемента.
-        /// </summary>
-        private ICommand _removeCommand;
-
-        /// <summary>
-        /// Команада изменения элемента.
-        /// </summary>
-        private ICommand _editCommand;
-
-        /// <summary>
-        /// Команда применения изменений.
-        /// </summary>
-        private ICommand _applyCommand;
+        [ObservableProperty]
+        public ObservableCollection<Contact> _contacts;
 
         /// <summary>
         /// Функция принятия изменений контакта.
         /// </summary>
         /// <param name="obj"></param>
+        [RelayCommand(CanExecute = nameof(CanApply))]
         private void Apply(object obj)
         {
+            CurrentContact.PropertyChanged -= CurrentContanctChanged;
             if (_isNewContact)
             {
                 Contacts.Add(CurrentContact);
@@ -96,6 +92,7 @@ namespace ContactCollection.ViewModel
         /// Функция начала редактирования контакта.
         /// </summary>
         /// <param name="obj"></param>
+        [RelayCommand(CanExecute = nameof(CanEdit))]
         private void Edit(object obj)
         {
             var clonnedContact = new Contact()
@@ -107,6 +104,7 @@ namespace ContactCollection.ViewModel
             _editedContactIndex = Contacts.IndexOf(CurrentContact);
             CurrentContact = clonnedContact;
 
+            CurrentContact.PropertyChanged += CurrentContanctChanged;
             _isNewContact = false;
             IsEditMode = true;
         }
@@ -125,18 +123,21 @@ namespace ContactCollection.ViewModel
         /// функция добавления контакта в список.
         /// </summary>
         /// <param name="obj"></param>
+        [RelayCommand]
         private void Add(object obj)
         {
             Contact newContact = new Contact();
             CurrentContact = newContact;
             _isNewContact = true;
             IsEditMode = true;
+            CurrentContact.PropertyChanged += CurrentContanctChanged;
         }
 
         /// <summary>
         /// Функция удаления контакта.
         /// </summary>
         /// <param name="obj"></param>
+        [RelayCommand(CanExecute = nameof(CanRemove))]
         private void Remove(object obj)
         {
             int oldIndex = Contacts.IndexOf((Contact)obj);
@@ -175,91 +176,9 @@ namespace ContactCollection.ViewModel
             ContactSerializer.SaveContacts(Contacts);
         }
 
-        /// <inheritdoc/>
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        /// <summary>
-        /// Экземпляр класса <see cref="Contact"/>.
-        /// </summary>
-        public Contact CurrentContact
+        private void CurrentContanctChanged(object? sender, PropertyChangedEventArgs e)
         {
-            get { return _currentContact; }
-            set
-            {
-                if (CurrentContact is not null && CurrentContact != value)
-                {
-                    IsEditMode = false;
-                }
-
-                _currentContact = value;
-                OnPropertyChanged(nameof(CurrentContact));
-            }
-        }
-
-        /// <summary>
-        /// определяет включен ли режим редактирвания.
-        /// </summary>
-        public bool IsEditMode
-        {
-            get { return _isEditMode; }
-            set
-            {
-                _isEditMode = value;
-                OnPropertyChanged(nameof(IsEditMode));
-            }
-        }
-
-        /// <summary>
-        /// Список всех контактов.
-        /// </summary>
-        public ObservableCollection<Contact> Contacts { get; private set; }
-
-        /// <summary>
-        /// Команда добавления контакта.
-        /// </summary>
-        public ICommand AddCommand
-        {
-            get
-            {
-                return _addCommand ??
-                    (_addCommand = new RelayCommand(Add));
-            }
-        }
-
-        /// <summary>
-        /// Команда удаления контакта.
-        /// </summary>
-        public ICommand RemoveCommand
-        {
-            get
-            {
-                return _removeCommand ??
-                    (_removeCommand = new RelayCommand(Remove, CanRemove));
-            }
-        }
-
-        /// <summary>
-        /// Команда редактирования контакта.
-        /// </summary>
-        public ICommand EditCommand
-        {
-            get
-            {
-                return _editCommand ??
-                    (_editCommand = new RelayCommand(Edit, CanEdit));
-            }
-        }
-
-        /// <summary>
-        /// Команда принятия изменений контакта.
-        /// </summary>
-        public ICommand ApplyCommand
-        {
-            get
-            {
-                return _applyCommand ??
-                    (_applyCommand = new RelayCommand(Apply, CanApply));
-            }
+            ApplyCommand.NotifyCanExecuteChanged();
         }
 
         /// <summary>
@@ -271,11 +190,21 @@ namespace ContactCollection.ViewModel
             Contacts = loadedContacts;
         }
 
-        /// <summary>
-        /// Событие изменения свойства.
-        /// </summary>
-        /// <param name="propertyName">Имя свойства вызвавшего событие.</param>
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        partial void OnCurrentContactChanging(Contact oldValue, Contact newValue)
+        {
+            if (oldValue != null)
+            {
+                oldValue.PropertyChanged -= CurrentContanctChanged;
+            }
+
+            IsEditMode = false;
+        }
+
+        partial void OnCurrentContactChanged(Contact value)
+        {
+            EditCommand.NotifyCanExecuteChanged();
+            RemoveCommand.NotifyCanExecuteChanged();
+            ApplyCommand.NotifyCanExecuteChanged();
+        }
     }
 }

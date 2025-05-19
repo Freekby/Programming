@@ -2,7 +2,7 @@
 using System.IO;
 using Newtonsoft.Json;
 
-namespace ContactCollection.Model.Services
+namespace Model.Services
 {
         /// <summary>
         /// Предоставляет методы для сериализации и десериализации

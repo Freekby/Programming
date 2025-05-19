@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using System.Windows.Data;
 
-namespace ContactCollection.ViewModel
+namespace ContactCollection.Converters
 {
     /// <summary>
     /// Инвертирует булево значение (true меняется на false и наоборот).
